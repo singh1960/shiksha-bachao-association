@@ -1170,31 +1170,36 @@ Shiksha Bachao Association
 
 
 <script>
+(function(){
+    function setLanguage(lang){
+        if (!['mr','hi','en'].includes(lang)) lang = 'hi';
 
-function setLanguage(lang){
+        // Hide every language first. This prevents Marathi + Hindi + English mixing.
+        document.querySelectorAll('.lang').forEach(function(el){
+            el.classList.remove('active');
+        });
 
-    document.querySelectorAll('.lang').forEach(function(el){
-        el.classList.remove('active');
-    });
+        // Show only the selected language.
+        document.querySelectorAll('.lang.' + lang).forEach(function(el){
+            el.classList.add('active');
+        });
 
-    document.querySelectorAll('.' + lang).forEach(function(el){
-        el.classList.add('active');
-    });
+        document.querySelectorAll('.languages button').forEach(function(btn){
+            btn.classList.toggle('active', btn.id === lang + 'Btn');
+        });
 
-    document.querySelectorAll('.languages button').forEach(function(btn){
-        btn.classList.remove('active');
-    });
+        document.documentElement.lang = lang;
+        localStorage.setItem('sba-language', lang);
+    }
 
-    document.getElementById(lang + 'Btn').classList.add('active');
+    window.setLanguage = setLanguage;
 
-    document.documentElement.lang =
-        lang === 'mr' ? 'mr' :
-        lang === 'hi' ? 'hi' : 'en';
-}
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
+    // Restore the user's last choice; default is Hindi.
+    var savedLanguage = localStorage.getItem('sba-language') || 'hi';
+    setLanguage(savedLanguage);
+})();
 </script>
 
 </body>
