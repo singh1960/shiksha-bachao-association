@@ -1,224 +1,332 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teacher Welfare Scheme | Shiksha Bachao Association</title>
-<meta name="description" content="Shiksha Bachao Association की Teacher Welfare Scheme: शिक्षक एवं शिक्षकेतर कर्मचारियों के कल्याण और सामाजिक सुरक्षा की प्रस्तावित रूपरेखा।">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="शिक्षा बचाओ संगठन की शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण योजना। चिकित्सा, दुर्घटना, परिवार, शिक्षा एवं आपातकालीन सहायता की जानकारी।">
+<title>शिक्षक कल्याण योजना | Shiksha Bachao Association</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:#f5f7fb;color:#263238}
-header{background:linear-gradient(135deg,#123c69,#176b87);color:#fff;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.logo{font-weight:800;font-size:22px}
-nav a{color:#fff;text-decoration:none;margin:0 7px;font-weight:600}.languages button{background:transparent;color:#fff;border:1px solid #fff;padding:7px 11px;border-radius:20px;margin-left:3px;cursor:pointer}.languages button.active{background:#fff;color:#123c69}
-.hero{background:#eaf5f8;padding:52px 7%;text-align:center}.hero h1{font-size:40px;color:#123c69;margin:0 0 10px}.hero p{font-size:18px;max-width:900px;margin:auto}
-main{max-width:1120px;margin:35px auto;padding:0 20px}.card{background:#fff;border-radius:16px;padding:30px;margin-bottom:25px;box-shadow:0 5px 22px #00000012}
-h2{color:#123c69;margin-top:0}h3{color:#176b87}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.feature{background:#f0f7f9;border-radius:12px;padding:20px}.feature h3{margin-top:0}.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{background:#e9f2f5;padding:7px 12px;border-radius:20px;font-size:14px}
-.notice{background:#fff8e8;border-left:5px solid #d99a00;padding:17px;border-radius:10px}.important{background:#fff1f1;border-left:5px solid #c0392b;padding:17px;border-radius:10px}
-.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th,td{border:1px solid #d8e0e5;padding:11px;text-align:left}th{background:#eaf5f8;color:#123c69}
-.step{display:flex;gap:14px;margin:14px 0}.num{min-width:36px;height:36px;border-radius:50%;background:#176b87;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold}
-.cta{text-align:center;background:#123c69;color:#fff}.cta h2{color:#fff}.cta a{display:inline-block;background:#fff;color:#123c69;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:bold}
-.lang{display:none}.lang.active{display:block}footer{background:#102f4f;color:#fff;text-align:center;padding:25px}
-@media(max-width:700px){.hero h1{font-size:30px}nav{width:100%;text-align:center}nav a{display:inline-block;margin:4px;font-size:14px}}
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;
+ line-height:1.8;background:#f3f6fa;color:#263238
+}
+header{
+ background:linear-gradient(135deg,#123c69,#176b87);
+ color:white;padding:28px 15px;text-align:center
+}
+header h1{margin:0;font-size:clamp(23px,4vw,36px)}
+header p{margin:8px 0 0}
+nav{
+ background:#0e2d4a;padding:12px;text-align:center
+}
+nav a{
+ color:white;text-decoration:none;margin:5px 12px;font-weight:bold
+}
+.container{max-width:1100px;margin:25px auto;padding:0 15px}
+.card{
+ background:white;padding:25px;margin-bottom:22px;
+ border-radius:14px;box-shadow:0 3px 14px #00000010
+}
+h2{color:#123c69;border-bottom:2px solid #e5edf3;padding-bottom:8px}
+h3{color:#176b87}
+.notice{
+ background:#fff5d9;border-left:5px solid #e2a900;
+ padding:15px;border-radius:6px
+}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px
+}
+.feature{
+ background:#f0f7fb;padding:18px;border-radius:10px;
+ border-top:4px solid #176b87
+}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #d7e0e7;padding:12px;text-align:left}
+th{background:#123c69;color:white}
+.download{
+ display:inline-block;background:#176b87;color:white;
+ padding:12px 18px;margin:7px 4px;border-radius:7px;
+ text-decoration:none;font-weight:bold
+}
+.download:hover{background:#123c69}
+.steps{counter-reset:step}
+.step{padding:10px 0 10px 42px;position:relative}
+.step:before{
+ counter-increment:step;content:counter(step);
+ position:absolute;left:0;top:10px;background:#176b87;
+ color:white;border-radius:50%;width:30px;height:30px;
+ text-align:center;line-height:30px;font-weight:bold
+}
+footer{
+ background:#123c69;color:white;text-align:center;
+ padding:25px 15px;margin-top:30px
+}
+footer a{color:white}
+@media(max-width:600px){
+ .card{padding:18px}
+ table{font-size:14px}
+ th,td{padding:8px}
+ nav a{display:inline-block}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">SBA</div>
-<nav>
-<span class="lang mr"><a href="index.html">मुख्यपृष्ठ</a><a href="about-us.html">आमच्याविषयी</a><a href="welfare-scheme.html">कल्याण योजना</a><a href="index.html#eligibility">पात्रता</a><a href="index.html#government">शासकीय योजना</a><a href="index.html#contact">संपर्क</a></span>
-<span class="lang hi"><a href="index.html">मुख्यपृष्ठ</a><a href="about-us.html">हमारे बारे में</a><a href="welfare-scheme.html">कल्याण योजना</a><a href="index.html#eligibility">पात्रता</a><a href="index.html#government">सरकारी योजनाएँ</a><a href="index.html#contact">संपर्क</a></span>
-<span class="lang en"><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="welfare-scheme.html">Welfare Scheme</a><a href="index.html#eligibility">Eligibility</a><a href="index.html#government">Government Schemes</a><a href="index.html#contact">Contact</a></span>
-</nav>
-<div class="languages"><button id="mrBtn" onclick="setLanguage('mr')">मराठी</button><button id="hiBtn" onclick="setLanguage('hi')">हिंदी</button><button id="enBtn" onclick="setLanguage('en')">English</button></div>
+<h1>शिक्षक कल्याण योजना</h1>
+<p>Shiksha Bachao Association</p>
+<p>शिक्षक एवं शिक्षकेतर कर्मचारियों के कल्याण और सामाजिक सुरक्षा की प्रस्तावित व्यवस्था</p>
 </header>
 
-<section class="hero">
-<div class="lang mr"><h1>शिक्षक कल्याण योजना</h1><p>शिक्षक व शिक्षकेतर कर्मचाऱ्यांसाठी कल्याण, सामाजिक सुरक्षा आणि गरजेनुसार सहाय्याची प्रस्तावित रूपरेषा.</p></div>
-<div class="lang hi"><h1>शिक्षक कल्याण योजना</h1><p>शिक्षक एवं गैर-शिक्षण कर्मचारियों के लिए कल्याण, सामाजिक सुरक्षा और आवश्यकता-आधारित सहायता की प्रस्तावित रूपरेखा।</p></div>
-<div class="lang en"><h1>Teacher Welfare Scheme</h1><p>A proposed framework for welfare, social security and need-based assistance for teachers and non-teaching employees.</p></div>
-</section>
+<nav>
+<a href="index.html">मुख्यपृष्ठ</a>
+<a href="about-us.html">हमारे बारे में</a>
+<a href="downloads-forms.html">डाउनलोड एवं फॉर्म</a>
+</nav>
 
-<main>
-<section class="card">
-<div class="lang mr"><h2>योजनेची ओळख</h2><p>ही योजना Shiksha Bachao Association च्या सभासदांसाठी सामूहिक कल्याण व सामाजिक सुरक्षा व्यवस्था विकसित करण्याच्या उद्देशाने तयार करण्यात येत आहे. संचालन मंजूर नियमावली, ठराव, उपलब्ध निधी आणि लागू कायदे/नियम यांच्या अधीन राहील.</p></div>
-<div class="lang hi"><h2>योजना का परिचय</h2><p>यह योजना Shiksha Bachao Association के सदस्यों के लिए सामूहिक कल्याण एवं सामाजिक सुरक्षा व्यवस्था विकसित करने के उद्देश्य से तैयार की जा रही है। संचालन स्वीकृत नियमावली, प्रस्तावों, उपलब्ध निधि और लागू कानूनों/नियमों के अधीन होगा।</p></div>
-<div class="lang en"><h2>About the Scheme</h2><p>This scheme is being developed for a collective welfare and social security framework for members of Shiksha Bachao Association. Administration will remain subject to approved rules, resolutions, available funds and applicable laws.</p></div>
-<div class="notice"><strong class="lang mr">महत्त्वाची सूचना:</strong><strong class="lang hi">महत्त्वपूर्ण सूचना:</strong><strong class="lang en">Important Notice:</strong><span class="lang mr"> लाभांची रक्कम व अंतिम अटी मंजूर नियमावलीनुसार निश्चित केल्या जातील.</span><span class="lang hi"> लाभों की राशि और अंतिम शर्तें स्वीकृत नियमावली के अनुसार निर्धारित की जाएँगी।</span><span class="lang en"> Benefit amounts and final conditions will be determined under the approved rules.</span></div>
-</section>
+<main class="container">
 
 <section class="card">
-<div class="lang mr"><h2>योजनेची प्रमुख उद्दिष्टे</h2></div><div class="lang hi"><h2>योजना के प्रमुख उद्देश्य</h2></div><div class="lang en"><h2>Key Objectives</h2></div>
-<div class="grid">
-<div class="feature"><h3 class="lang mr">वैद्यकीय सहाय्य</h3><h3 class="lang hi">चिकित्सा सहायता</h3><h3 class="lang en">Medical Support</h3><div class="lang mr">गरजेच्या वेळी नियमांनुसार वैद्यकीय सहाय्य.</div><div class="lang hi">आवश्यकता के समय नियमों के अनुसार चिकित्सा सहायता।</div><div class="lang en">Need-based medical assistance subject to the rules.</div></div>
-<div class="feature"><h3 class="lang mr">अपघात सहाय्य</h3><h3 class="lang hi">दुर्घटना सहायता</h3><h3 class="lang en">Accident Support</h3><div class="lang mr">अपघातामुळे उद्भवलेल्या अडचणींमध्ये सहाय्य.</div><div class="lang hi">दुर्घटना से उत्पन्न कठिनाइयों में सहायता।</div><div class="lang en">Assistance for eligible accident-related hardship.</div></div>
-<div class="feature"><h3 class="lang mr">कुटुंब संरक्षण</h3><h3 class="lang hi">परिवार सुरक्षा</h3><h3 class="lang en">Family Protection</h3><div class="lang mr">सभासद व कुटुंबाच्या कठीण प्रसंगी सहाय्याचा प्रयत्न.</div><div class="lang hi">सदस्य एवं परिवार के कठिन समय में सहायता का प्रयास।</div><div class="lang en">Support for members and families during difficult circumstances.</div></div>
-<div class="feature"><h3 class="lang mr">शैक्षणिक सहाय्य</h3><h3 class="lang hi">शैक्षिक सहायता</h3><h3 class="lang en">Educational Support</h3><div class="lang mr">पात्र मुलांच्या शिक्षणासाठी नियमांनुसार सहाय्याचा विचार.</div><div class="lang hi">पात्र बच्चों की शिक्षा के लिए नियमों के अनुसार सहायता का प्रस्ताव।</div><div class="lang en">Proposed educational assistance for eligible children, subject to rules.</div></div>
+<h2>योजना का परिचय</h2>
+<p>
+यह योजना Shiksha Bachao Association के सदस्यों के लिए
+सामूहिक कल्याण एवं सामाजिक सुरक्षा व्यवस्था विकसित करने
+के उद्देश्य से तैयार की गई है।
+</p>
+<p>
+योजना का संचालन स्वीकृत नियमावली, उपलब्ध निधि,
+संगठन के प्रस्तावों तथा लागू कानूनों एवं नियमों के अधीन होगा।
+</p>
+
+<div class="notice">
+<strong>महत्त्वपूर्ण सूचना:</strong>
+सहायता की राशि, पात्रता और अंतिम शर्तें स्वीकृत नियमावली
+तथा सक्षम समिति के निर्णय के अनुसार निर्धारित की जाएँगी।
 </div>
 </section>
 
 <section class="card">
-<div class="lang mr"><h2>कोणासाठी?</h2><p>सभासदत्वाच्या अटी पूर्ण करणाऱ्या शिक्षक व शिक्षकेतर कर्मचाऱ्यांसाठी योजना विकसित करण्याचा उद्देश आहे.</p></div>
-<div class="lang hi"><h2>किसके लिए?</h2><p>सदस्यता की शर्तें पूरी करने वाले शिक्षक एवं गैर-शिक्षण कर्मचारियों के लिए योजना विकसित करने का उद्देश्य है।</p></div>
-<div class="lang en"><h2>Who Is It For?</h2><p>The scheme is intended for teachers and non-teaching employees who meet applicable membership conditions.</p></div>
-<div class="tags"><span class="tag">Aided Schools</span><span class="tag">Unaided Schools</span><span class="tag">Self-Financed Schools</span><span class="tag">Trained Teachers</span><span class="tag">Untrained Teachers</span><span class="tag">Trainees</span><span class="tag">Contract Employees</span><span class="tag">Temporary Employees</span><span class="tag">Part-Time Employees</span><span class="tag">Honorarium Employees</span><span class="tag">Non-Teaching Employees</span></div>
-<div class="lang mr"><p><strong>विशेष लक्ष:</strong> कमी वेतन किंवा मर्यादित उत्पन्न असलेल्या कर्मचाऱ्यांच्या अडचणी लक्षात घेऊन व्यवस्था व्यावहारिक व नियमबद्ध करण्याचा उद्देश आहे.</p></div>
-<div class="lang hi"><p><strong>विशेष ध्यान:</strong> कम वेतन या सीमित आय वाले कर्मचारियों की कठिनाइयों को ध्यान में रखते हुए व्यवस्था को व्यावहारिक और नियमबद्ध बनाने का उद्देश्य है।</p></div>
-<div class="lang en"><p><strong>Special focus:</strong> The framework aims to remain practical and rule-based while considering low-paid or limited-income employees.</p></div>
+<h2>योजना के प्रमुख उद्देश्य</h2>
+<div class="grid">
+<div class="feature">
+<h3>चिकित्सा सहायता</h3>
+<p>आवश्यकता के समय नियमों के अनुसार चिकित्सा सहायता।</p>
+</div>
+<div class="feature">
+<h3>दुर्घटना सहायता</h3>
+<p>दुर्घटना से उत्पन्न कठिनाइयों में सहायता का प्रावधान।</p>
+</div>
+<div class="feature">
+<h3>परिवार सुरक्षा</h3>
+<p>सदस्य एवं उनके परिवार के कठिन समय में सहायता का प्रयास।</p>
+</div>
+<div class="feature">
+<h3>शैक्षिक सहायता</h3>
+<p>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए नियमों के अनुसार सहायता।</p>
+</div>
+<div class="feature">
+<h3>आपातकालीन सहायता</h3>
+<p>वास्तविक आपातकालीन परिस्थितियों में नियमों के अनुसार सहायता।</p>
+</div>
+<div class="feature">
+<h3>सामाजिक सुरक्षा</h3>
+<p>सदस्यों के कल्याण और सुरक्षा के लिए सामूहिक व्यवस्था।</p>
+</div>
+</div>
 </section>
 
 <section class="card">
-<div class="lang mr"><h2>निधी व सभासद अंशदान</h2><p>निधी सभासद अंशदान, देणग्या/योगदान, कायदेशीररीत्या स्वीकारता येणारे इतर स्रोत आणि मंजूर नियमांनुसार प्राप्त निधीतून उभारला जाऊ शकतो.</p></div>
-<div class="lang hi"><h2>निधि एवं सदस्य अंशदान</h2><p>निधि सदस्य अंशदान, दान/योगदान, कानूनी रूप से स्वीकार्य अन्य स्रोतों और स्वीकृत नियमों के अनुसार प्राप्त निधि से बनाया जा सकता है।</p></div>
-<div class="lang en"><h2>Fund & Member Contributions</h2><p>The fund may be built through member contributions, donations/contributions, other legally permissible sources and funds received under approved rules.</p></div>
-<div class="important"><div class="lang mr"><strong>टीप:</strong> मासिक अंशदानाची निश्चित रक्कम, सवलती किंवा matching contribution याबाबत अंतिम निर्णय मंजूर नियमावली/ठरावात स्पष्ट केला जाईल.</div><div class="lang hi"><strong>नोट:</strong> मासिक अंशदान की निश्चित राशि, रियायत या matching contribution के संबंध में अंतिम निर्णय स्वीकृत नियमावली/प्रस्ताव में स्पष्ट किया जाएगा।</div><div class="lang en"><strong>Note:</strong> The final monthly contribution, concessions or any matching contribution will be specified in the approved rules/resolution.</div></div>
+<h2>किसके लिए?</h2>
+<p>
+सदस्यता की शर्तें पूरी करने वाले शिक्षक एवं शिक्षकेतर कर्मचारियों
+के लिए यह योजना विकसित करने का उद्देश्य है।
+</p>
+<div class="grid">
+<div class="feature">अनुदानित विद्यालयों के कर्मचारी</div>
+<div class="feature">गैर-अनुदानित विद्यालयों के कर्मचारी</div>
+<div class="feature">स्व-वित्तपोषित विद्यालयों के कर्मचारी</div>
+<div class="feature">प्रशिक्षित एवं अप्रशिक्षित शिक्षक</div>
+<div class="feature">स्थायी एवं अस्थायी कर्मचारी</div>
+<div class="feature">संविदा एवं अंशकालिक कर्मचारी</div>
+<div class="feature">मानदेय कर्मचारी</div>
+<div class="feature">शिक्षकेतर कर्मचारी</div>
+</div>
+<p>
+कम वेतन या सीमित आय वाले कर्मचारियों की कठिनाइयों को ध्यान में
+रखते हुए व्यवस्था को व्यावहारिक और नियमबद्ध बनाने का उद्देश्य है।
+</p>
 </section>
 
 <section class="card">
-<div class="lang mr"><h2>प्रस्तावित सहाय्याचे क्षेत्र</h2></div><div class="lang hi"><h2>प्रस्तावित सहायता के क्षेत्र</h2></div><div class="lang en"><h2>Proposed Areas of Assistance</h2></div>
-<div class="tablewrap"><table>
-<tr><th><span class="lang mr">क्षेत्र</span><span class="lang hi">क्षेत्र</span><span class="lang en">Area</span></th><th><span class="lang mr">सहाय्याचे स्वरूप</span><span class="lang hi">सहायता का स्वरूप</span><span class="lang en">Nature of Support</span></th><th><span class="lang mr">स्थिती</span><span class="lang hi">स्थिति</span><span class="lang en">Status</span></th></tr>
-
-<tr>
-<td><span class="lang mr">वैद्यकीय</span><span class="lang hi">चिकित्सा</span><span class="lang en">Medical</span></td>
-<td><span class="lang mr">पात्रता व निधीच्या उपलब्धतेनुसार गरजेनुसार वैद्यकीय सहाय्य.</span><span class="lang hi">पात्रता और निधि की उपलब्धता के अनुसार आवश्यकता-आधारित चिकित्सा सहायता।</span><span class="lang en">Need-based medical assistance subject to eligibility and fund availability.</span></td>
-<td><span class="lang mr">नियमांनुसार निश्चित करणे</span><span class="lang hi">नियमों के अनुसार निर्धारित होगा</span><span class="lang en">Rules to specify</span></td>
-</tr>
-
-<tr>
-<td><span class="lang mr">अपघात</span><span class="lang hi">दुर्घटना</span><span class="lang en">Accident</span></td>
-<td><span class="lang mr">पात्र अपघातामुळे निर्माण झालेल्या अडचणींसाठी सहाय्य.</span><span class="lang hi">पात्र दुर्घटना से उत्पन्न कठिनाइयों के लिए सहायता।</span><span class="lang en">Assistance for eligible accident-related hardship.</span></td>
-<td><span class="lang mr">नियमांनुसार निश्चित करणे</span><span class="lang hi">नियमों के अनुसार निर्धारित होगा</span><span class="lang en">Rules to specify</span></td>
-</tr>
-
-<tr>
-<td><span class="lang mr">मृत्यू / कुटुंब</span><span class="lang hi">मृत्यु / परिवार</span><span class="lang en">Death / Family</span></td>
-<td><span class="lang mr">सभासदाच्या मृत्यूनंतर पात्र Nominee/कुटुंबास नियमांनुसार सहाय्य.</span><span class="lang hi">सदस्य की मृत्यु के बाद पात्र Nominee/परिवार को नियमों के अनुसार सहायता।</span><span class="lang en">Support to eligible nominee/family after death of a member.</span></td>
-<td><span class="lang mr">नियमांनुसार निश्चित करणे</span><span class="lang hi">नियमों के अनुसार निर्धारित होगा</span><span class="lang en">Rules to specify</span></td>
-</tr>
-
-<tr>
-<td><span class="lang mr">शिक्षण</span><span class="lang hi">शिक्षा</span><span class="lang en">Education</span></td>
-<td><span class="lang mr">पात्र मुलांच्या/आश्रितांच्या शिक्षणासाठी नियमांनुसार सहाय्य.</span><span class="lang hi">पात्र बच्चों/आश्रितों की शिक्षा के लिए नियमों के अनुसार सहायता।</span><span class="lang en">Educational assistance for eligible children/dependants.</span></td>
-<td><span class="lang mr">नियमांनुसार निश्चित करणे</span><span class="lang hi">नियमों के अनुसार निर्धारित होगा</span><span class="lang en">Rules to specify</span></td>
-</tr>
-
-<tr>
-<td><span class="lang mr">आपत्कालीन</span><span class="lang hi">आपातकालीन</span><span class="lang en">Emergency</span></td>
-<td><span class="lang mr">खऱ्या आपत्कालीन परिस्थितीत नियमांनुसार विशेष सहाय्य.</span><span class="lang hi">वास्तविक आपातकालीन परिस्थितियों में नियमों के अनुसार विशेष सहायता।</span><span class="lang en">Special assistance in genuine emergencies.</span></td>
-<td><span class="lang mr">नियमांनुसार निश्चित करणे</span><span class="lang hi">नियमों के अनुसार निर्धारित होगा</span><span class="lang en">Rules to specify</span></td>
-</tr>
-
-<tr>
-<td><span class="lang mr">अल्पकालीन कर्ज</span><span class="lang hi">अल्पकालीन ऋण</span><span class="lang en">Short-term Loan</span></td>
-<td><span class="lang mr">मंजूर असल्यास स्वतंत्र अटी व नियमांनुसार मर्यादित सहाय्य/कर्ज.</span><span class="lang hi">स्वीकृति होने पर अलग शर्तों और नियमों के अनुसार सीमित सहायता/ऋण।</span><span class="lang en">If approved, limited assistance/loan subject to separate conditions.</span></td>
-<td><span class="lang mr">मंजुरीच्या अधीन</span><span class="lang hi">स्वीकृति के अधीन</span><span class="lang en">Subject to approval</span></td>
-</tr>
-</table></div>
+<h2>निधि एवं सदस्य अंशदान</h2>
+<p>
+निधि सदस्य अंशदान, दान एवं योगदान, कानूनी रूप से स्वीकार्य
+अन्य स्रोतों और स्वीकृत नियमों के अनुसार प्राप्त धनराशि से
+बनाई जा सकती है।
+</p>
+<div class="notice">
+<strong>नोट:</strong>
+मासिक अंशदान की निश्चित राशि, रियायत तथा Matching Contribution
+के संबंध में अंतिम निर्णय स्वीकृत नियमावली एवं प्रस्ताव में
+स्पष्ट किया जाएगा।
+</div>
 </section>
 
 <section class="card">
-<div class="lang mr"><h2>क्लेम कसा करावा?</h2></div><div class="lang hi"><h2>क्लेम कैसे किया जाएगा?</h2></div><div class="lang en"><h2>How Will a Claim Work?</h2></div>
-<div class="step"><div class="num">1</div><div><strong>Claim Form</strong> — <span class="lang mr">निर्धारित Claim Form जमा करा.</span><span class="lang hi">निर्धारित Claim Form जमा करें.</span><span class="lang en">Submit the prescribed Claim Form.</span></div></div>
-<div class="step"><div class="num">2</div><div><strong class="lang mr">कागदपत्रे</strong><strong class="lang hi">दस्तावेज</strong><strong class="lang en">Documents</strong> — <span class="lang mr">घटनेनुसार आवश्यक पुरावे जोडावेत.</span><span class="lang hi">घटना के अनुसार आवश्यक प्रमाण संलग्न करें.</span><span class="lang en">Attach the required evidence according to the event.</span></div></div>
-<div class="step"><div class="num">3</div><div><strong class="lang mr">पडताळणी</strong><strong class="lang hi">सत्यापन</strong><strong class="lang en">Verification</strong> — <span class="lang mr">पात्रता व कागदपत्रांची तपासणी केली जाईल.</span><span class="lang hi">पात्रता और दस्तावेजों की जाँच होगी.</span><span class="lang en">Eligibility and documents will be verified.</span></div></div>
-<div class="step"><div class="num">4</div><div><strong class="lang mr">निर्णय</strong><strong class="lang hi">निर्णय</strong><strong class="lang en">Decision</strong> — <span class="lang mr">सक्षम समिती/अधिकारी नियमांनुसार निर्णय घेतील.</span><span class="lang hi">सक्षम समिति/अधिकारी नियमों के अनुसार निर्णय करेंगे.</span><span class="lang en">The competent committee/authority will decide under the rules.</span></div></div>
-<div class="step"><div class="num">5</div><div><strong class="lang mr">वितरण</strong><strong class="lang hi">भुगतान</strong><strong class="lang en">Disbursement</strong> — <span class="lang mr">मंजूर सहाय्य निधीच्या उपलब्धतेनुसार दिले जाईल.</span><span class="lang hi">स्वीकृत सहायता निधि की उपलब्धता के अनुसार दी जाएगी.</span><span class="lang en">Approved assistance will be provided subject to fund availability.</span></div></div>
+<h2>प्रस्तावित सहायता के क्षेत्र</h2>
+<table>
+<thead>
+<tr>
+<th>सहायता का क्षेत्र</th>
+<th>सहायता का स्वरूप</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>चिकित्सा</td>
+<td>पात्रता एवं निधि की उपलब्धता के अनुसार चिकित्सा सहायता।</td>
+</tr>
+<tr>
+<td>दुर्घटना</td>
+<td>पात्र दुर्घटना से उत्पन्न कठिनाइयों के लिए सहायता।</td>
+</tr>
+<tr>
+<td>मृत्यु / परिवार</td>
+<td>पात्र नामांकित व्यक्ति या परिवार को नियमों के अनुसार सहायता।</td>
+</tr>
+<tr>
+<td>शिक्षा</td>
+<td>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए सहायता।</td>
+</tr>
+<tr>
+<td>आपातकालीन</td>
+<td>वास्तविक आपातकालीन परिस्थितियों में विशेष सहायता।</td>
+</tr>
+<tr>
+<td>अल्पकालीन ऋण</td>
+<td>स्वीकृति होने पर अलग शर्तों के अनुसार सीमित ऋण सुविधा।</td>
+</tr>
+</tbody>
+</table>
 </section>
 
 <section class="card">
-<div class="lang mr"><h2>Nominee व कुटुंब संरक्षण</h2><p>सभासदाने विहित पद्धतीने Nominee नोंदविण्याची व्यवस्था केली जाऊ शकते. मृत्यूच्या प्रकरणात पात्र Nominee/कायदेशीर हक्कदारास मंजूर नियमावलीनुसार सहाय्य दिले जाईल.</p></div>
-<div class="lang hi"><h2>Nominee एवं परिवार सुरक्षा</h2><p>सदस्य के लिए निर्धारित प्रक्रिया के अनुसार Nominee दर्ज करने की व्यवस्था की जा सकती है। मृत्यु की स्थिति में पात्र Nominee/कानूनी हकदार को स्वीकृत नियमावली के अनुसार सहायता दी जाएगी।</p></div>
-<div class="lang en"><h2>Nominee & Family Protection</h2><p>A member may nominate a person through the prescribed process. In case of death, assistance to an eligible nominee/legal heir will be processed under the approved rules.</p></div>
-</section>
+<h2>सहायता आवेदन-पत्र डाउनलोड करें</h2>
+<p>
+आवश्यकता के अनुसार अपनी पसंद की भाषा में सहायता आवेदन-पत्र
+डाउनलोड करें।
+</p>
 
-<section class="card">
-<div class="lang mr"><h2>निधी पारदर्शकता</h2><p>सभासदांची संख्या, प्राप्त अंशदान, मंजूर सहाय्य, क्लेम आणि वार्षिक लेखापरीक्षण याबाबत योग्य पारदर्शकता राखण्याचा प्रयत्न केला जाईल.</p></div>
-<div class="lang hi"><h2>निधि पारदर्शिता</h2><p>सदस्यों की संख्या, प्राप्त अंशदान, स्वीकृत सहायता, क्लेम और वार्षिक लेखापरीक्षण के संबंध में उचित पारदर्शिता बनाए रखने का प्रयास किया जाएगा।</p></div>
-<div class="lang en"><h2>Fund Transparency</h2><p>The Association will seek appropriate transparency regarding membership, contributions, assistance approved, claims and annual audit.</p></div>
-</section>
+<a class="download"
+href="Teachers_Welfare_Assistance_Form_Hindi_Corrected_v2.pdf"
+target="_blank">
+हिंदी आवेदन-पत्र
+</a>
 
-<section class="card">
-<div class="lang mr"><h2>शासकीय योजनांपासून वेगळी योजना</h2><p>ही Association ची स्वतःची सदस्य-आधारित कल्याणकारी व्यवस्था आहे. शासकीय/विमा योजनांपासून तिची रचना व प्रशासन स्वतंत्र आहे.</p></div>
-<div class="lang hi"><h2>सरकारी योजनाओं से अलग</h2><p>यह Association की अपनी सदस्य-आधारित कल्याणकारी व्यवस्था है। सरकारी या बीमा योजनाओं से इसकी संरचना एवं प्रशासन अलग है।</p></div>
-<div class="lang en"><h2>Separate from Government Schemes</h2><p>This is the Association's own member-based welfare framework. Its structure and administration are separate from government or insurance schemes.</p></div>
-<div class="notice"><div class="lang mr"><strong>महत्त्वाचे:</strong> शासकीय योजनांची पात्रता, लाभ व अटी संबंधित अधिकृत प्राधिकरणाच्या त्या वेळच्या नियमांनुसार असतात.</div><div class="lang hi"><strong>महत्वपूर्ण:</strong> सरकारी योजनाओं की पात्रता, लाभ और शर्तें संबंधित अधिकृत प्राधिकरण के उस समय लागू नियमों के अनुसार होती हैं।</div><div class="lang en"><strong>Important:</strong> Government scheme eligibility, benefits and conditions are governed by the concerned authority's rules in force from time to time.</div></div>
-</section>
+<a class="download"
+href="Teachers_Welfare_Assistance_Form_English_Clear.pdf"
+target="_blank">
+English Form
+</a>
 
-<section class="card cta">
-<div class="lang mr"><h2>पुढील माहिती</h2><p>सभासदत्व, पात्रता, Claim Form आणि अंतिम नियमावलीसाठी संबंधित पृष्ठे पहा.</p><a href="index.html">मुख्यपृष्ठावर जा</a></div>
-<div class="lang hi"><h2>आगे की जानकारी</h2><p>सदस्यता, पात्रता, Claim Form और अंतिम नियमावली के लिए संबंधित पृष्ठ देखें.</p><a href="index.html">मुख्यपृष्ठ पर जाएँ</a></div>
-<div class="lang en"><h2>Next Information</h2><p>See the relevant pages for membership, eligibility, claim forms and final rules.</p><a href="index.html">Go to Home</a></div>
-</section>
-</main>
-
-<footer style="background:#102f4f;color:#fff;padding:35px 20px;margin-top:40px;">
-<div style="max-width:1100px;margin:auto;">
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;text-align:left;">
-
-<div>
-<h3>SHIKSHA BACHAO ASSOCIATION</h3>
-
-<p class="lang mr">शिक्षक व शिक्षकेतर कर्मचारी कल्याण व सामाजिक सुरक्षा योजना</p>
-<p class="lang hi">शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p>
-<p class="lang en">Teacher & Non-Teaching Employees Welfare & Social Security Scheme</p>
+<a class="download"
+href="Teachers_Welfare_Assistance_Form_Marathi_Corrected_v2.pdf"
+target="_blank">
+मराठी अर्ज
+</a>
 
 <p>
-<strong>Official Registered Name:</strong><br>
-Shiksha Bachao Association
+<strong>नोट:</strong>
+आवेदन-पत्र जमा करने से पहले पात्रता एवं लागू नियमों की जाँच करें।
 </p>
+</section>
+
+<section class="card">
+<h2>सहायता के लिए आवेदन कैसे करें?</h2>
+<div class="steps">
+<div class="step">
+<strong>आवेदन-पत्र भरें</strong><br>
+निर्धारित सहायता आवेदन-पत्र में सभी आवश्यक जानकारी भरें।
 </div>
-
-
-<div>
-<h3>
-<span class="lang mr">महत्त्वाच्या लिंक</span>
-<span class="lang hi">महत्वपूर्ण लिंक</span>
-<span class="lang en">Important Links</span>
-</h3>
-
-<p><a href="welfare-scheme.html" style="color:#fff;">Welfare Scheme</a></p>
-<p><a href="index.html#eligibility" style="color:#fff;">Eligibility</a></p>
-<p><a href="index.html#government" style="color:#fff;">Government Schemes</a></p>
-<p><a href="about-us.html" style="color:#fff;">About Us</a></p>
-<p><a href="index.html#contact" style="color:#fff;">Contact</a></p>
+<div class="step">
+<strong>दस्तावेज संलग्न करें</strong><br>
+घटना के अनुसार आवश्यक प्रमाण-पत्र एवं दस्तावेज संलग्न करें।
 </div>
-
-
-<div>
-<h3>
-<span class="lang mr">संपर्क</span>
-<span class="lang hi">संपर्क</span>
-<span class="lang en">Contact</span>
-</h3>
-
-<p>Email: To be added</p>
-<p>Phone: To be added</p>
-<p>Address: To be added</p>
+<div class="step">
+<strong>सत्यापन</strong><br>
+पात्रता एवं दस्तावेजों की जाँच की जाएगी।
 </div>
-
+<div class="step">
+<strong>निर्णय</strong><br>
+सक्षम समिति या अधिकारी नियमों के अनुसार निर्णय लेंगे।
 </div>
-
-<hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:25px 0;">
-
-<div style="text-align:center;">
-© <span id="year"></span> Shiksha Bachao Association. All Rights Reserved.
+<div class="step">
+<strong>सहायता का भुगतान</strong><br>
+स्वीकृत सहायता निधि की उपलब्धता के अनुसार दी जाएगी।
 </div>
-
 </div>
+</section>
+
+<section class="card">
+<h2>नामांकित व्यक्ति एवं परिवार सुरक्षा</h2>
+<p>
+सदस्य के लिए निर्धारित प्रक्रिया के अनुसार नामांकित व्यक्ति
+(Nominee) दर्ज करने की व्यवस्था की जा सकती है।
+</p>
+<p>
+सदस्य की मृत्यु की स्थिति में पात्र नामांकित व्यक्ति या कानूनी
+हकदार को स्वीकृत नियमावली के अनुसार सहायता दी जाएगी।
+</p>
+</section>
+
+<section class="card">
+<h2>निधि में पारदर्शिता</h2>
+<p>
+सदस्यों की संख्या, प्राप्त अंशदान, स्वीकृत सहायता, क्लेम तथा
+वार्षिक लेखापरीक्षण के संबंध में उचित पारदर्शिता बनाए रखने का
+प्रयास किया जाएगा।
+</p>
+</section>
+
+<section class="card">
+<h2>सरकारी योजनाओं से अलग</h2>
+<p>
+यह Association की अपनी सदस्य-आधारित कल्याणकारी व्यवस्था है।
+सरकारी या बीमा योजनाओं से इसकी संरचना एवं प्रशासन अलग है।
+</p>
+<div class="notice">
+सरकारी योजनाओं की पात्रता, लाभ एवं शर्तें संबंधित अधिकृत
+प्राधिकरण के उस समय लागू नियमों के अनुसार निर्धारित होती हैं।
+</div>
+</section>
+
+<section class="card">
+<h2>आगे की जानकारी</h2>
+<p>
+सदस्यता, पात्रता, सहायता आवेदन-पत्र और अंतिम नियमावली के लिए
+संबंधित वेबसाइट पेज देखें।
+</p>
+<p>
+<a class="download" href="index.html">मुख्यपृष्ठ पर जाएँ</a>
+<a class="download" href="about-us.html">हमारे बारे में</a>
+<a class="download" href="downloads-forms.html">डाउनलोड एवं फॉर्म</a>
+</p>
+</section>
+
+</main>
+
+<footer>
+<h3 style="color:white">SHIKSHA BACHAO ASSOCIATION</h3>
+<p>शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p>
+<p><strong>Official Registered Name:</strong><br>
+Shiksha Bachao Association</p>
+<p>© 2026 Shiksha Bachao Association. All Rights Reserved.</p>
 </footer>
-<script>
-(function(){
-function setLanguage(lang){
-if(!['mr','hi','en'].includes(lang))lang='hi';
-document.querySelectorAll('.lang').forEach(function(e){e.classList.remove('active')});
-document.querySelectorAll('.lang.'+lang).forEach(function(e){e.classList.add('active')});
-document.querySelectorAll('.languages button').forEach(function(b){b.classList.toggle('active',b.id===lang+'Btn')});
-document.documentElement.lang=lang;localStorage.setItem('sba-language',lang);
-}
-window.setLanguage=setLanguage;
-document.getElementById('year').textContent=new Date().getFullYear();
-setLanguage(localStorage.getItem('sba-language')||'hi');
-})();
-</script>
-</body></html>
+
+</body>
+</html>
