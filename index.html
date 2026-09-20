@@ -1154,23 +1154,43 @@ Shiksha Bachao Association
 <ul>
 
 <li>
-<a href="welfare-scheme.html?lang=en">Welfare Scheme</a>
+<a href="welfare-scheme.html?lang=hi" id="footerWelfareLink">
+<span class="lang mr">कल्याण योजना</span>
+<span class="lang hi">कल्याण योजना</span>
+<span class="lang en">Welfare Scheme</span>
+</a>
 </li>
 
 <li>
-<a href="index.html#eligibility">Eligibility</a>
+<a href="index.html#eligibility">
+<span class="lang mr">पात्रता</span>
+<span class="lang hi">पात्रता</span>
+<span class="lang en">Eligibility</span>
+</a>
 </li>
 
 <li>
-<a href="index.html#government">Government Schemes</a>
+<a href="index.html#government">
+<span class="lang mr">शासकीय योजना</span>
+<span class="lang hi">सरकारी योजनाएँ</span>
+<span class="lang en">Government Schemes</span>
+</a>
 </li>
 
 <li>
-<a href="about-us-professional.html">About Us</a>
+<a href="about-us-professional.html">
+<span class="lang mr">आमच्याविषयी</span>
+<span class="lang hi">हमारे बारे में</span>
+<span class="lang en">About Us</span>
+</a>
 </li>
 
 <li>
-<a href="index.html#contact">Contact</a>
+<a href="index.html#contact">
+<span class="lang mr">संपर्क</span>
+<span class="lang hi">संपर्क करें</span>
+<span class="lang en">Contact</span>
+</a>
 </li>
 
 </ul>
@@ -1219,6 +1239,7 @@ Shiksha Bachao Association
             el.classList.add('active');
         });
 
+        
         document.querySelectorAll('.languages button').forEach(function(btn){
             btn.classList.toggle('active', btn.id === lang + 'Btn');
         });
@@ -1229,8 +1250,15 @@ Shiksha Bachao Association
 if (welfareLink) {
     welfareLink.href = 'welfare-scheme.html?lang=' + lang;
 }
-        localStorage.setItem('sba-language', lang);
-    }
+
+var footerWelfareLink = document.getElementById('footerWelfareLink');
+
+if (footerWelfareLink) {
+    footerWelfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
+
+localStorage.setItem('sba-language', lang);
+}
 
     window.setLanguage = setLanguage;
 
