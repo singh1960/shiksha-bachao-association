@@ -1234,7 +1234,7 @@ Shiksha Bachao Association
 
 <script>
 (function(){
-    function setLanguage(lang){
+    window.setLanguage = function(lang){
         if (!['mr','hi','en'].includes(lang)) lang = 'hi';
 
         // Hide every language first. This prevents Marathi + Hindi + English mixing.
@@ -1268,7 +1268,7 @@ if (footerWelfareLink) {
 localStorage.setItem('sba-language', lang);
 }
 
-    window.setLanguage = setLanguage;
+  
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
