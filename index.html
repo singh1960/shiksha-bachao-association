@@ -249,6 +249,9 @@ section{
 }
 
 .card{
+     display:block;
+     cursor:pointer;
+     transition:transform .2s, box-shadow .2s;
     background:#fff;
     padding:28px 22px;
     border-radius:12px;
@@ -266,6 +269,11 @@ section{
     color:#12355b;
     margin-bottom:8px;
     font-size:19px;
+}
+
+.card:hover{
+     transform:translateY(-4px);
+     box-shadow:0 8px 24px rgba(0,0,0,.12);
 }
 
 .card p{
@@ -730,7 +738,7 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 
 <div class="cards">
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#medical">
 <div class="icon">🏥</div>
 <h3>
 <span class="lang mr active">वैद्यकीय मदत</span>
@@ -742,9 +750,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">गंभीर बीमारी या अस्पताल में भर्ती होने पर निर्धारित नियमों के अनुसार सहायता।</span>
 <span class="lang en">Support during serious illness or hospitalization as per the scheme rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#accident">
 <div class="icon">🛡️</div>
 <h3>
 <span class="lang mr active">अपघात सहाय्य</span>
@@ -756,9 +764,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">दुर्घटना एवं विकलांगता की स्थिति में निर्धारित सहायता।</span>
 <span class="lang en">Support in cases of accidents and disability as per the rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#family">
 <div class="icon">👨‍👩‍👧</div>
 <h3>
 <span class="lang mr active">कुटुंब सुरक्षा</span>
@@ -770,9 +778,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">सदस्य की मृत्यु पर Nominee/परिवार को निर्धारित सहायता।</span>
 <span class="lang en">Assistance to the nominee/family after the member's death, subject to the rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#education">
 <div class="icon">🎓</div>
 <h3>
 <span class="lang mr active">शैक्षणिक सहाय्य</span>
@@ -784,7 +792,7 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">आश्रित बच्चों की शिक्षा के लिए विशेष सहायता का प्रावधान।</span>
 <span class="lang en">Special education assistance for dependent children.</span>
 </p>
-</div>
+</a>
 
 </div>
 </div>
