@@ -608,7 +608,7 @@ footer li{
 <span class="lang en">About Us</span>
 </a>
 
-<a href="welfare-scheme.html?lang=hi">
+<a href="welfare-scheme.html?lang=hi" id="navWelfareLink">
 <span class="lang mr active">कल्याण योजना</span>
 <span class="lang hi">कल्याण योजना</span>
 <span class="lang en">Welfare Scheme</span>
@@ -1253,6 +1253,11 @@ Shiksha Bachao Association
         });
 
         document.documentElement.lang = lang;
+        var navWelfareLink = document.getElementById('navWelfareLink');
+
+if (navWelfareLink) {
+    navWelfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
         var welfareLink = document.getElementById('welfareLink');
 
 if (welfareLink) {
