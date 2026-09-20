@@ -1,332 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="शिक्षा बचाओ संगठन की शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण योजना। चिकित्सा, दुर्घटना, परिवार, शिक्षा एवं आपातकालीन सहायता की जानकारी।">
-<title>शिक्षक कल्याण योजना | Shiksha Bachao Association</title>
-
+<meta name="description" content="शिक्षा बचाओ संगठन की प्रस्तावित शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण योजना। चिकित्सा, दुर्घटना, परिवार, शिक्षा एवं आपातकालीन सहायता की जानकारी।">
+<title>प्रस्तावित शिक्षक कल्याण योजना | Shiksha Bachao Association</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;
- line-height:1.8;background:#f3f6fa;color:#263238
-}
-header{
- background:linear-gradient(135deg,#123c69,#176b87);
- color:white;padding:28px 15px;text-align:center
-}
+body{margin:0;font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;line-height:1.8;background:#f3f6fa;color:#263238}
+header{background:linear-gradient(135deg,#123c69,#176b87);color:white;padding:28px 15px;text-align:center}
 header h1{margin:0;font-size:clamp(23px,4vw,36px)}
 header p{margin:8px 0 0}
-nav{
- background:#0e2d4a;padding:12px;text-align:center
-}
-nav a{
- color:white;text-decoration:none;margin:5px 12px;font-weight:bold
-}
+.status-badge{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:20px;background:#fff5d9;color:#6b4c00;font-weight:bold}
+nav{background:#0e2d4a;padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;margin:5px 12px;font-weight:bold}
 .container{max-width:1100px;margin:25px auto;padding:0 15px}
-.card{
- background:white;padding:25px;margin-bottom:22px;
- border-radius:14px;box-shadow:0 3px 14px #00000010
-}
+.card{background:white;padding:25px;margin-bottom:22px;border-radius:14px;box-shadow:0 3px 14px #00000010}
 h2{color:#123c69;border-bottom:2px solid #e5edf3;padding-bottom:8px}
 h3{color:#176b87}
-.notice{
- background:#fff5d9;border-left:5px solid #e2a900;
- padding:15px;border-radius:6px
-}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:16px
-}
-.feature{
- background:#f0f7fb;padding:18px;border-radius:10px;
- border-top:4px solid #176b87
-}
-table{width:100%;border-collapse:collapse;margin-top:15px}
+.notice{background:#fff5d9;border-left:5px solid #e2a900;padding:15px;border-radius:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.feature{background:#f0f7fb;padding:18px;border-radius:10px;border-top:4px solid #176b87}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;margin-top:15px;min-width:520px}
 th,td{border:1px solid #d7e0e7;padding:12px;text-align:left}
 th{background:#123c69;color:white}
-.download{
- display:inline-block;background:#176b87;color:white;
- padding:12px 18px;margin:7px 4px;border-radius:7px;
- text-decoration:none;font-weight:bold
-}
+.download{display:inline-block;background:#176b87;color:white;padding:12px 18px;margin:7px 4px;border-radius:7px;text-decoration:none;font-weight:bold}
 .download:hover{background:#123c69}
-.steps{counter-reset:step}
-.step{padding:10px 0 10px 42px;position:relative}
-.step:before{
- counter-increment:step;content:counter(step);
- position:absolute;left:0;top:10px;background:#176b87;
- color:white;border-radius:50%;width:30px;height:30px;
- text-align:center;line-height:30px;font-weight:bold
-}
-footer{
- background:#123c69;color:white;text-align:center;
- padding:25px 15px;margin-top:30px
-}
-footer a{color:white}
-@media(max-width:600px){
- .card{padding:18px}
- table{font-size:14px}
- th,td{padding:8px}
- nav a{display:inline-block}
-}
+.steps{counter-reset:step}.step{padding:10px 0 10px 42px;position:relative}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:10px;background:#176b87;color:white;border-radius:50%;width:30px;height:30px;text-align:center;line-height:30px;font-weight:bold}
+footer{background:#123c69;color:white;text-align:center;padding:25px 15px;margin-top:30px}footer a{color:white}
+@media(max-width:600px){.card{padding:18px}th,td{padding:8px}nav a{display:inline-block}.download{display:block;text-align:center;margin:10px 0}}
 </style>
 </head>
-
 <body>
-
 <header>
-<h1>शिक्षक कल्याण योजना</h1>
+<h1>प्रस्तावित शिक्षक कल्याण योजना</h1>
 <p>Shiksha Bachao Association</p>
-<p>शिक्षक एवं शिक्षकेतर कर्मचारियों के कल्याण और सामाजिक सुरक्षा की प्रस्तावित व्यवस्था</p>
+<p>शिक्षक एवं शिक्षकेतर कर्मचारियों के कल्याण, सहायता और सामाजिक सुरक्षा के लिए प्रस्तावित योजना</p>
+<span class="status-badge">नियमावली की स्वीकृति लंबित है</span>
 </header>
-
 <nav>
 <a href="index.html">मुख्यपृष्ठ</a>
 <a href="about-us.html">हमारे बारे में</a>
 <a href="downloads-forms.html">डाउनलोड एवं फॉर्म</a>
 </nav>
-
 <main class="container">
-
 <section class="card">
 <h2>योजना का परिचय</h2>
-<p>
-यह योजना Shiksha Bachao Association के सदस्यों के लिए
-सामूहिक कल्याण एवं सामाजिक सुरक्षा व्यवस्था विकसित करने
-के उद्देश्य से तैयार की गई है।
-</p>
-<p>
-योजना का संचालन स्वीकृत नियमावली, उपलब्ध निधि,
-संगठन के प्रस्तावों तथा लागू कानूनों एवं नियमों के अधीन होगा।
-</p>
-
-<div class="notice">
-<strong>महत्त्वपूर्ण सूचना:</strong>
-सहायता की राशि, पात्रता और अंतिम शर्तें स्वीकृत नियमावली
-तथा सक्षम समिति के निर्णय के अनुसार निर्धारित की जाएँगी।
-</div>
+<p>यह योजना शिक्षा बचाओ संगठन के सदस्यों के लिए सामूहिक कल्याण एवं सामाजिक सुरक्षा व्यवस्था विकसित करने के उद्देश्य से तैयार की गई है। इसकी नियमावली तैयार है, लेकिन सक्षम प्राधिकारी से स्वीकृति प्राप्त होना अभी बाकी है। योजना का संचालन नियमावली की स्वीकृति तथा संगठन के अधिकृत निर्णय के बाद किया जाएगा।</p>
+<div class="notice"><strong>महत्त्वपूर्ण सूचना:</strong> सहायता की राशि, पात्रता, अंशदान तथा अन्य शर्तें नियमावली की स्वीकृति के बाद अंतिम रूप से लागू होंगी।</div>
 </section>
-
 <section class="card">
 <h2>योजना के प्रमुख उद्देश्य</h2>
 <div class="grid">
-<div class="feature">
-<h3>चिकित्सा सहायता</h3>
-<p>आवश्यकता के समय नियमों के अनुसार चिकित्सा सहायता।</p>
-</div>
-<div class="feature">
-<h3>दुर्घटना सहायता</h3>
-<p>दुर्घटना से उत्पन्न कठिनाइयों में सहायता का प्रावधान।</p>
-</div>
-<div class="feature">
-<h3>परिवार सुरक्षा</h3>
-<p>सदस्य एवं उनके परिवार के कठिन समय में सहायता का प्रयास।</p>
-</div>
-<div class="feature">
-<h3>शैक्षिक सहायता</h3>
-<p>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए नियमों के अनुसार सहायता।</p>
-</div>
-<div class="feature">
-<h3>आपातकालीन सहायता</h3>
-<p>वास्तविक आपातकालीन परिस्थितियों में नियमों के अनुसार सहायता।</p>
-</div>
-<div class="feature">
-<h3>सामाजिक सुरक्षा</h3>
-<p>सदस्यों के कल्याण और सुरक्षा के लिए सामूहिक व्यवस्था।</p>
-</div>
+<div class="feature"><h3>चिकित्सा सहायता</h3><p>नियमावली की स्वीकृति के बाद निर्धारित शर्तों के अनुसार चिकित्सा सहायता का प्रस्ताव।</p></div>
+<div class="feature"><h3>दुर्घटना सहायता</h3><p>पात्र दुर्घटनाओं से उत्पन्न कठिनाइयों में सहायता का प्रस्ताव।</p></div>
+<div class="feature"><h3>परिवार सुरक्षा</h3><p>सदस्य एवं उनके परिवार के कठिन समय में सहायता की प्रस्तावित व्यवस्था।</p></div>
+<div class="feature"><h3>शैक्षिक सहायता</h3><p>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए नियमों के अनुसार सहायता का प्रस्ताव।</p></div>
+<div class="feature"><h3>आपातकालीन सहायता</h3><p>वास्तविक आपातकालीन परिस्थितियों में नियमों के अनुसार सहायता का प्रस्ताव।</p></div>
+<div class="feature"><h3>सामाजिक सुरक्षा</h3><p>सदस्यों के कल्याण और सुरक्षा के लिए सामूहिक व्यवस्था विकसित करना।</p></div>
 </div>
 </section>
-
 <section class="card">
-<h2>किसके लिए?</h2>
-<p>
-सदस्यता की शर्तें पूरी करने वाले शिक्षक एवं शिक्षकेतर कर्मचारियों
-के लिए यह योजना विकसित करने का उद्देश्य है।
-</p>
+<h2>पात्रता एवं सदस्यता</h2>
+<p>यह प्रस्तावित योजना शिक्षा बचाओ संगठन के उन शिक्षक एवं शिक्षकेतर कर्मचारियों के लिए तैयार की गई है, जो संगठन की सदस्यता संबंधी शर्तें पूरी करते हैं। पात्रता, सदस्यता की अवधि, आश्रितों की परिभाषा तथा सहायता प्राप्त करने की अन्य शर्तें नियमावली की स्वीकृति के बाद अंतिम रूप से लागू होंगी।</p>
 <div class="grid">
-<div class="feature">अनुदानित विद्यालयों के कर्मचारी</div>
-<div class="feature">गैर-अनुदानित विद्यालयों के कर्मचारी</div>
-<div class="feature">स्व-वित्तपोषित विद्यालयों के कर्मचारी</div>
-<div class="feature">प्रशिक्षित एवं अप्रशिक्षित शिक्षक</div>
-<div class="feature">स्थायी एवं अस्थायी कर्मचारी</div>
-<div class="feature">संविदा एवं अंशकालिक कर्मचारी</div>
-<div class="feature">मानदेय कर्मचारी</div>
-<div class="feature">शिक्षकेतर कर्मचारी</div>
+<div class="feature">अनुदानित विद्यालयों के कर्मचारी</div><div class="feature">गैर-अनुदानित विद्यालयों के कर्मचारी</div><div class="feature">स्व-वित्तपोषित विद्यालयों के कर्मचारी</div><div class="feature">प्रशिक्षित एवं अप्रशिक्षित शिक्षक</div><div class="feature">स्थायी एवं अस्थायी कर्मचारी</div><div class="feature">संविदा एवं अंशकालिक कर्मचारी</div><div class="feature">मानदेय कर्मचारी</div><div class="feature">शिक्षकेतर कर्मचारी</div>
 </div>
-<p>
-कम वेतन या सीमित आय वाले कर्मचारियों की कठिनाइयों को ध्यान में
-रखते हुए व्यवस्था को व्यावहारिक और नियमबद्ध बनाने का उद्देश्य है।
-</p>
+<div class="notice"><strong>महत्त्वपूर्ण सूचना:</strong> पात्रता एवं सदस्यता संबंधी सभी प्रावधान प्रस्तावित नियमावली के अधीन हैं। नियमावली की स्वीकृति के बाद पात्रता की अंतिम शर्तें और सहायता के नियम स्पष्ट रूप से प्रकाशित किए जाएँगे।</div>
 </section>
-
 <section class="card">
 <h2>निधि एवं सदस्य अंशदान</h2>
-<p>
-निधि सदस्य अंशदान, दान एवं योगदान, कानूनी रूप से स्वीकार्य
-अन्य स्रोतों और स्वीकृत नियमों के अनुसार प्राप्त धनराशि से
-बनाई जा सकती है।
-</p>
-<div class="notice">
-<strong>नोट:</strong>
-मासिक अंशदान की निश्चित राशि, रियायत तथा Matching Contribution
-के संबंध में अंतिम निर्णय स्वीकृत नियमावली एवं प्रस्ताव में
-स्पष्ट किया जाएगा।
-</div>
+<p>प्रस्तावित शिक्षक कल्याण निधि का निर्माण सदस्य अंशदान, स्वैच्छिक दान, योगदान तथा कानूनन स्वीकार्य अन्य स्रोतों से किया जा सकता है। निधि का संग्रह, संरक्षण और उपयोग संगठन की स्वीकृत नियमावली, अधिकृत प्रस्तावों तथा लागू कानूनों के अनुसार किया जाएगा।</p>
+<div class="notice"><strong>नोट:</strong> मासिक सदस्य अंशदान की राशि, आर्थिक रूप से कमजोर सदस्यों के लिए रियायत, Matching Contribution तथा निधि के उपयोग से संबंधित अंतिम प्रावधान नियमावली की स्वीकृति के बाद लागू होंगे।</div>
 </section>
-
 <section class="card">
 <h2>प्रस्तावित सहायता के क्षेत्र</h2>
-<table>
-<thead>
-<tr>
-<th>सहायता का क्षेत्र</th>
-<th>सहायता का स्वरूप</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>चिकित्सा</td>
-<td>पात्रता एवं निधि की उपलब्धता के अनुसार चिकित्सा सहायता।</td>
-</tr>
-<tr>
-<td>दुर्घटना</td>
-<td>पात्र दुर्घटना से उत्पन्न कठिनाइयों के लिए सहायता।</td>
-</tr>
-<tr>
-<td>मृत्यु / परिवार</td>
-<td>पात्र नामांकित व्यक्ति या परिवार को नियमों के अनुसार सहायता।</td>
-</tr>
-<tr>
-<td>शिक्षा</td>
-<td>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए सहायता।</td>
-</tr>
-<tr>
-<td>आपातकालीन</td>
-<td>वास्तविक आपातकालीन परिस्थितियों में विशेष सहायता।</td>
-</tr>
-<tr>
-<td>अल्पकालीन ऋण</td>
-<td>स्वीकृति होने पर अलग शर्तों के अनुसार सीमित ऋण सुविधा।</td>
-</tr>
-</tbody>
-</table>
+<div class="table-wrap"><table><thead><tr><th>सहायता का क्षेत्र</th><th>सहायता का स्वरूप</th></tr></thead><tbody>
+<tr><td>चिकित्सा</td><td>पात्रता एवं निधि की उपलब्धता के अनुसार चिकित्सा सहायता।</td></tr>
+<tr><td>दुर्घटना</td><td>पात्र दुर्घटना से उत्पन्न कठिनाइयों के लिए सहायता।</td></tr>
+<tr><td>मृत्यु / परिवार</td><td>पात्र नामांकित व्यक्ति या परिवार को नियमों के अनुसार सहायता।</td></tr>
+<tr><td>शिक्षा</td><td>पात्र बच्चों एवं आश्रितों की शिक्षा के लिए सहायता।</td></tr>
+<tr><td>आपातकालीन</td><td>वास्तविक आपातकालीन परिस्थितियों में विशेष सहायता।</td></tr>
+<tr><td>अन्य सहायता</td><td>नियमावली में स्वीकृत अन्य सहायता योजनाएँ, यदि लागू हों।</td></tr>
+</tbody></table></div>
+<div class="notice"><strong>महत्त्वपूर्ण सूचना:</strong> ऊपर दिए गए सभी सहायता क्षेत्र प्रस्तावित हैं। सहायता किसी सदस्य का स्वतः प्राप्त अधिकार नहीं होगी। सहायता की पात्रता, राशि, प्राथमिकता, आवश्यक दस्तावेज तथा स्वीकृति की प्रक्रिया नियमावली की स्वीकृति, उपलब्ध निधि और सक्षम समिति के निर्णय के अधीन होगी।</div>
 </section>
-
 <section class="card">
 <h2>सहायता आवेदन-पत्र डाउनलोड करें</h2>
-<p>
-आवश्यकता के अनुसार अपनी पसंद की भाषा में सहायता आवेदन-पत्र
-डाउनलोड करें।
-</p>
-
-<a class="download"
-href="Teachers_Welfare_Assistance_Form_Hindi_Corrected_v2.pdf"
-target="_blank">
-हिंदी आवेदन-पत्र
-</a>
-
-<a class="download"
-href="Teachers_Welfare_Assistance_Form_English_Clear.pdf"
-target="_blank">
-English Form
-</a>
-
-<a class="download"
-href="Teachers_Welfare_Assistance_Form_Marathi_Corrected_v2.pdf"
-target="_blank">
-मराठी अर्ज
-</a>
-
-<p>
-<strong>नोट:</strong>
-आवेदन-पत्र जमा करने से पहले पात्रता एवं लागू नियमों की जाँच करें।
-</p>
+<p>आवश्यकता के अनुसार अपनी पसंद की भाषा में सहायता आवेदन-पत्र डाउनलोड करें।</p>
+<a class="download" href="Teachers_Welfare_Assistance_Form_Hindi_Corrected_v2.pdf" target="_blank" rel="noopener">हिंदी आवेदन-पत्र</a>
+<a class="download" href="Teachers_Welfare_Assistance_Form_English_Clear.pdf" target="_blank" rel="noopener">English Form</a>
+<a class="download" href="Teachers_Welfare_Assistance_Form_Marathi_Corrected_v2.pdf" target="_blank" rel="noopener">मराठी अर्ज</a>
+<p><strong>नोट:</strong> आवेदन-पत्र जमा करने से पहले पात्रता एवं लागू नियमों की जाँच करें।</p>
 </section>
-
 <section class="card">
 <h2>सहायता के लिए आवेदन कैसे करें?</h2>
 <div class="steps">
-<div class="step">
-<strong>आवेदन-पत्र भरें</strong><br>
-निर्धारित सहायता आवेदन-पत्र में सभी आवश्यक जानकारी भरें।
-</div>
-<div class="step">
-<strong>दस्तावेज संलग्न करें</strong><br>
-घटना के अनुसार आवश्यक प्रमाण-पत्र एवं दस्तावेज संलग्न करें।
-</div>
-<div class="step">
-<strong>सत्यापन</strong><br>
-पात्रता एवं दस्तावेजों की जाँच की जाएगी।
-</div>
-<div class="step">
-<strong>निर्णय</strong><br>
-सक्षम समिति या अधिकारी नियमों के अनुसार निर्णय लेंगे।
-</div>
-<div class="step">
-<strong>सहायता का भुगतान</strong><br>
-स्वीकृत सहायता निधि की उपलब्धता के अनुसार दी जाएगी।
-</div>
+<div class="step"><strong>आवेदन-पत्र भरें</strong><br>निर्धारित सहायता आवेदन-पत्र में सभी आवश्यक जानकारी भरें।</div>
+<div class="step"><strong>दस्तावेज संलग्न करें</strong><br>घटना के अनुसार आवश्यक प्रमाण-पत्र एवं दस्तावेज संलग्न करें।</div>
+<div class="step"><strong>सत्यापन</strong><br>पात्रता एवं दस्तावेजों की जाँच की जाएगी।</div>
+<div class="step"><strong>निर्णय</strong><br>सक्षम समिति या अधिकारी नियमों के अनुसार निर्णय लेंगे।</div>
+<div class="step"><strong>सहायता का भुगतान</strong><br>स्वीकृत सहायता निधि की उपलब्धता के अनुसार दी जाएगी।</div>
 </div>
 </section>
-
-<section class="card">
-<h2>नामांकित व्यक्ति एवं परिवार सुरक्षा</h2>
-<p>
-सदस्य के लिए निर्धारित प्रक्रिया के अनुसार नामांकित व्यक्ति
-(Nominee) दर्ज करने की व्यवस्था की जा सकती है।
-</p>
-<p>
-सदस्य की मृत्यु की स्थिति में पात्र नामांकित व्यक्ति या कानूनी
-हकदार को स्वीकृत नियमावली के अनुसार सहायता दी जाएगी।
-</p>
-</section>
-
-<section class="card">
-<h2>निधि में पारदर्शिता</h2>
-<p>
-सदस्यों की संख्या, प्राप्त अंशदान, स्वीकृत सहायता, क्लेम तथा
-वार्षिक लेखापरीक्षण के संबंध में उचित पारदर्शिता बनाए रखने का
-प्रयास किया जाएगा।
-</p>
-</section>
-
-<section class="card">
-<h2>सरकारी योजनाओं से अलग</h2>
-<p>
-यह Association की अपनी सदस्य-आधारित कल्याणकारी व्यवस्था है।
-सरकारी या बीमा योजनाओं से इसकी संरचना एवं प्रशासन अलग है।
-</p>
-<div class="notice">
-सरकारी योजनाओं की पात्रता, लाभ एवं शर्तें संबंधित अधिकृत
-प्राधिकरण के उस समय लागू नियमों के अनुसार निर्धारित होती हैं।
-</div>
-</section>
-
-<section class="card">
-<h2>आगे की जानकारी</h2>
-<p>
-सदस्यता, पात्रता, सहायता आवेदन-पत्र और अंतिम नियमावली के लिए
-संबंधित वेबसाइट पेज देखें।
-</p>
-<p>
-<a class="download" href="index.html">मुख्यपृष्ठ पर जाएँ</a>
-<a class="download" href="about-us.html">हमारे बारे में</a>
-<a class="download" href="downloads-forms.html">डाउनलोड एवं फॉर्म</a>
-</p>
-</section>
-
+<section class="card"><h2>नामांकित व्यक्ति एवं परिवार सुरक्षा</h2><p>सदस्य के लिए निर्धारित प्रक्रिया के अनुसार नामांकित व्यक्ति (Nominee) दर्ज करने की व्यवस्था की जा सकती है।</p><p>सदस्य की मृत्यु की स्थिति में पात्र नामांकित व्यक्ति या कानूनी हकदार को स्वीकृत नियमावली के अनुसार सहायता दी जाएगी।</p></section>
+<section class="card"><h2>निधि में पारदर्शिता</h2><p>सदस्यों की संख्या, प्राप्त अंशदान, स्वीकृत सहायता, क्लेम तथा वार्षिक लेखापरीक्षण के संबंध में उचित पारदर्शिता बनाए रखने का प्रयास किया जाएगा।</p></section>
+<section class="card"><h2>सरकारी योजनाओं से अलग</h2><p>यह Association की अपनी सदस्य-आधारित कल्याणकारी व्यवस्था है। सरकारी या बीमा योजनाओं से इसकी संरचना एवं प्रशासन अलग है।</p><div class="notice">सरकारी योजनाओं की पात्रता, लाभ एवं शर्तें संबंधित अधिकृत प्राधिकरण के उस समय लागू नियमों के अनुसार निर्धारित होती हैं।</div></section>
+<section class="card"><h2>आगे की जानकारी</h2><p>सदस्यता, पात्रता, सहायता आवेदन-पत्र और अंतिम नियमावली के लिए संबंधित वेबसाइट पेज देखें।</p><p><a class="download" href="index.html">मुख्यपृष्ठ पर जाएँ</a><a class="download" href="about-us.html">हमारे बारे में</a><a class="download" href="downloads-forms.html">डाउनलोड एवं फॉर्म</a></p></section>
 </main>
-
-<footer>
-<h3 style="color:white">SHIKSHA BACHAO ASSOCIATION</h3>
-<p>शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p>
-<p><strong>Official Registered Name:</strong><br>
-Shiksha Bachao Association</p>
-<p>© 2026 Shiksha Bachao Association. All Rights Reserved.</p>
-</footer>
-
+<footer><h3 style="color:white">SHIKSHA BACHAO ASSOCIATION</h3><p>शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p><p><strong>Official Registered Name:</strong><br>Shiksha Bachao Association</p><p>© 2026 Shiksha Bachao Association. All Rights Reserved.</p></footer>
 </body>
 </html>
