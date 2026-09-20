@@ -600,7 +600,7 @@ footer li{
 <span class="lang en">About Us</span>
 </a>
 
-<a href="welfare-scheme.html">
+<a href="welfare-scheme.html?lang=mr">
 <span class="lang mr active">कल्याण योजना</span>
 <span class="lang hi">कल्याण योजना</span>
 <span class="lang en">Welfare Scheme</span>
@@ -667,7 +667,7 @@ footer li{
 <span class="lang en">Become a Member</span>
 </a>
 
-<a class="btn btn-outline" href="welfare-scheme.html">
+<a class="btn btn-outline" id="welfareLink" href="welfare-scheme.html?lang=hi">
 <span class="lang mr active">योजनेची माहिती</span>
 <span class="lang hi">योजना की जानकारी</span>
 <span class="lang en">Explore the Scheme</span>
@@ -1154,7 +1154,7 @@ Shiksha Bachao Association
 <ul>
 
 <li>
-<a href="welfare-scheme.html">Welfare Scheme</a>
+<a href="welfare-scheme.html?lang=en">Welfare Scheme</a>
 </li>
 
 <li>
@@ -1224,6 +1224,11 @@ Shiksha Bachao Association
         });
 
         document.documentElement.lang = lang;
+        var welfareLink = document.getElementById('welfareLink');
+
+if (welfareLink) {
+    welfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
         localStorage.setItem('sba-language', lang);
     }
 
