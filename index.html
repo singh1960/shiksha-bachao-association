@@ -249,6 +249,9 @@ section{
 }
 
 .card{
+     display:block;
+     cursor:pointer;
+     transition:transform .2s, box-shadow .2s;
     background:#fff;
     padding:28px 22px;
     border-radius:12px;
@@ -266,6 +269,11 @@ section{
     color:#12355b;
     margin-bottom:8px;
     font-size:19px;
+}
+
+.card:hover{
+     transform:translateY(-4px);
+     box-shadow:0 8px 24px rgba(0,0,0,.12);
 }
 
 .card p{
@@ -594,13 +602,13 @@ footer li{
 <span class="lang en">Home</span>
 </a>
 
-<a href="#about">
+<a href="about-us-professional.html">
 <span class="lang mr active">आमच्याविषयी</span>
 <span class="lang hi">हमारे बारे में</span>
 <span class="lang en">About Us</span>
 </a>
 
-<a href="#scheme">
+<a href="welfare-scheme.html?lang=hi" id="navWelfareLink">
 <span class="lang mr active">कल्याण योजना</span>
 <span class="lang hi">कल्याण योजना</span>
 <span class="lang en">Welfare Scheme</span>
@@ -612,12 +620,16 @@ footer li{
 <span class="lang en">Eligibility</span>
 </a>
 
-<a href="#government">
+<a href="government-schemes.html?lang=hi" id="governmentNavLink">
 <span class="lang mr active">शासकीय योजना</span>
 <span class="lang hi">सरकारी योजनाएँ</span>
 <span class="lang en">Government Schemes</span>
 </a>
-
+<a href="government-updates.html">
+<span class="lang mr active">सरकारी अद्यतने</span>
+<span class="lang hi">सरकारी अपडेट</span>
+<span class="lang en">Government Updates</span>
+</a>
 <a href="#contact">
 <span class="lang mr active">संपर्क</span>
 <span class="lang hi">संपर्क</span>
@@ -661,13 +673,13 @@ footer li{
 
 <div class="buttons">
 
-<a class="btn btn-primary" href="#eligibility">
+<a class="btn btn-primary" href="membership.html">
 <span class="lang mr active">सभासद व्हा</span>
 <span class="lang hi">सदस्य बनें</span>
 <span class="lang en">Become a Member</span>
 </a>
 
-<a class="btn btn-outline" href="#scheme">
+<a class="btn btn-outline" id="welfareLink" href="welfare-scheme.html?lang=hi">
 <span class="lang mr active">योजनेची माहिती</span>
 <span class="lang hi">योजना की जानकारी</span>
 <span class="lang en">Explore the Scheme</span>
@@ -730,7 +742,7 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 
 <div class="cards">
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#medical">
 <div class="icon">🏥</div>
 <h3>
 <span class="lang mr active">वैद्यकीय मदत</span>
@@ -742,9 +754,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">गंभीर बीमारी या अस्पताल में भर्ती होने पर निर्धारित नियमों के अनुसार सहायता।</span>
 <span class="lang en">Support during serious illness or hospitalization as per the scheme rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#accident">
 <div class="icon">🛡️</div>
 <h3>
 <span class="lang mr active">अपघात सहाय्य</span>
@@ -756,9 +768,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">दुर्घटना एवं विकलांगता की स्थिति में निर्धारित सहायता।</span>
 <span class="lang en">Support in cases of accidents and disability as per the rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#family">
 <div class="icon">👨‍👩‍👧</div>
 <h3>
 <span class="lang mr active">कुटुंब सुरक्षा</span>
@@ -770,9 +782,9 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">सदस्य की मृत्यु पर Nominee/परिवार को निर्धारित सहायता।</span>
 <span class="lang en">Assistance to the nominee/family after the member's death, subject to the rules.</span>
 </p>
-</div>
+</a>
 
-<div class="card">
+<a class="card" href="welfare-benefits.html#education">
 <div class="icon">🎓</div>
 <h3>
 <span class="lang mr active">शैक्षणिक सहाय्य</span>
@@ -784,7 +796,7 @@ Whether a teacher or non-teaching employee, working in an aided, unaided or self
 <span class="lang hi">आश्रित बच्चों की शिक्षा के लिए विशेष सहायता का प्रावधान।</span>
 <span class="lang en">Special education assistance for dependent children.</span>
 </p>
-</div>
+</a>
 
 </div>
 </div>
@@ -913,55 +925,6 @@ The Association may provide concessional contribution and special hardship assis
 </div>
 </section>
 
-
-<!-- GOVERNMENT SCHEMES -->
-<section class="government" id="government">
-<div class="container">
-
-<div class="section-title">
-<h2>
-<span class="lang mr active">शासकीय योजनांशी समन्वय</span>
-<span class="lang hi">सरकारी योजनाओं से समन्वय</span>
-<span class="lang en">Government Scheme Facilitation</span>
-</h2>
-
-<p>
-<span class="lang mr active">पात्र सदस्यांना उपलब्ध शासकीय योजनांचा लाभ घेण्यासाठी मार्गदर्शन</span>
-<span class="lang hi">पात्र सदस्यों को उपलब्ध सरकारी योजनाओं का लाभ लेने में मार्गदर्शन</span>
-<span class="lang en">Guidance to eligible members in accessing available government schemes</span>
-</p>
-</div>
-
-<div class="scheme-list">
-
-<div class="scheme">PMJJBY</div>
-<div class="scheme">PMSBY</div>
-<div class="scheme">PM-JAY</div>
-<div class="scheme">MJPJAY</div>
-<div class="scheme">Scholarship</div>
-<div class="scheme">Pension / Social Security</div>
-
-</div>
-
-<div class="disclaimer">
-
-<span class="lang mr active">
-<strong>महत्त्वाची सूचना:</strong> शासकीय योजनांची पात्रता, लाभ, प्रीमियम आणि इतर अटी संबंधित शासन/विमा संस्थेच्या विद्यमान नियमांनुसार असतील. संघटना या योजनांचा पर्याय नाही.
-</span>
-
-<span class="lang hi active">
-<strong>महत्वपूर्ण सूचना:</strong> सरकारी योजनाओं की पात्रता, लाभ, प्रीमियम और अन्य शर्तें संबंधित सरकार/बीमा संस्था के वर्तमान नियमों के अनुसार होंगी। संगठन इन योजनाओं का विकल्प नहीं है।
-</span>
-
-<span class="lang en">
-<strong>Important:</strong> Eligibility, benefits, premiums and other conditions of government schemes are governed by the current rules of the concerned government authority/insurer. The Association is not a substitute for these schemes.
-</span>
-
-</div>
-</div>
-</section>
-
-
 <!-- TRANSPARENCY -->
 <section class="transparency">
 <div class="container">
@@ -1081,7 +1044,7 @@ A collective effort for the dignity, welfare and social security of education-se
 </p>
 
 <div class="buttons">
-<a class="btn btn-primary" href="#eligibility">
+<a class="btn btn-primary" href="membership.html">
 <span class="lang mr active">सभासद व्हा</span>
 <span class="lang hi">सदस्य बनें</span>
 <span class="lang en">Become a Member</span>
@@ -1136,11 +1099,47 @@ Shiksha Bachao Association
 </h3>
 
 <ul>
-<li>Welfare Scheme</li>
-<li>Eligibility</li>
-<li>Rules & Regulations</li>
-<li>Government Schemes</li>
-<li>Downloads</li>
+
+<li>
+<a href="welfare-scheme.html?lang=hi" id="footerWelfareLink">
+<span class="lang mr">कल्याण योजना</span>
+<span class="lang hi">कल्याण योजना</span>
+<span class="lang en">Welfare Scheme</span>
+</a>
+</li>
+
+<li>
+<a href="index.html#eligibility">
+<span class="lang mr">पात्रता</span>
+<span class="lang hi">पात्रता</span>
+<span class="lang en">Eligibility</span>
+</a>
+</li>
+
+<li>
+<a href="government-schemes.html?lang=hi" id="footerGovernmentLink">
+<span class="lang mr">शासकीय योजना</span>
+<span class="lang hi">सरकारी योजनाएँ</span>
+<span class="lang en">Government Schemes</span>
+</a>
+</li>
+
+<li>
+<a href="about-us-professional.html">
+<span class="lang mr">आमच्याविषयी</span>
+<span class="lang hi">हमारे बारे में</span>
+<span class="lang en">About Us</span>
+</a>
+</li>
+
+<li>
+<a href="index.html#contact">
+<span class="lang mr">संपर्क</span>
+<span class="lang hi">संपर्क करें</span>
+<span class="lang en">Contact</span>
+</a>
+</li>
+
 </ul>
 </div>
 
@@ -1153,13 +1152,17 @@ Shiksha Bachao Association
 </h3>
 
 <ul>
-<li>Email: To be added</li>
-<li>Phone: To be added</li>
-<li>Address: To be added</li>
+
+<li>Email: SAVEEDUCATIONCOMMITTEE1996@gmail.com</li>
+<li>President: D. R. Singh</li>
+<li>Mobile: 8369756549</li>
+<li>Address: संघर्ष कार्यालय, क्वारी रोड, मंगतराम पेट्रोल पंप के पीछे, भांडुप, मुंबई – 400078</li>
+
 </ul>
 </div>
 
 </div>
+
 
 <div class="copyright">
 © <span id="year"></span> Shiksha Bachao Association. All Rights Reserved.
@@ -1168,10 +1171,9 @@ Shiksha Bachao Association
 </div>
 </footer>
 
-
 <script>
 (function(){
-    function setLanguage(lang){
+    window.setLanguage = function(lang){
         if (!['mr','hi','en'].includes(lang)) lang = 'hi';
 
         // Hide every language first. This prevents Marathi + Hindi + English mixing.
@@ -1184,15 +1186,33 @@ Shiksha Bachao Association
             el.classList.add('active');
         });
 
+        
         document.querySelectorAll('.languages button').forEach(function(btn){
             btn.classList.toggle('active', btn.id === lang + 'Btn');
         });
 
         document.documentElement.lang = lang;
-        localStorage.setItem('sba-language', lang);
-    }
+        var navWelfareLink = document.getElementById('navWelfareLink');
 
-    window.setLanguage = setLanguage;
+if (navWelfareLink) {
+    navWelfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
+        var welfareLink = document.getElementById('welfareLink');
+
+if (welfareLink) {
+    welfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
+
+var footerWelfareLink = document.getElementById('footerWelfareLink');
+
+if (footerWelfareLink) {
+    footerWelfareLink.href = 'welfare-scheme.html?lang=' + lang;
+}
+
+localStorage.setItem('sba-language', lang);
+}
+
+  
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
