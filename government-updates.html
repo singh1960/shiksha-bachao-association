@@ -3,40 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Government Updates | Shiksha Bachao Association</title>
-<meta name="description" content="महाराष्ट्र में शिक्षक एवं शिक्षकेतर कर्मचारियों से संबंधित महत्वपूर्ण सरकारी अपडेट, GR और परिपत्र।">
+<meta name="description" content="शिक्षा बचाओ संगठन — सरकारी योजनाओं, छात्रवृत्तियों और नागरिक सेवाओं की उपयोगी जानकारी।">
+<title>सरकारी योजनाएँ | शिक्षा बचाओ संगठन</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari","Noto Sans",sans-serif;line-height:1.7;background:#f5f8fb;color:#243447}header{background:#12355b;color:#fff;padding:24px 5%}header h1{margin:0;font-size:28px}header p{margin:5px 0 0}.container{width:90%;max-width:1050px;margin:30px auto}.card{background:#fff;padding:26px;margin-bottom:22px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);border-left:5px solid #12355b}.card h2{color:#12355b;margin-top:0}.date{font-weight:bold;color:#b36b00}.notice{background:#fff8e8;border-left:5px solid #d27b00;padding:18px;border-radius:8px}.back{display:inline-block;background:#12355b;color:#fff;text-decoration:none;padding:10px 18px;border-radius:6px;margin-top:10px}.lang{display:none}.lang.active{display:block}.languages{margin-top:15px}.languages button{padding:7px 12px;margin-right:5px;border:1px solid #fff;border-radius:5px;background:transparent;color:#fff;cursor:pointer}.languages button.active{background:#fff;color:#12355b}footer{background:#0d2742;color:#dce7f0;text-align:center;padding:24px}ul{padding-left:22px}@media(max-width:600px){header h1{font-size:22px}.container{width:92%}}
+:root{--primary:#124e78;--secondary:#f2a900;--light:#f5f8fb;--dark:#17324d;--border:#d9e2ec}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--light);color:#23313f;line-height:1.65}
+header{background:linear-gradient(135deg,var(--primary),#1d789b);color:#fff;text-align:center;padding:28px 15px}
+header h1{margin:0 0 6px;font-size:clamp(24px,5vw,38px)}
+header p{margin:0;font-size:16px}
+nav{background:#fff;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:12px;border-bottom:1px solid var(--border)}
+nav a{color:var(--primary);text-decoration:none;font-weight:bold;padding:7px 12px;border-radius:6px}
+nav a:hover{background:#eaf3f8}
+.language-bar{text-align:center;padding:18px 10px}
+.lang-btn{border:1px solid var(--primary);background:#fff;color:var(--primary);padding:9px 16px;margin:4px;border-radius:22px;cursor:pointer;font-weight:bold}
+.lang-btn.active,.lang-btn:hover{background:var(--primary);color:#fff}
+.container{max-width:1100px;margin:auto;padding:10px 16px 35px}
+.notice{background:#fff7df;border-left:5px solid var(--secondary);padding:15px 18px;border-radius:8px;margin:10px 0 25px}
+.section-title{color:var(--primary);margin-top:28px;border-bottom:2px solid var(--secondary);padding-bottom:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 3px 10px #17324d12}
+.card h3{color:var(--primary);margin-top:0}
+.card p{margin-bottom:12px}
+.card a{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:8px 13px;border-radius:6px}
+.card a:hover{background:#0b3857}
+.small{font-size:14px;color:#526575}
+footer{background:var(--dark);color:#fff;text-align:center;padding:22px 15px}
+footer p{margin:4px}
+.hidden{display:none}
+@media(max-width:600px){.card{padding:16px}nav a{font-size:14px}}
 </style>
 </head>
 <body>
 <header>
-<h1>Shiksha Bachao Association</h1>
-<p class="lang mr">शिक्षक एवं शिक्षकेतर कर्मचारियों से संबंधित सरकारी अपडेट</p>
-<p class="lang hi active">शिक्षक एवं शिक्षकेतर कर्मचारियों से संबंधित सरकारी अपडेट</p>
-<p class="lang en">Government Updates for Teachers and Non-Teaching Employees</p>
-<div class="languages"><button id="mrBtn" onclick="setLanguage('mr')">मराठी</button><button id="hiBtn" class="active" onclick="setLanguage('hi')">हिंदी</button><button id="enBtn" onclick="setLanguage('en')">English</button></div>
+  <h1 id="siteTitle">सरकारी योजनाएँ</h1>
+  <p id="siteSubtitle">शिक्षा बचाओ संगठन — उपयोगी सरकारी योजनाओं और सेवाओं की जानकारी</p>
 </header>
+
+<nav>
+  <a href="index.html" id="homeLink">मुख्य पृष्ठ</a>
+  <a href="about-us.html" id="aboutLink">हमारे बारे में</a>
+  <a href="welfare-scheme.html" id="welfareLink">कल्याण योजना</a>
+  <a href="downloads-forms.html" id="downloadsLink">डाउनलोड / फॉर्म</a>
+</nav>
+
+<div class="language-bar" aria-label="भाषा चुनें">
+  <button class="lang-btn active" data-lang="hi">हिंदी</button>
+  <button class="lang-btn" data-lang="en">English</button>
+  <button class="lang-btn" data-lang="mr">मराठी</button>
+</div>
+
 <main class="container">
-<div class="lang mr active">
-<section class="card"><h2>महत्त्वाचा शासकीय अपडेट: शिक्षकेतर पदभरती</h2><p class="date">सप्टेंबर 2026</p><p>मान्यताप्राप्त अंशतः किंवा पूर्णतः अनुदानित माध्यमिक व उच्च माध्यमिक शाळांमधील काही शिक्षकेतर पदे, जसे की कनिष्ठ लिपिक, पूर्णवेळ ग्रंथपाल आणि प्रयोगशाळा सहाय्यक, यांच्याबाबत सरळसेवेने भरतीसंबंधी व्यवस्था लागू करण्यात आल्याची माहिती उपलब्ध आहे.</p><ul><li>लागू नियमांनुसार पदोन्नती व अनुकंपा नियुक्तीची प्रक्रिया आधी पूर्ण करणे आवश्यक असू शकते.</li><li>वैयक्तिक मान्यता आणि Shalarth संबंधित प्रक्रियेसाठी ऑनलाइन पोर्टलचा संदर्भ देण्यात आला आहे.</li><li>अंतिम निर्णयासाठी संबंधित शासन निर्णय, विभागीय सूचना आणि अधिकृत पोर्टल तपासावे.</li></ul></section>
-<section class="card"><h2>Shalarth E-KYC सूचना</h2><p class="date">महत्त्वाची अंतिम तारीख: 20 सप्टेंबर 2026</p><p>Shalarth वेतन घेणाऱ्या संबंधित शिक्षक व शिक्षकेतर कर्मचाऱ्यांसाठी E-KYC पूर्ण करण्याबाबत सूचना देण्यात आली होती. अंतिम तारीख आता उलटून गेली आहे.</p><p>ज्यांचे E-KYC प्रलंबित आहे त्यांनी तातडीने त्यांच्या शाळेच्या कार्यालयाशी किंवा संबंधित शिक्षण विभागाशी संपर्क साधावा.</p></section>
-</div>
-<div class="lang hi active">
-<section class="card"><h2>महत्वपूर्ण सरकारी अपडेट: शिक्षकेतर पदभरती</h2><p class="date">सितंबर 2026</p><p>मान्यताप्राप्त आंशिक अथवा पूर्णतः अनुदानित माध्यमिक एवं उच्च माध्यमिक विद्यालयों में कनिष्ठ लिपिक, पूर्णकालिक ग्रंथपाल तथा प्रयोगशाला सहायक जैसे कुछ शिक्षकेतर पदों को सीधी भर्ती से भरने संबंधी व्यवस्था लागू किए जाने की जानकारी उपलब्ध है।</p><ul><li>लागू नियमों के अनुसार पदोन्नति एवं अनुकंपा नियुक्ति की प्रक्रिया पहले पूरी करना आवश्यक हो सकता है।</li><li>व्यक्तिगत मान्यता तथा Shalarth संबंधी प्रक्रिया के लिए ऑनलाइन पोर्टल का उल्लेख किया गया है।</li><li>अंतिम कार्रवाई से पहले संबंधित शासन निर्णय, विभागीय सूचना एवं आधिकारिक पोर्टल अवश्य देखें।</li></ul></section>
-<section class="card"><h2>Shalarth E-KYC सूचना</h2><p class="date">महत्वपूर्ण अंतिम तिथि: 20 सितंबर 2026</p><p>Shalarth के माध्यम से वेतन प्राप्त करने वाले संबंधित शिक्षक एवं शिक्षकेतर कर्मचारियों के लिए E-KYC पूरा करने संबंधी सूचना जारी की गई थी। निर्धारित अंतिम तिथि अब बीत चुकी है।</p><p>जिनका E-KYC लंबित है, वे तुरंत अपने विद्यालय के कार्यालय अथवा संबंधित शिक्षा विभाग से संपर्क करें।</p></section>
-</div>
-<div class="lang en">
-<section class="card"><h2>Important Government Update: Recruitment of Non-Teaching Employees</h2><p class="date">September 2026</p><p>Information is available regarding a direct-recruitment arrangement for certain non-teaching posts—such as junior clerk, full-time librarian and laboratory assistant—in recognised partially or fully aided secondary and higher-secondary schools.</p><ul><li>Applicable promotion and compassionate-appointment procedures may need to be completed first.</li><li>An online portal has been referred to for individual recognition and Shalarth-related processes.</li><li>Always verify the applicable Government Resolution, departmental notice and official portal before taking action.</li></ul></section>
-<section class="card"><h2>Shalarth E-KYC Notice</h2><p class="date">Important deadline: 20 September 2026</p><p>A notice had required relevant teachers and non-teaching employees receiving salary through Shalarth to complete E-KYC. The stated deadline has now passed.</p><p>Employees whose E-KYC remains pending should contact their school office or the concerned education department immediately.</p></section>
-</div>
-<div class="notice"><strong>महत्वपूर्ण सूचना / Important Notice:</strong><br>यह पृष्ठ केवल जानकारी के लिए है। सरकारी योजनाएँ, GR, परिपत्र और पात्रता संबंधित विभाग के वर्तमान नियमों के अधीन हैं। Shiksha Bachao Association स्वयं किसी सरकारी योजना का प्रशासक नहीं है।</div>
-<a class="back" href="index.html">मुख्य पृष्ठ / Home</a>
+  <div class="notice" id="notice"></div>
+  <div id="content"></div>
 </main>
-<footer>Shiksha Bachao Association — Teacher & Non-Teaching Employees Welfare & Social Security Initiative</footer>
+
+<footer>
+  <p id="footerText">© 2026 शिक्षा बचाओ संगठन</p>
+  <p class="small" id="footerNote">जानकारी सुविधा के लिए दी गई है। आवेदन से पहले संबंधित सरकारी वेबसाइट पर नियम और पात्रता अवश्य जाँचें।</p>
+</footer>
+
 <script>
-function setLanguage(lang){if(!['mr','hi','en'].includes(lang))lang='hi';document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.lang.'+lang).forEach(e=>e.classList.add('active'));document.querySelectorAll('.languages button').forEach(b=>b.classList.toggle('active',b.id===lang+'Btn'));document.documentElement.lang=lang;localStorage.setItem('sba-language',lang)}
-setLanguage(localStorage.getItem('sba-language')||'hi');
+const data={
+hi:{
+title:"सरकारी योजनाएँ",
+subtitle:"शिक्षा बचाओ संगठन — उपयोगी सरकारी योजनाओं और सेवाओं की जानकारी",
+home:"मुख्य पृष्ठ",about:"हमारे बारे में",welfare:"कल्याण योजना",downloads:"डाउनलोड / फॉर्म",
+notice:"महत्वपूर्ण सूचना: यहाँ दी गई जानकारी सामान्य मार्गदर्शन के लिए है। पात्रता, अंतिम तिथि और लाभ की पुष्टि संबंधित सरकारी पोर्टल से करें।",
+footer:"© 2026 शिक्षा बचाओ संगठन",
+footerNote:"जानकारी सुविधा के लिए दी गई है। आवेदन से पहले संबंधित सरकारी वेबसाइट पर नियम और पात्रता अवश्य जाँचें।",
+heading:"प्रमुख सरकारी पोर्टल और योजनाएँ",
+cards:[
+["महाराष्ट्र सरकार","महाराष्ट्र सरकार के आधिकारिक पोर्टल पर विभागों, शासन निर्णयों और सरकारी सेवाओं की जानकारी प्राप्त करें।","https://maharashtra.gov.in/","आधिकारिक वेबसाइट खोलें"],
+["आपले सरकार — नागरिक सेवाएँ","आय, जाति, अधिवास प्रमाणपत्र तथा अन्य नागरिक सेवाओं के लिए महाराष्ट्र का ऑनलाइन सेवा पोर्टल।","https://aaplesarkar.mahaonline.gov.in/","सेवा पोर्टल खोलें"],
+["MahaDBT — छात्रवृत्ति एवं DBT","महाराष्ट्र की छात्रवृत्ति, शुल्क प्रतिपूर्ति, पेंशन और अन्य प्रत्यक्ष लाभ अंतरण योजनाओं की जानकारी।","https://mahadbt.maharashtra.gov.in/","MahaDBT पोर्टल खोलें"],
+["राष्ट्रीय छात्रवृत्ति पोर्टल","केंद्र सरकार और विभिन्न विभागों की छात्रवृत्ति योजनाओं के लिए राष्ट्रीय पोर्टल।","https://scholarships.gov.in/","छात्रवृत्ति पोर्टल खोलें"],
+["UMANG","केंद्र और राज्य सरकार की अनेक डिजिटल सेवाओं तक पहुँच प्रदान करने वाला मंच।","https://web.umang.gov.in/","UMANG खोलें"],
+["आयुष्मान भारत / PM-JAY","पात्र परिवारों के लिए स्वास्थ्य सुरक्षा और अस्पताल संबंधी सरकारी सुविधा की जानकारी।","https://beneficiary.nha.gov.in/","आधिकारिक वेबसाइट खोलें"],
+["प्रधानमंत्री जन-धन योजना","बैंकिंग सेवाओं और वित्तीय समावेशन से संबंधित सरकारी योजना की जानकारी।","https://pmjdy.gov.in/","योजना की वेबसाइट खोलें"],
+["ई-श्रम पोर्टल","असंगठित क्षेत्र के श्रमिकों के पंजीकरण और संबंधित सुविधाओं की जानकारी।","https://eshram.gov.in/","ई-श्रम पोर्टल खोलें"],
+["राष्ट्रीय करियर सेवा","रोजगार, करियर मार्गदर्शन और नौकरी से संबंधित सेवाओं के लिए सरकारी पोर्टल।","https://www.ncs.gov.in/","पोर्टल खोलें"]
+]},
+en:{
+title:"Government Schemes",
+subtitle:"Shiksha Bachao Association — Information on useful government schemes and services",
+home:"Home",about:"About Us",welfare:"Welfare Scheme",downloads:"Downloads / Forms",
+notice:"Important note: This page is for general guidance. Verify eligibility, deadlines and benefits on the concerned official government portal.",
+footer:"© 2026 Shiksha Bachao Association",
+footerNote:"Information is provided for convenience. Check the latest rules and eligibility on the relevant official government website before applying.",
+heading:"Major Government Portals and Schemes",
+cards:[
+["Government of Maharashtra","Find information about departments, government resolutions and public services on the official Maharashtra Government portal.","https://maharashtra.gov.in/","Open official website"],
+["Aaple Sarkar — Citizen Services","Maharashtra’s online portal for income, caste, domicile certificates and other citizen services.","https://aaplesarkar.mahaonline.gov.in/","Open service portal"],
+["MahaDBT — Scholarships and DBT","Information on scholarships, fee reimbursement, pensions and other direct benefit transfer schemes in Maharashtra.","https://mahadbt.maharashtra.gov.in/","Open MahaDBT portal"],
+["National Scholarship Portal","National portal for scholarships offered by the Government of India and different departments.","https://scholarships.gov.in/","Open scholarship portal"],
+["UMANG","A platform providing access to many central and state government digital services.","https://web.umang.gov.in/","Open UMANG"],
+["Ayushman Bharat / PM-JAY","Information about government health protection and hospital-related benefits for eligible families.","https://beneficiary.nha.gov.in/","Open official website"],
+["Pradhan Mantri Jan-Dhan Yojana","Information about banking services and financial inclusion initiatives.","https://pmjdy.gov.in/","Open scheme website"],
+["e-Shram Portal","Information about registration and related services for unorganised-sector workers.","https://eshram.gov.in/","Open e-Shram portal"],
+["National Career Service","Government portal for employment, career guidance and job-related services.","https://www.ncs.gov.in/","Open portal"]
+]},
+mr:{
+title:"शासकीय योजना",
+subtitle:"शिक्षा बचाओ संगठन — उपयुक्त शासकीय योजना व सेवांची माहिती",
+home:"मुख्य पृष्ठ",about:"आमच्याविषयी",welfare:"कल्याण योजना",downloads:"डाउनलोड / फॉर्म",
+notice:"महत्त्वाची सूचना: ही माहिती सामान्य मार्गदर्शनासाठी आहे. पात्रता, अंतिम तारीख आणि लाभ यांची खात्री संबंधित अधिकृत शासकीय पोर्टलवरून करा.",
+footer:"© 2026 शिक्षा बचाओ संगठन",
+footerNote:"माहिती सोयीसाठी देण्यात आली आहे. अर्ज करण्यापूर्वी संबंधित अधिकृत शासकीय संकेतस्थळावरील अद्ययावत नियम व पात्रता तपासा.",
+heading:"प्रमुख शासकीय पोर्टल आणि योजना",
+cards:[
+["महाराष्ट्र शासन","महाराष्ट्र शासनाच्या अधिकृत पोर्टलवर विभाग, शासन निर्णय आणि शासकीय सेवांची माहिती मिळवा.","https://maharashtra.gov.in/","अधिकृत संकेतस्थळ उघडा"],
+["आपले सरकार — नागरिक सेवा","उत्पन्न, जात, अधिवास प्रमाणपत्रे आणि इतर नागरिक सेवांसाठी महाराष्ट्राचे ऑनलाइन पोर्टल.","https://aaplesarkar.mahaonline.gov.in/","सेवा पोर्टल उघडा"],
+["MahaDBT — शिष्यवृत्ती व DBT","महाराष्ट्रातील शिष्यवृत्ती, शुल्क प्रतिपूर्ती, पेन्शन आणि इतर थेट लाभ हस्तांतरण योजनांची माहिती.","https://mahadbt.maharashtra.gov.in/","MahaDBT पोर्टल उघडा"],
+["राष्ट्रीय शिष्यवृत्ती पोर्टल","भारत सरकार आणि विविध विभागांच्या शिष्यवृत्ती योजनांसाठी राष्ट्रीय पोर्टल.","https://scholarships.gov.in/","शिष्यवृत्ती पोर्टल उघडा"],
+["UMANG","केंद्र व राज्य सरकारच्या अनेक डिजिटल सेवांपर्यंत पोहोच देणारे व्यासपीठ.","https://web.umang.gov.in/","UMANG उघडा"],
+["आयुष्मान भारत / PM-JAY","पात्र कुटुंबांसाठी आरोग्य संरक्षण आणि रुग्णालयाशी संबंधित शासकीय सुविधांची माहिती.","https://beneficiary.nha.gov.in/","अधिकृत संकेतस्थळ उघडा"],
+["प्रधानमंत्री जन-धन योजना","बँकिंग सेवा आणि आर्थिक समावेशनाशी संबंधित सरकारी योजनेची माहिती.","https://pmjdy.gov.in/","योजनेचे संकेतस्थळ उघडा"],
+["ई-श्रम पोर्टल","असंघटित क्षेत्रातील कामगारांच्या नोंदणी व संबंधित सुविधांची माहिती.","https://eshram.gov.in/","ई-श्रम पोर्टल उघडा"],
+["राष्ट्रीय करिअर सेवा","रोजगार, करिअर मार्गदर्शन आणि नोकरीसंबंधित सेवांसाठी सरकारी पोर्टल.","https://www.ncs.gov.in/","पोर्टल उघडा"]
+]}
+};
+
+function render(lang){
+ const d=data[lang]||data.hi;
+ document.documentElement.lang=lang;
+ document.getElementById("siteTitle").textContent=d.title;
+ document.getElementById("siteSubtitle").textContent=d.subtitle;
+ document.getElementById("homeLink").textContent=d.home;
+ document.getElementById("aboutLink").textContent=d.about;
+ document.getElementById("welfareLink").textContent=d.welfare;
+ document.getElementById("downloadsLink").textContent=d.downloads;
+ document.getElementById("notice").textContent=d.notice;
+ document.getElementById("footerText").textContent=d.footer;
+ document.getElementById("footerNote").textContent=d.footerNote;
+ document.getElementById("content").innerHTML="<h2 class='section-title'>"+d.heading+"</h2><div class='cards'>"+
+ d.cards.map(c=>"<article class='card'><h3>"+c[0]+"</h3><p>"+c[1]+"</p><a href='"+c[2]+"' target='_blank' rel='noopener noreferrer'>"+c[3]+"</a></article>").join("")+"</div>";
+ document.querySelectorAll(".lang-btn").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+ try{localStorage.setItem("sba-schemes-language",lang)}catch(e){}
+}
+document.querySelectorAll(".lang-btn").forEach(b=>b.addEventListener("click",()=>render(b.dataset.lang)));
+let initial="hi";
+try{initial=localStorage.getItem("sba-schemes-language")||"hi"}catch(e){}
+const urlLang=new URLSearchParams(location.search).get("lang");
+if(["hi","en","mr"].includes(urlLang))initial=urlLang;
+render(initial);
 </script>
 </body>
 </html>
