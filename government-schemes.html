@@ -40,6 +40,8 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 .card:hover,.box:hover,.option:hover,.item:hover{transform:translateY(-3px);box-shadow:0 9px 24px rgba(18,60,105,.12);}
 .hero{border-bottom:5px solid #e2a900;}
 @media(max-width:600px){header h1,.hero h1,.hero h2{font-size:30px;line-height:1.25;}}
+/* Government Schemes Hero */
+.gov-hero{position:relative;max-width:1200px;margin:0 auto 8px;min-height:300px;background-image:linear-gradient(90deg,rgba(7,42,78,.92) 0%,rgba(7,42,78,.70) 42%,rgba(7,42,78,.18) 72%),url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Mantralaya.jpg');background-size:cover;background-position:center;display:flex;align-items:center;overflow:hidden;box-shadow:0 8px 24px rgba(18,60,105,.18);border-bottom:5px solid #e2a900}.gov-hero-inner{padding:42px 34px;color:#fff;max-width:700px}.gov-hero h2{font-size:clamp(30px,5vw,48px);margin:0 0 8px;font-weight:800;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.35)}.gov-hero p{font-size:18px;margin:0;max-width:620px}.gov-credit{position:absolute;right:12px;bottom:8px;background:rgba(0,0,0,.58);color:#fff;padding:4px 8px;border-radius:5px;font-size:11px}.gov-credit a{color:#fff}@media(max-width:600px){.gov-hero{min-height:230px;background-position:center}.gov-hero-inner{padding:28px 20px}.gov-hero p{font-size:15px}}
 </style>
 </head>
 <body>
@@ -54,6 +56,14 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
   <a href="welfare-scheme.html" id="welfareLink">कल्याण योजना</a>
   <a href="downloads-forms.html" id="downloadsLink">डाउनलोड / फॉर्म</a>
 </nav>
+
+<section class="gov-hero" aria-label="सरकारी योजनाएँ">
+  <div class="gov-hero-inner">
+    <h2 id="heroTitle">सरकारी योजनाएँ</h2>
+    <p id="heroText">महाराष्ट्र शासन और भारत सरकार की शिक्षक-उपयोगी योजनाओं एवं सेवाओं की जानकारी</p>
+  </div>
+  <div class="gov-credit">फोटो: Mantralaya, Mumbai — <a href="https://commons.wikimedia.org/wiki/File:Mantralaya.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></div>
+</section>
 
 <div class="language-bar" aria-label="भाषा चुनें">
   <button class="lang-btn active" data-lang="hi">हिंदी</button>
@@ -137,6 +147,8 @@ function render(lang){
  document.documentElement.lang=lang;
  document.getElementById("siteTitle").textContent=d.title;
  document.getElementById("siteSubtitle").textContent=d.subtitle;
+ document.getElementById("heroTitle").textContent=d.title;
+ document.getElementById("heroText").textContent=lang==="hi"?"महाराष्ट्र शासन और भारत सरकार की शिक्षक-उपयोगी योजनाओं एवं सेवाओं की जानकारी":lang==="en"?"Information on useful Maharashtra and Government of India schemes and services for teachers":"महाराष्ट्र शासन व भारत सरकारच्या शिक्षकांसाठी उपयुक्त योजना व सेवांची माहिती";
  document.getElementById("homeLink").textContent=d.home;
  document.getElementById("aboutLink").textContent=d.about;
  document.getElementById("welfareLink").textContent=d.welfare;
