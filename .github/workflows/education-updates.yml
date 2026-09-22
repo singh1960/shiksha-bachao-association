@@ -1,0 +1,82 @@
+name: Education Updates Monitor
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check official education sources
+        run: |
+          python - <<'PY'
+          import json, urllib.request
+          from datetime import datetime, timezone
+
+          sources = [
+            {
+              "type": "Bombay High Court",
+              "title": "Judgments / Orders Search",
+              "url": "https://bombayhighcourt.gov.in/bhc/front/unified-search"
+            },
+            {
+              "type": "Supreme Court of India",
+              "title": "Judgments",
+              "url": "https://www.sci.gov.in/judgements/"
+            },
+            {
+              "type": "Maharashtra Government",
+              "title": "Government Resolutions",
+              "url": "https://gr.maharashtra.gov.in/"
+            },
+            {
+              "type": "Education Department",
+              "title": "Maharashtra School Education and Sports Department",
+              "url": "https://education.maharashtra.gov.in/"
+            },
+            {
+              "type": "eCourts",
+              "title": "High Court Services",
+              "url": "https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index"
+            }
+          ]
+
+          checked = []
+          for s in sources:
+              item = dict(s)
+              try:
+                  req = urllib.request.Request(s["url"], headers={"User-Agent": "Shiksha-Bachao-Association-Education-Monitor/1.0"})
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      item["status"] = r.status
+                      item["reachable"] = True
+              except Exception as e:
+                  item["status"] = None
+                  item["reachable"] = False
+                  item["error"] = str(e)[:180]
+              checked.append(item)
+
+          data = {
+              "lastChecked": datetime.now(timezone.utc).isoformat(),
+              "note": "This file verifies official source availability. New court orders and GRs are added only after subject relevance and source verification.",
+              "sources": checked
+          }
+          with open("education-updates.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          PY
+
+      - name: Commit update
+        run: |
+          git config user.name "Shiksha Bachao Association Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add education-updates.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update education source monitor"
+          git push
