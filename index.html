@@ -146,17 +146,18 @@ img.setAttribute('aria-hidden',visible?'false':'true');
 });
 document.querySelectorAll('.languages button').forEach(function(btn){btn.classList.toggle('active',btn.id===lang+'Btn');});
 document.documentElement.lang=lang;
-try{localStorage.setItem('sba-home-language',lang);}catch(e){}
+try{localStorage.setItem('sba-language',lang);}catch(e){}
 var links=['navWelfareLink','welfareLink','footerWelfareLink'];
 links.forEach(function(id){var el=document.getElementById(id);if(el)el.href='welfare-scheme.html?lang='+lang;});
 };document.getElementById('year').textContent=new Date().getFullYear();
 var queryLanguage=new URLSearchParams(window.location.search).get('lang');
 var savedLanguage='hi';
-try{savedLanguage=localStorage.getItem('sba-home-language')||'hi';}catch(e){}
+try{savedLanguage=localStorage.getItem('sba-language')||'hi';}catch(e){}
 var initialLanguage=['mr','hi','en'].includes(queryLanguage)?queryLanguage:(['mr','hi','en'].includes(savedLanguage)?savedLanguage:'hi');
 setLanguage(initialLanguage);
-try{localStorage.setItem('sba-home-language',initialLanguage);}catch(e){}
+try{localStorage.setItem('sba-language',initialLanguage);}catch(e){}
 })();
 </script>
+<script id="sba-unified-language-navigation">(function(){var S=['hi','en','mr'],P=['index.html','about-us-professional.html','about-us.html','downloads-forms.html','education-court-orders.html','eligibility.html','government-schemes.html','government-updates.html','membership.html','welfare-benefits.html','welfare-scheme.html'];function v(x){return S.indexOf(x)>=0?x:'hi'}function save(x){try{localStorage.setItem('sba-language',x)}catch(e){}}function sync(x){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|javascript:|#)/i.test(h))return;var z=h.split('#'),base=z[0],hash=z[1]?'#'+z[1]:'';var q=base.split('?'),p=q[0];if(P.indexOf(p)<0)return;var ps=new URLSearchParams(q[1]||'');ps.set('lang',x);a.setAttribute('href',p+'?'+ps.toString()+hash)})}function activate(x){x=v(x);document.documentElement.lang=x;save(x);sync(x);if(typeof window.setSbaLang==='function')window.setSbaLang(x);else if(typeof window.setLanguage==='function')window.setLanguage(x);else if(typeof window.render==='function')window.render(x)}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.languages button,.sba-language-bar button,.lang-btn,[data-lang]').forEach(function(b){b.addEventListener('click',function(){activate(b.getAttribute('data-lang')||b.id.replace(/Btn$/,''))})});var q=new URLSearchParams(location.search).get('lang'),x=S.indexOf(q)>=0?q:(function(){try{return localStorage.getItem('sba-language')||'hi'}catch(e){return'hi'}})();activate(x)})})();</script>
 </body>
 </html>
