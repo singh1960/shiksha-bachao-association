@@ -118,7 +118,7 @@ footer li{margin-bottom:7px;}
 <section class="homepage-image-banner" id="home" aria-label="Shiksha Bachao Association">
 <img class="language-banner banner-mr" data-banner-lang="mr" src="banner-marathi.png" alt="शिक्षा बचाओ संगठन — मराठी बैनर" loading="eager">
 <img class="language-banner banner-hi" data-banner-lang="hi" src="banner-hindi.png" alt="शिक्षा बचाओ संगठन — हिंदी बैनर" loading="eager">
-<img class="language-banner banner-en" data-banner-lang="en" src="banner-english-new.png" alt="Shiksha Bachao Association — English banner" loading="eager">
+<img class="language-banner banner-en" data-banner-lang="en" src="banner-english.png" alt="Shiksha Bachao Association — English banner" loading="eager">
 <div class="home-hero-copy"><div class="home-hero-copy-inner">
 <div class="hero-line"></div>
 <h2><span class="lang mr">शिक्षक हित • शिक्षण अधिकार • सामाजिक सुरक्षा</span><span class="lang hi active">शिक्षक हित में एक मजबूत आवाज़</span><span class="lang en">A Strong Voice for Teachers</span></h2>
@@ -146,9 +146,17 @@ img.classList.toggle('is-visible', img.getAttribute('data-banner-lang')===lang);
 });
 document.querySelectorAll('.languages button').forEach(function(btn){btn.classList.toggle('active',btn.id===lang+'Btn');});
 document.documentElement.lang=lang;
+try{localStorage.setItem('sba-home-language',lang);}catch(e){}
 var links=['navWelfareLink','welfareLink','footerWelfareLink'];
 links.forEach(function(id){var el=document.getElementById(id);if(el)el.href='welfare-scheme.html?lang='+lang;});
-};document.getElementById('year').textContent=new Date().getFullYear();setLanguage('hi');})();
+};document.getElementById('year').textContent=new Date().getFullYear();
+var queryLanguage=new URLSearchParams(window.location.search).get('lang');
+var savedLanguage='hi';
+try{savedLanguage=localStorage.getItem('sba-home-language')||'hi';}catch(e){}
+var initialLanguage=['mr','hi','en'].includes(queryLanguage)?queryLanguage:(['mr','hi','en'].includes(savedLanguage)?savedLanguage:'hi');
+setLanguage(initialLanguage);
+try{localStorage.setItem('sba-home-language',initialLanguage);}catch(e){}
+})();
 </script>
 </body>
 </html>
