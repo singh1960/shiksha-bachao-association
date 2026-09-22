@@ -50,13 +50,28 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 .sba-global-page-links a{display:inline-block;padding:9px 18px;border-radius:7px;text-decoration:none;font-weight:700;background:#123c69;color:#fff}
 .sba-global-page-links a.member{background:#177687}
 .sba-global-page-links a:hover{opacity:.9}
-</style></head>
+</style><style id="sba-common-shell-style">
+.sba-site-header{background:linear-gradient(135deg,#123c69,#176b87);color:#fff;padding:18px 20px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.12)}
+.sba-header-inner{width:92%;max-width:1200px;margin:0 auto}
+.sba-site-header strong{display:block;font-size:25px;line-height:1.25}
+.sba-site-header small{display:block;margin-top:4px;font-size:14px;opacity:.94}
+.sba-site-footer{background:#0d2742;color:#dce7f0;padding:38px 20px 18px;margin-top:40px}
+.sba-site-footer .footer-grid{width:92%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:28px}
+.sba-site-footer h3{color:#fff;margin:0 0 10px}
+.sba-site-footer p,.sba-site-footer li{font-size:14px;line-height:1.6;color:#b9c9d8}
+.sba-site-footer a{color:#dce7f0}
+.sba-site-footer ul{list-style:none;margin:0;padding:0}
+.sba-site-footer li{margin-bottom:6px}
+.sba-site-footer .copyright{border-top:1px solid rgba(255,255,255,.15);margin-top:25px;padding-top:14px;text-align:center;font-size:13px;color:#aebdca}
+@media(max-width:800px){.sba-site-footer .footer-grid{grid-template-columns:1fr}.sba-site-header strong{font-size:21px}}
+</style>
+</head>
 <body>
 
 
 <nav>
   <a href="index.html" id="homeLink">मुख्य पृष्ठ</a>
-  <a href="about-us.html" id="aboutLink">हमारे बारे में</a>
+  <a href="about-us-professional.html" id="aboutLink">हमारे बारे में</a>
   <a href="welfare-scheme.html" id="welfareLink">कल्याण योजना</a>
   <a href="downloads-forms.html" id="downloadsLink">डाउनलोड / फॉर्म</a>
 </nav>
@@ -76,7 +91,7 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 <nav class="sba-global-page-links" aria-label="Page navigation">
 <a href="index.html">⌂ मुख्य पृष्ठ / Home</a>
 <a class="member" href="membership.html">🤝 सदस्य बनें / Become a Member</a>
-</nav><footer>
+</nav><footer class="sba-site-footer" >
   <p id="footerText">© 2026 शिक्षा बचाओ संगठन</p>
   <p class="small" id="footerNote">जानकारी सुविधा के लिए दी गई है। आवेदन से पहले संबंधित सरकारी वेबसाइट पर नियम और पात्रता अवश्य जाँचें।</p>
 </footer>
