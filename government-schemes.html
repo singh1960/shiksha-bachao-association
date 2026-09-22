@@ -133,6 +133,9 @@ mr:{home:"मुख्य पृष्ठ",about:"आमच्याविषय
 
 function renderSchemes(lang){
  const d=data[lang]||data.hi;
+ document.body.classList.remove("sba-hi","sba-en","sba-mr");
+ document.body.classList.add("sba-"+(data[lang]?lang:"hi"));
+ document.documentElement.lang=data[lang]?lang:"hi";
  const heroImg=document.getElementById("govHeroImg");
  if(heroImg){ heroImg.src=d.hero; heroImg.alt=d.heading; }
  document.getElementById("homeLink").textContent=d.home;
@@ -140,17 +143,17 @@ function renderSchemes(lang){
  document.getElementById("welfareLink").textContent=d.welfare;
  document.getElementById("downloadsLink").textContent=d.downloads;
  document.getElementById("notice").textContent=d.notice;
- document.getElementById("footerText").textContent=d.footer;
- document.getElementById("footerNote").textContent=d.note;
+ var footerText=document.getElementById("footerText"); if(footerText) footerText.textContent=d.footer;
+ var footerNote=document.getElementById("footerNote"); if(footerNote) footerNote.textContent=d.note;
  document.getElementById("content").innerHTML="<h2 class='section-title'>"+d.heading+"</h2><div class='cards'>"+d.cards.map(function(c){return "<article class='card'><h3>"+c[0]+"</h3><p>"+c[1]+"</p><a href='"+c[2]+"' target='_blank' rel='noopener noreferrer'>"+c[3]+"</a></article>"}).join("")+"</div>";
  document.querySelectorAll(".lang-btn").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-lang")===lang)});
 }
 document.addEventListener("DOMContentLoaded",function(){
- document.querySelectorAll(".lang-btn").forEach(function(b){b.addEventListener("click",function(){renderSchemes(b.getAttribute("data-lang"))})});
  const q=new URLSearchParams(window.location.search).get("lang");
- renderSchemes(["hi","en","mr"].includes(q)?q:"hi");
+ const saved=(function(){try{return localStorage.getItem("sba-language")||"hi"}catch(e){return"hi"}})();
+ renderSchemes(["hi","en","mr"].includes(q)?q:saved);
 });
 </script>
-<script id="sba-unified-language-navigation">(function(){var S=['hi','en','mr'],P=['index.html','about-us-professional.html','about-us.html','downloads-forms.html','education-court-orders.html','eligibility.html','government-schemes.html','government-updates.html','membership.html','welfare-benefits.html','welfare-scheme.html'];function v(x){return S.indexOf(x)>=0?x:'hi'}function save(x){try{localStorage.setItem('sba-language',x)}catch(e){}}function sync(x){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|javascript:|#)/i.test(h))return;var z=h.split('#'),base=z[0],hash=z[1]?'#'+z[1]:'';var q=base.split('?'),p=q[0];if(P.indexOf(p)<0)return;var ps=new URLSearchParams(q[1]||'');ps.set('lang',x);a.setAttribute('href',p+'?'+ps.toString()+hash)})}function activate(x){x=v(x);document.documentElement.lang=x;save(x);sync(x);if(typeof window.setSbaLang==='function')window.setSbaLang(x);else if(typeof window.setLanguage==='function')window.setLanguage(x);else if(typeof window.render==='function')window.render(x)}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.languages button,.sba-language-bar button,.lang-btn,[data-lang]').forEach(function(b){b.addEventListener('click',function(){activate(b.getAttribute('data-lang')||b.id.replace(/Btn$/,''))})});var q=new URLSearchParams(location.search).get('lang'),x=S.indexOf(q)>=0?q:(function(){try{return localStorage.getItem('sba-language')||'hi'}catch(e){return'hi'}})();activate(x)})})();</script>
+<script id="sba-unified-language-navigation">(function(){var S=['hi','en','mr'],P=['index.html','about-us-professional.html','about-us.html','downloads-forms.html','education-court-orders.html','eligibility.html','government-schemes.html','government-updates.html','membership.html','welfare-benefits.html','welfare-scheme.html'];function v(x){return S.indexOf(x)>=0?x:'hi'}function save(x){try{localStorage.setItem('sba-language',x)}catch(e){}}function sync(x){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|javascript:|#)/i.test(h))return;var z=h.split('#'),base=z[0],hash=z[1]?'#'+z[1]:'';var q=base.split('?'),p=q[0];if(P.indexOf(p)<0)return;var ps=new URLSearchParams(q[1]||'');ps.set('lang',x);a.setAttribute('href',p+'?'+ps.toString()+hash)})}function activate(x){x=v(x);document.documentElement.lang=x;save(x);sync(x);if(typeof window.renderSchemes==='function')window.renderSchemes(x);}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.languages button,.sba-language-bar button,.lang-btn,[data-lang]').forEach(function(b){b.addEventListener('click',function(){activate(b.getAttribute('data-lang')||b.id.replace(/Btn$/,''))})});var q=new URLSearchParams(location.search).get('lang'),x=S.indexOf(q)>=0?q:(function(){try{return localStorage.getItem('sba-language')||'hi'}catch(e){return'hi'}})();activate(x)})})();</script>
 </body>
 </html>
