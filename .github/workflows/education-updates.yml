@@ -15,68 +15,60 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check official education sources
+      - name: Scan official sources for education keywords
         run: |
           python - <<'PY'
-          import json, urllib.request
-          from datetime import datetime, timezone
-
-          sources = [
-            {
-              "type": "Bombay High Court",
-              "title": "Judgments / Orders Search",
-              "url": "https://bombayhighcourt.gov.in/bhc/front/unified-search"
-            },
-            {
-              "type": "Supreme Court of India",
-              "title": "Judgments",
-              "url": "https://www.sci.gov.in/judgements/"
-            },
-            {
-              "type": "Maharashtra Government",
-              "title": "Government Resolutions",
-              "url": "https://gr.maharashtra.gov.in/"
-            },
-            {
-              "type": "Education Department",
-              "title": "Maharashtra School Education and Sports Department",
-              "url": "https://education.maharashtra.gov.in/"
-            },
-            {
-              "type": "eCourts",
-              "title": "High Court Services",
-              "url": "https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index"
-            }
+          import json,re,urllib.request
+          from datetime import datetime,timezone
+          keywords=["education","school","teacher","teachers","MEPS","pension","promotion","seniority","salary","service","Education Officer","शिक्षण","शाळा","शिक्षक","वेतन","पेन्शन"]
+          sources=[
+            {"type":"Bombay High Court","title":"Recent Judgments / Orders","url":"https://bombayhighcourt.gov.in/bhc/front/recentjudgment?page=1"},
+            {"type":"Bombay High Court","title":"Unified Orders / Judgments Search","url":"https://bombayhighcourt.gov.in/bhc/front/unified-search"},
+            {"type":"Supreme Court of India","title":"Judgments Search","url":"https://www.sci.gov.in/judgements/"},
+            {"type":"Maharashtra Government","title":"Government Resolutions","url":"https://gr.maharashtra.gov.in/"},
+            {"type":"Education Department","title":"School Education and Sports Department","url":"https://education.maharashtra.gov.in/"}
           ]
-
-          checked = []
+          candidates=[]
           for s in sources:
-              item = dict(s)
-              try:
-                  req = urllib.request.Request(s["url"], headers={"User-Agent": "Shiksha-Bachao-Association-Education-Monitor/1.0"})
-                  with urllib.request.urlopen(req, timeout=30) as r:
-                      item["status"] = r.status
-                      item["reachable"] = True
-              except Exception as e:
-                  item["status"] = None
-                  item["reachable"] = False
-                  item["error"] = str(e)[:180]
-              checked.append(item)
-
-          data = {
-              "lastChecked": datetime.now(timezone.utc).isoformat(),
-              "note": "This file verifies official source availability. New court orders and GRs are added only after subject relevance and source verification.",
-              "sources": checked
-          }
-          with open("education-updates.json", "w", encoding="utf-8") as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
+            x=dict(s); x["matchedKeywords"]=[]; x["checked"]=False
+            try:
+              req=urllib.request.Request(s["url"],headers={"User-Agent":"Shiksha-Bachao-Association-Education-Monitor/1.0"})
+              html=urllib.request.urlopen(req,timeout=30).read().decode("utf-8","ignore")
+              plain=re.sub(r"<[^>]+>"," ",html).lower()
+              x["matchedKeywords"]=[k for k in keywords if k.lower() in plain]
+              x["checked"]=True
+              if x["matchedKeywords"]: candidates.append(x)
+            except Exception as e:
+              x["error"]=str(e)[:180]
+          out={"lastChecked":datetime.now(timezone.utc).isoformat(),"status":"candidate scan","keywords":keywords,"candidates":candidates,"note":"Potential matches only. Verify the actual order/GR and relevance before publishing as a confirmed education update."}
+          with open("education-candidates.json","w",encoding="utf-8") as f: json.dump(out,f,ensure_ascii=False,indent=2)
           PY
 
-      - name: Commit update
+      - name: Check official source availability
+        run: |
+          python - <<'PY'
+          import json,urllib.request
+          from datetime import datetime,timezone
+          urls=[
+            ("Bombay High Court","Unified Search","https://bombayhighcourt.gov.in/bhc/front/unified-search"),
+            ("Supreme Court of India","Judgments","https://www.sci.gov.in/judgements/"),
+            ("Maharashtra Government","Government Resolutions","https://gr.maharashtra.gov.in/"),
+            ("Education Department","School Education","https://education.maharashtra.gov.in/"),
+            ("eCourts","High Court Services","https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index")]
+          rows=[]
+          for t,n,u in urls:
+            try:
+              r=urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":"Shiksha-Bachao-Association-Education-Monitor/1.0"}),timeout=30)
+              rows.append({"type":t,"title":n,"url":u,"status":r.status,"reachable":True})
+            except Exception as e: rows.append({"type":t,"title":n,"url":u,"status":None,"reachable":False,"error":str(e)[:180]})
+          with open("education-updates.json","w",encoding="utf-8") as f: json.dump({"lastChecked":datetime.now(timezone.utc).isoformat(),"sources":rows},f,ensure_ascii=False,indent=2)
+          PY
+
+      - name: Commit monitor results
         run: |
           git config user.name "Shiksha Bachao Association Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add education-updates.json
+          git add education-updates.json education-candidates.json
           git diff --cached --quiet && exit 0
-          git commit -m "Update education source monitor"
+          git commit -m "Update education source candidates"
           git push
