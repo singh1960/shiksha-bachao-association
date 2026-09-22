@@ -45,10 +45,7 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 </style>
 </head>
 <body>
-<header>
-  <h1 id="siteTitle">सरकारी योजनाएँ</h1>
-  <p id="siteSubtitle">शिक्षा बचाओ संगठन — उपयोगी सरकारी योजनाओं और सेवाओं की जानकारी</p>
-</header>
+
 
 <nav>
   <a href="index.html" id="homeLink">मुख्य पृष्ठ</a>
@@ -145,8 +142,7 @@ cards:[
 function render(lang){
  const d=data[lang]||data.hi;
  document.documentElement.lang=lang;
- document.getElementById("siteTitle").textContent=d.title;
- document.getElementById("siteSubtitle").textContent=d.subtitle;
+ 
  document.getElementById("heroTitle").textContent=d.title;
  document.getElementById("heroText").textContent=lang==="hi"?"महाराष्ट्र शासन और भारत सरकार की शिक्षक-उपयोगी योजनाओं एवं सेवाओं की जानकारी":lang==="en"?"Information on useful Maharashtra and Government of India schemes and services for teachers":"महाराष्ट्र शासन व भारत सरकारच्या शिक्षकांसाठी उपयुक्त योजना व सेवांची माहिती";
  document.getElementById("homeLink").textContent=d.home;
