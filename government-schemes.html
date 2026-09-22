@@ -45,7 +45,12 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 .gov-hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;margin:0 auto}
 @media(max-width:600px){.gov-hero img{max-height:none;width:100%;height:auto}}
 </style>
-</head>
+<style id="sba-global-page-links">
+.sba-global-page-links{max-width:1150px;margin:24px auto 0;padding:14px 18px;background:#eef4f8;border:1px solid #d7e3eb;border-radius:10px;text-align:center;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.sba-global-page-links a{display:inline-block;padding:9px 18px;border-radius:7px;text-decoration:none;font-weight:700;background:#123c69;color:#fff}
+.sba-global-page-links a.member{background:#177687}
+.sba-global-page-links a:hover{opacity:.9}
+</style></head>
 <body>
 
 
@@ -68,7 +73,10 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
   <div id="content"></div>
 </main>
 
-<footer>
+<nav class="sba-global-page-links" aria-label="Page navigation">
+<a href="index.html">⌂ मुख्य पृष्ठ / Home</a>
+<a class="member" href="membership.html">🤝 सदस्य बनें / Become a Member</a>
+</nav><footer>
   <p id="footerText">© 2026 शिक्षा बचाओ संगठन</p>
   <p class="small" id="footerNote">जानकारी सुविधा के लिए दी गई है। आवेदन से पहले संबंधित सरकारी वेबसाइट पर नियम और पात्रता अवश्य जाँचें।</p>
 </footer>
