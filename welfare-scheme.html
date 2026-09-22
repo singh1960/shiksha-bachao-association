@@ -19,23 +19,30 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 
 
 
-<style id="sba-clean-page-hero">
-.sba-clean-hero{position:relative;max-width:1150px;margin:0 auto 30px;padding:55px 28px;background:linear-gradient(135deg,#0b3558,#176b8e);color:#fff;border-bottom:5px solid #e2a900;box-shadow:0 8px 24px rgba(18,60,105,.16);overflow:hidden}
-.sba-clean-hero:after{content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
-.sba-clean-hero .icon{font-size:40px;margin-bottom:12px}.sba-clean-hero h2{margin:0;font-size:42px;line-height:1.2;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.25)}.sba-clean-hero p{margin:12px 0 0;font-size:18px;max-width:760px;color:#fff}.sba-clean-hero .line{width:85px;height:4px;background:#e2a900;border-radius:4px;margin-top:16px}
-@media(max-width:700px){.sba-clean-hero{padding:42px 20px}.sba-clean-hero h2{font-size:30px}.sba-clean-hero p{font-size:16px}}
+<style id="sba-final-language-system">
+/* Final SBA language + banner system */
+.lang-hi,.lang-en,.lang-mr{display:none!important}
+body.sba-hi .lang-hi{display:inline!important} body.sba-en .lang-en{display:inline!important} body.sba-mr .lang-mr{display:inline!important}
+.lang.hi,.lang.en,.lang.mr{display:none!important}
+body.sba-hi .lang.hi,body.sba-en .lang.en,body.sba-mr .lang.mr{display:block!important}
+.sba-final-banner{position:relative;min-height:230px;margin:0 auto 26px;max-width:1150px;background-size:cover;background-position:center;display:flex;align-items:center;overflow:hidden;border-bottom:5px solid #e2a900;box-shadow:0 7px 22px rgba(18,60,105,.15)}
+.sba-final-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,42,78,.78),rgba(7,42,78,.28))}
+.sba-final-banner-title{position:relative;z-index:2;padding:35px 28px;color:#fff}
+.sba-final-banner-title h2{margin:0;font-size:40px;line-height:1.2;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.sba-final-banner-title p{margin:8px 0 0;font-size:17px;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+@media(max-width:700px){.sba-final-banner{min-height:190px}.sba-final-banner-title{padding:28px 20px}.sba-final-banner-title h2{font-size:30px}.sba-final-banner-title p{font-size:15px}}
 </style></head>
 <body>
 
 
 <nav><a href="index.html" id="home">मुख्यपृष्ठ</a><a href="about-us.html" id="about">हमारे बारे में</a><a href="downloads-forms.html" id="downloads">डाउनलोड एवं फॉर्म</a></nav>
 <div class="languages" aria-label="Language selection"><button class="lang-btn active" data-lang="hi">हिंदी</button><button class="lang-btn" data-lang="en">English</button><button class="lang-btn" data-lang="mr">मराठी</button></div>
-<section class="sba-clean-hero" aria-label="शिक्षक कल्याण योजना">
-<div class="icon">❤️</div>
+
+<section class="sba-final-banner" id="sbaFinalBanner" aria-label="शिक्षक कल्याण योजना">
+<div class="sba-final-banner-title">
 <h2><span class="lang-hi">शिक्षक कल्याण योजना</span><span class="lang-en">Teacher Welfare Scheme</span><span class="lang-mr">शिक्षक कल्याण योजना</span></h2>
-<p><span class="lang-hi">शिक्षकों और उनके परिवारों के लिए कल्याण एवं सहायता की जानकारी</span><span class="lang-en">Welfare and assistance information for teachers and their families</span><span class="lang-mr">शिक्षक व त्यांच्या कुटुंबासाठी कल्याण व सहाय्याची माहिती</span></p>
-<div class="line"></div>
-</section>
+<p><span class="lang-hi">शिक्षकों और उनके परिवारों के लिए कल्याण एवं सहायता</span><span class="lang-en">Welfare and assistance for teachers and their families</span><span class="lang-mr">शिक्षक व त्यांच्या कुटुंबासाठी कल्याण व सहाय्य</span></p>
+</div></section>
 <main class="container" id="content">
 </main>
 <footer><h3 style="color:white">SHIKSHA BACHAO ASSOCIATION</h3><p id="footerText">शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p><p><strong>Official Registered Name:</strong><br>Shiksha Bachao Association</p><p>© 2026 Shiksha Bachao Association. All Rights Reserved.</p></footer>
@@ -47,5 +54,25 @@ mr:{tableArea:'क्षेत्र',tableNature:'सहाय्याचे �
 function render(lang){const d=data[lang];document.documentElement.lang=lang;['title','subtitle','status','home','about','downloads'].forEach(id=>document.getElementById(id).textContent=d[id]);let h='';h+=`<section class="card"><h2>${d.intro}</h2><p>${d.introText}</p><div class="notice"><strong>महत्त्वपूर्ण सूचना:</strong> ${d.notice}</div></section>`;h+=`<section class="card"><h2>${d.objectives}</h2><div class="grid">${d.obj.map(x=>`<div class="feature"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div></section>`;h+=`<section class="card"><h2>${d.elig}</h2><p>${d.eligText}</p><div class="grid">${d.categories.map(x=>`<div class="feature">${x}</div>`).join('')}</div></section>`;h+=`<section class="card"><h2>${d.fund}</h2><p>${d.fundText}</p><div class="notice"><strong>Note:</strong> ${d.fundNote}</div></section>`;h+=`<section class="card"><h2>${d.areas}</h2><div class="table-wrap"><table><tr><th>${d.tableArea}</th><th>${d.tableNature}</th></tr>${d.rows.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join('')}</table></div><div class="notice">${d.aidNote}</div></section>`;h+=`<section class="card"><h2>${d.form}</h2><p>${d.formText}</p><a class="download" href="Teachers_Welfare_Assistance_Form_Hindi_Corrected_v2.pdf" target="_blank" rel="noopener">${d.hiForm}</a><a class="download" href="Teachers_Welfare_Assistance_Form_English_Clear.pdf" target="_blank" rel="noopener">${d.enForm}</a><a class="download" href="Teachers_Welfare_Assistance_Form_Marathi_Corrected_v2.pdf" target="_blank" rel="noopener">${d.mrForm}</a></section>`;h+=`<section class="card"><h2>${d.apply}</h2><div class="steps">${d.steps.map(x=>`<div class="step">${x}</div>`).join('')}</div></section>`;h+=`<section class="card"><h2>${d.nominee}</h2><p>${d.nomineeText}</p></section><section class="card"><h2>${d.trans}</h2><p>${d.transText}</p></section><section class="card"><h2>${d.separate}</h2><p>${d.separateText}</p></section><section class="card"><h2>${d.more}</h2><p>${d.moreText}</p><a class="download" href="index.html">${d.home}</a> <a class="download" href="about-us.html">${d.about}</a> <a class="download" href="downloads-forms.html">${d.downloads}</a></section>`;document.getElementById('content').innerHTML=h;document.getElementById('footerText').textContent=d.footer;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang))}document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));const params = new URLSearchParams(window.location.search); const selectedLang = params.get('lang') || 'hi';  render(['hi', 'en', 'mr'].includes(selectedLang) ? selectedLang : 'hi');
 </script>
 
-</body>
+<script id="sba-language-controller">
+(function(){
+function setSbaLang(lang){
+ if(!['hi','en','mr'].includes(lang)) lang='hi';
+ document.body.classList.remove('sba-hi','sba-en','sba-mr');
+ document.body.classList.add('sba-'+lang);
+ document.documentElement.lang=lang;
+ document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===lang)});
+ var banner=document.getElementById('sbaFinalBanner');
+ if(banner) banner.style.backgroundImage="url('"+(lang==='en'?'banner-english.png':lang==='mr'?'banner-marathi.png':'banner-hindi.png')+"')";
+ try{localStorage.setItem('sba-language',lang)}catch(e){}
+}
+window.setSbaLang=setSbaLang;
+document.addEventListener('DOMContentLoaded',function(){
+ document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setSbaLang(b.getAttribute('data-lang'))})});
+ var q=new URLSearchParams(location.search).get('lang');
+ var saved='hi'; try{saved=localStorage.getItem('sba-language')||'hi'}catch(e){}
+ setSbaLang(['hi','en','mr'].includes(q)?q:saved);
+});
+})();
+</script></body>
 </html>
