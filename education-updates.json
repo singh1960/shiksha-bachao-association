@@ -1,11 +1,42 @@
 {
-  "lastChecked": null,
-  "note": "Official education sources monitored automatically. New court orders and GRs are added only after subject relevance and source verification.",
+  "lastChecked": "2026-09-22T08:45:14.859659+00:00",
   "sources": [
-    {"type":"Bombay High Court","title":"Judgments / Orders Search","url":"https://bombayhighcourt.gov.in/bhc/front/unified-search"},
-    {"type":"Supreme Court of India","title":"Judgments","url":"https://www.sci.gov.in/judgements/"},
-    {"type":"Maharashtra Government","title":"Government Resolutions","url":"https://gr.maharashtra.gov.in/"},
-    {"type":"Education Department","title":"Maharashtra School Education and Sports Department","url":"https://education.maharashtra.gov.in/"},
-    {"type":"eCourts","title":"High Court Services","url":"https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index"}
+    {
+      "type": "Bombay High Court",
+      "title": "Unified Search",
+      "url": "https://bombayhighcourt.gov.in/bhc/front/unified-search",
+      "status": null,
+      "reachable": false,
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1000)>"
+    },
+    {
+      "type": "Supreme Court of India",
+      "title": "Judgments",
+      "url": "https://www.sci.gov.in/judgements/",
+      "status": 200,
+      "reachable": true
+    },
+    {
+      "type": "Maharashtra Government",
+      "title": "Government Resolutions",
+      "url": "https://gr.maharashtra.gov.in/",
+      "status": 200,
+      "reachable": true
+    },
+    {
+      "type": "Education Department",
+      "title": "School Education",
+      "url": "https://education.maharashtra.gov.in/",
+      "status": null,
+      "reachable": false,
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "type": "eCourts",
+      "title": "High Court Services",
+      "url": "https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index",
+      "status": 200,
+      "reachable": true
+    }
   ]
 }

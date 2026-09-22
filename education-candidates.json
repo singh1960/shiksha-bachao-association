@@ -1,0 +1,34 @@
+{
+  "lastChecked": "2026-09-22T08:44:22.165548+00:00",
+  "status": "candidate scan",
+  "keywords": [
+    "education",
+    "school",
+    "teacher",
+    "teachers",
+    "MEPS",
+    "pension",
+    "promotion",
+    "seniority",
+    "salary",
+    "service",
+    "Education Officer",
+    "शिक्षण",
+    "शाळा",
+    "शिक्षक",
+    "वेतन",
+    "पेन्शन"
+  ],
+  "candidates": [
+    {
+      "type": "Supreme Court of India",
+      "title": "Judgments Search",
+      "url": "https://www.sci.gov.in/judgements/",
+      "matchedKeywords": [
+        "service"
+      ],
+      "checked": true
+    }
+  ],
+  "note": "Potential matches only. Verify the actual order/GR and relevance before publishing as a confirmed education update."
+}
