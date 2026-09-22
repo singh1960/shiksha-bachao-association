@@ -84,16 +84,16 @@ footer li{margin-bottom:7px;}
 .copyright{border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:18px;text-align:center;font-size:13px;color:#aebdca;}
 .lang{display:none;}
 .lang.active{display:block;}
-.homepage-image-banner{background:#0b2d4d;padding:0;text-align:center;position:relative;overflow:hidden;height:auto;min-height:330px;}
-.language-banner{position:absolute !important;inset:0;width:100% !important;height:100% !important;max-width:none !important;margin:0 !important;display:block !important;object-fit:contain !important;object-position:center center !important;opacity:0;visibility:hidden;z-index:1;transition:none;}
+.homepage-image-banner{background:#0b2d4d;padding:0;text-align:center;position:relative;overflow:hidden;width:100%;aspect-ratio:7.75/1;height:auto;min-height:0;}
+.language-banner{position:absolute !important;inset:0;width:100% !important;height:100% !important;max-width:none !important;margin:0 !important;display:block !important;object-fit:fill !important;object-position:center center !important;opacity:0;visibility:hidden;z-index:1;transition:none;}
 .language-banner.is-visible{opacity:1 !important;visibility:visible !important;z-index:2;}
 @media (max-width:700px){.homepage-image-banner img{height:150px;}}
 @media(max-width:900px){.header-inner{flex-direction:column;padding:15px 0;}nav{justify-content:center;}.cards{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.steps{grid-template-columns:repeat(2,1fr);}.scheme-list{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){.hero{padding:60px 0;}.hero h2{font-size:30px;}.hero h3{font-size:19px;}.cards,.support-grid,.scheme-list,.steps{grid-template-columns:1fr;}.stats{grid-template-columns:1fr 1fr;}.brand h1{font-size:18px;}nav{gap:9px;}nav a{font-size:12px;}}
 
 /* SBA Homepage Professional Hero */
-.homepage-image-banner{position:relative;overflow:hidden;background:#0b2d4d;height:330px;min-height:330px;}
-.homepage-image-banner img.language-banner{height:330px!important;max-width:none!important;width:100%!important;object-fit:contain!important;object-position:center center!important;filter:none;}
+.homepage-image-banner{position:relative;overflow:hidden;background:#0b2d4d;width:100%;aspect-ratio:7.75/1;height:auto;min-height:0;}
+.homepage-image-banner img.language-banner{height:100%!important;max-width:none!important;width:100%!important;object-fit:fill!important;object-position:center center!important;filter:none;}
 .homepage-image-banner:after{display:none;}
 .home-hero-copy{display:none;}
 .home-hero-copy-inner{max-width:850px;text-shadow:0 2px 8px rgba(0,0,0,.42);}
@@ -106,7 +106,7 @@ footer li{margin-bottom:7px;}
 .card .icon{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#edf3f7;font-size:32px;box-shadow:0 4px 12px rgba(18,60,105,.10)}
 .card:hover .icon{transform:scale(1.06);transition:.2s}
 .section-title h2{font-weight:800}
-@media(max-width:600px){.homepage-image-banner{height:250px!important;min-height:250px}.homepage-image-banner img.language-banner{height:250px!important;object-fit:contain!important;object-position:center center!important}.home-hero-copy p{font-size:14px}.home-hero-copy h2{font-size:29px}}
+@media(max-width:600px){.homepage-image-banner{height:180px!important;min-height:180px;aspect-ratio:auto}.homepage-image-banner img.language-banner{height:180px!important;object-fit:fill!important;object-position:center center!important}.home-hero-copy p{font-size:14px}.home-hero-copy h2{font-size:29px}}
 </style>
 </head>
 <body>
