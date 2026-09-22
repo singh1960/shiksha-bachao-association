@@ -52,6 +52,8 @@ mr:{tableArea:'क्षेत्र',tableNature:'सहाय्याचे �
 function render(lang){
 const d=data[lang];
 document.documentElement.lang=lang;
+document.body.classList.remove('sba-hi','sba-en','sba-mr');
+document.body.classList.add('sba-'+lang);
 let h='';
 h+=`<section class="card"><h2>${d.intro}</h2><p>${d.introText}</p><div class="notice"><strong>${lang==='hi'?'महत्त्वपूर्ण सूचना:':lang==='en'?'Important Notice:':'महत्त्वाची सूचना:'}</strong> ${d.notice}</div></section>`;
 h+=`<section class="card"><h2>${d.objectives}</h2><div class="grid">${d.obj.map(x=>`<div class="feature"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div></section>`;
@@ -66,7 +68,8 @@ h+=`<section class="card"><h2>${d.more}</h2><p>${d.moreText}</p><a class="downlo
 document.getElementById('content').innerHTML=h;
 var banner=document.getElementById('sbaFinalBanner');
 if(banner){banner.style.backgroundImage="url('"+(lang==='en'?'banner-english.png':lang==='mr'?'banner-marathi.png':'banner-hindi.png')+"')";}
-document.getElementById('footerText').textContent=d.footer;
+var footerText=document.getElementById('footerText');
+if(footerText) footerText.textContent=d.footer;
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
 }
 
