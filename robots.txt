@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singh1960.github.io/shiksha-bachao-association/sitemap.xml
