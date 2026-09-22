@@ -64,6 +64,8 @@ h+=`<section class="card"><h2>${d.nominee}</h2><p>${d.nomineeText}</p></section>
 h+=`<section class="benefits-link"><h2>${lang==='hi'?'सहायता की विस्तृत जानकारी':lang==='en'?'Detailed Assistance Information':'सहाय्याची सविस्तर माहिती'}</h2><p>${lang==='hi'?'चिकित्सा, दुर्घटना, परिवार सुरक्षा और शिक्षा सहायता के बारे में विस्तृत जानकारी देखें।':lang==='en'?'View detailed information about medical, accident, family and educational assistance.':'वैद्यकीय, अपघात, कुटुंब सुरक्षा आणि शैक्षणिक सहाय्याची सविस्तर माहिती पहा.'}</p><a href="welfare-benefits.html">${lang==='hi'?'सहायता की विस्तृत जानकारी देखें':lang==='en'?'View Detailed Assistance Information':'सहाय्याची सविस्तर माहिती पहा'}</a></section>`;
 h+=`<section class="card"><h2>${d.more}</h2><p>${d.moreText}</p><a class="download" href="index.html">${d.home}</a> <a class="download" href="about-us-professional.html">${d.about}</a> <a class="download" href="downloads-forms.html">${d.downloads}</a></section>`;
 document.getElementById('content').innerHTML=h;
+var banner=document.getElementById('sbaFinalBanner');
+if(banner){banner.style.backgroundImage="url('"+(lang==='en'?'banner-english.png':lang==='mr'?'banner-marathi.png':'banner-hindi.png')+"')";}
 document.getElementById('footerText').textContent=d.footer;
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
 }
@@ -78,8 +80,7 @@ var q=new URLSearchParams(location.search).get('lang');
 var saved='hi';
 try{saved=localStorage.getItem('sba-language')||'hi'}catch(e){}
 if(q && ['hi','en','mr'].includes(q)) render(q); else render(saved);
-var banner=document.getElementById('sbaFinalBanner');
-if(banner) banner.style.backgroundImage="url('"+(saved==='en'?'banner-english.png':saved==='mr'?'banner-marathi.png':'banner-hindi.png')+"')";
+
 });
 </script>
 <script id="sba-unified-language-navigation">(function(){var S=['hi','en','mr'],P=['index.html','about-us-professional.html','about-us.html','downloads-forms.html','education-court-orders.html','eligibility.html','government-schemes.html','government-updates.html','membership.html','welfare-benefits.html','welfare-scheme.html'];function v(x){return S.indexOf(x)>=0?x:'hi'}function save(x){try{localStorage.setItem('sba-language',x)}catch(e){}}function sync(x){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|javascript:|#)/i.test(h))return;var z=h.split('#'),base=z[0],hash=z[1]?'#'+z[1]:'';var q=base.split('?'),p=q[0];if(P.indexOf(p)<0)return;var ps=new URLSearchParams(q[1]||'');ps.set('lang',x);a.setAttribute('href',p+'?'+ps.toString()+hash)})}function activate(x){x=v(x);document.documentElement.lang=x;save(x);sync(x);if(typeof window.setSbaLang==='function')window.setSbaLang(x);else if(typeof window.setLanguage==='function')window.setLanguage(x);else if(typeof window.render==='function')window.render(x);var banner=document.getElementById('sbaFinalBanner');if(banner){banner.style.backgroundImage="url('"+(x==='en'?'banner-english.png':x==='mr'?'banner-marathi.png':'banner-hindi.png')+"')"}}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.languages button,.sba-language-bar button,.lang-btn,[data-lang]').forEach(function(b){b.addEventListener('click',function(){activate(b.getAttribute('data-lang')||b.id.replace(/Btn$/,''))})});var q=new URLSearchParams(location.search).get('lang'),x=S.indexOf(q)>=0?q:(function(){try{return localStorage.getItem('sba-language')||'hi'}catch(e){return'hi'}})();activate(x)})})();</script>
