@@ -367,28 +367,6 @@ body.sba-hi .lang.hi,body.sba-en .lang.en,body.sba-mr .lang.mr{display:block!imp
   <div class="copyright">© <span id="year"></span> Shiksha Bachao Association. All Rights Reserved.</div>
 </footer>
 
-<script>
-(function(){
-  function setLanguage(lang){
-    if(!['mr','hi','en'].includes(lang)){lang='hi';}
-    document.querySelectorAll('.lang').forEach(function(el){
-      el.classList.toggle('active',el.classList.contains(lang));
-    });
-    document.querySelectorAll('.languages button').forEach(function(btn){
-      btn.classList.remove('active');
-    });
-    document.getElementById(lang+'Btn').classList.add('active');
-    document.documentElement.lang = lang === 'mr' ? 'mr' : lang;
-    localStorage.setItem('sba-language',lang);
-  }
-  window.setLanguage=setLanguage;
-  document.getElementById('year').textContent=new Date().getFullYear();
-  var saved=localStorage.getItem('sba-language') || 'hi';
-  setLanguage(saved);
-})();
-</script>
-
-
 <script id="sba-language-controller">
 (function(){
 function setSbaLang(lang){
