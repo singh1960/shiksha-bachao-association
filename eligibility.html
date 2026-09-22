@@ -92,27 +92,6 @@ body.sba-hi .lang.hi,body.sba-en .lang.en,body.sba-mr .lang.mr{display:block!imp
 <a class="member" href="membership.html">🤝 सदस्य बनें / Become a Member</a>
 </nav><footer><div class="container"><p>© <span id="year"></span> Shiksha Bachao Association. All Rights Reserved.</p></div></footer>
 
-<script>
-(function(){
-function setLanguage(lang){
-if(!['mr','hi','en'].includes(lang))lang='hi';
-document.querySelectorAll('.lang').forEach(function(el){el.classList.remove('active')});
-document.querySelectorAll('.lang.'+lang).forEach(function(el){el.classList.add('active')});
-document.querySelectorAll('.languages button').forEach(function(btn){btn.classList.toggle('active',btn.id===lang+'Btn')});
-document.documentElement.lang=lang;
-document.querySelectorAll('nav a').forEach(function(a){
-var href=a.getAttribute('href');
-if(href && href.indexOf('eligibility.html')===0)a.href='eligibility.html?lang='+lang;
-if(href && href.indexOf('welfare-scheme.html')===0)a.href='welfare-scheme.html?lang='+lang;
-if(href && href.indexOf('government-schemes.html')===0)a.href='government-schemes.html?lang='+lang;
-});
-}
-window.setLanguage=setLanguage;
-document.getElementById('year').textContent=new Date().getFullYear();
-var p=new URLSearchParams(location.search);setLanguage(p.get('lang')||'hi');
-})();
-</script>
-
 <script id="sba-language-controller">
 (function(){
 function setSbaLang(lang){
