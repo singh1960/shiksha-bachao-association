@@ -151,11 +151,18 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 
 
 
-<style id="sba-clean-page-hero">
-.sba-clean-hero{position:relative;max-width:1150px;margin:0 auto 30px;padding:55px 28px;background:linear-gradient(135deg,#0b3558,#176b8e);color:#fff;border-bottom:5px solid #e2a900;box-shadow:0 8px 24px rgba(18,60,105,.16);overflow:hidden}
-.sba-clean-hero:after{content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
-.sba-clean-hero .icon{font-size:40px;margin-bottom:12px}.sba-clean-hero h2{margin:0;font-size:42px;line-height:1.2;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.25)}.sba-clean-hero p{margin:12px 0 0;font-size:18px;max-width:760px;color:#fff}.sba-clean-hero .line{width:85px;height:4px;background:#e2a900;border-radius:4px;margin-top:16px}
-@media(max-width:700px){.sba-clean-hero{padding:42px 20px}.sba-clean-hero h2{font-size:30px}.sba-clean-hero p{font-size:16px}}
+<style id="sba-final-language-system">
+/* Final SBA language + banner system */
+.lang-hi,.lang-en,.lang-mr{display:none!important}
+body.sba-hi .lang-hi{display:inline!important} body.sba-en .lang-en{display:inline!important} body.sba-mr .lang-mr{display:inline!important}
+.lang.hi,.lang.en,.lang.mr{display:none!important}
+body.sba-hi .lang.hi,body.sba-en .lang.en,body.sba-mr .lang.mr{display:block!important}
+.sba-final-banner{position:relative;min-height:230px;margin:0 auto 26px;max-width:1150px;background-size:cover;background-position:center;display:flex;align-items:center;overflow:hidden;border-bottom:5px solid #e2a900;box-shadow:0 7px 22px rgba(18,60,105,.15)}
+.sba-final-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,42,78,.78),rgba(7,42,78,.28))}
+.sba-final-banner-title{position:relative;z-index:2;padding:35px 28px;color:#fff}
+.sba-final-banner-title h2{margin:0;font-size:40px;line-height:1.2;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.sba-final-banner-title p{margin:8px 0 0;font-size:17px;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+@media(max-width:700px){.sba-final-banner{min-height:190px}.sba-final-banner-title{padding:28px 20px}.sba-final-banner-title h2{font-size:30px}.sba-final-banner-title p{font-size:15px}}
 </style></head>
 
 <body>
@@ -178,12 +185,12 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
   </div>
 </section>
 
-<section class="sba-clean-hero" aria-label="हमारे बारे में">
-<div class="icon">👥</div>
+
+<section class="sba-final-banner" id="sbaFinalBanner" aria-label="हमारे बारे में">
+<div class="sba-final-banner-title">
 <h2><span class="lang-hi">हमारे बारे में</span><span class="lang-en">About Us</span><span class="lang-mr">आमच्याबद्दल</span></h2>
-<p><span class="lang-hi">शिक्षा बचाओ संगठन का परिचय, उद्देश्य और कार्य</span><span class="lang-en">Introduction, objectives and work of the association</span><span class="lang-mr">शिक्षा बचाओ संघटनेचा परिचय, उद्दिष्टे आणि कार्य</span></p>
-<div class="line"></div>
-</section>
+<p><span class="lang-hi">शिक्षा बचाओ संगठन का परिचय और उद्देश्य</span><span class="lang-en">Introduction and objectives of the association</span><span class="lang-mr">संघटनेचा परिचय आणि उद्दिष्टे</span></p>
+</div></section>
 <main class="container">
 
 
@@ -373,5 +380,25 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 </script>
 
 
-</body>
+<script id="sba-language-controller">
+(function(){
+function setSbaLang(lang){
+ if(!['hi','en','mr'].includes(lang)) lang='hi';
+ document.body.classList.remove('sba-hi','sba-en','sba-mr');
+ document.body.classList.add('sba-'+lang);
+ document.documentElement.lang=lang;
+ document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===lang)});
+ var banner=document.getElementById('sbaFinalBanner');
+ if(banner) banner.style.backgroundImage="url('"+(lang==='en'?'banner-english.png':lang==='mr'?'banner-marathi.png':'banner-hindi.png')+"')";
+ try{localStorage.setItem('sba-language',lang)}catch(e){}
+}
+window.setSbaLang=setSbaLang;
+document.addEventListener('DOMContentLoaded',function(){
+ document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setSbaLang(b.getAttribute('data-lang'))})});
+ var q=new URLSearchParams(location.search).get('lang');
+ var saved='hi'; try{saved=localStorage.getItem('sba-language')||'hi'}catch(e){}
+ setSbaLang(['hi','en','mr'].includes(q)?q:saved);
+});
+})();
+</script></body>
 </html>
