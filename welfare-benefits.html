@@ -11,190 +11,197 @@
 *{box-sizing:border-box}
 
 body{
-    font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;
-    margin:0;
-    background:#f5f8fb;
-    color:#243447;
-    line-height:1.8;
+font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;
+margin:0;
+background:#f5f8fb;
+color:#243447;
+line-height:1.8;
 }
 
 header{
-    background:linear-gradient(135deg,#12355b,#176b87);
-    color:#fff;
-    padding:28px 16px;
-    text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.12);
+background:linear-gradient(135deg,#12355b,#176b87);
+color:#fff;
+padding:28px 16px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
 header h1{
-    margin:0 0 8px;
-    font-size:clamp(25px,4vw,36px);
+margin:0 0 8px;
+font-size:clamp(25px,4vw,36px);
 }
 
 header p{
-    margin:0;
-    font-size:17px;
+margin:0;
+font-size:17px;
 }
 
 .container{
-    max-width:1100px;
-    width:92%;
-    margin:25px auto;
+max-width:1100px;
+width:92%;
+margin:25px auto;
 }
 
 .top-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:22px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:22px;
 }
 
 .top-links a{
-    display:inline-block;
-    background:#12355b;
-    color:#fff;
-    padding:9px 15px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+background:#12355b;
+color:#fff;
+padding:9px 15px;
+border-radius:7px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .languages{
-    text-align:center;
-    margin:20px 0 25px;
+text-align:center;
+margin:20px 0 25px;
 }
 
 .lang-btn{
-    border:0;
-    border-radius:7px;
-    background:#176b87;
-    color:#fff;
-    padding:10px 20px;
-    margin:4px;
-    font-weight:bold;
-    cursor:pointer;
+border:0;
+border-radius:7px;
+background:#176b87;
+color:#fff;
+padding:10px 20px;
+margin:4px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .lang-btn.active{
-    background:#12355b;
-    outline:3px solid #e2a900;
+background:#12355b;
+outline:3px solid #e2a900;
 }
 
 .card{
-    background:#fff;
-    border-radius:14px;
-    padding:25px;
-    margin-bottom:22px;
-    box-shadow:0 4px 18px rgba(0,0,0,.08);
-    border-top:5px solid #12355b;
+background:#fff;
+border-radius:14px;
+padding:25px;
+margin-bottom:22px;
+box-shadow:0 4px 18px rgba(0,0,0,.08);
+border-top:5px solid #12355b;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px;
 }
 
 .icon{
-    font-size:40px;
+font-size:40px;
 }
 
 .card h2{
-    color:#12355b;
-    margin:8px 0 12px;
-}
-
-.card h3{
-    color:#176b87;
+color:#12355b;
+margin:8px 0 12px;
 }
 
 .documents{
-    background:#f0f7fb;
-    border-radius:10px;
-    padding:15px 18px;
-    margin-top:15px;
+background:#f0f7fb;
+border-radius:10px;
+padding:15px 18px;
+margin-top:15px;
 }
 
 .note{
-    background:#fff8e8;
-    border-left:5px solid #d27b00;
-    padding:16px;
-    margin-top:25px;
-    border-radius:6px;
+background:#fff8e8;
+border-left:5px solid #d27b00;
+padding:16px;
+margin-top:25px;
+border-radius:6px;
 }
 
-.back-link{
-    display:inline-block;
-    background:#176b87;
-    color:#fff;
-    padding:11px 18px;
-    border-radius:7px;
-    text-decoration:none;
-    font-weight:bold;
+.main-scheme{
+text-align:center;
+background:#eef6fa;
+border-radius:12px;
+padding:20px;
+margin-bottom:25px;
+border:1px solid #d7e7ef;
 }
 
-footer{
-    background:#12355b;
-    color:#fff;
-    text-align:center;
-    padding:25px 15px;
-    margin-top:35px;
+.main-scheme a{
+display:inline-block;
+background:#176b87;
+color:#fff;
+padding:11px 20px;
+border-radius:7px;
+text-decoration:none;
+font-weight:bold;
+margin-top:8px;
 }
 
 .lang-hi,.lang-en,.lang-mr{
-    display:none;
+display:none;
 }
 
 body.sba-hi .lang-hi{
-    display:inline;
+display:inline;
 }
 
 body.sba-en .lang-en{
-    display:inline;
+display:inline;
 }
 
 body.sba-mr .lang-mr{
-    display:inline;
+display:inline;
 }
 
 .block-hi,.block-en,.block-mr{
-    display:none;
+display:none;
 }
 
 body.sba-hi .block-hi{
-    display:block;
+display:block;
 }
 
 body.sba-en .block-en{
-    display:block;
+display:block;
 }
 
 body.sba-mr .block-mr{
-    display:block;
+display:block;
+}
+
+footer{
+background:#12355b;
+color:#fff;
+text-align:center;
+padding:25px 15px;
+margin-top:35px;
 }
 
 @media(max-width:700px){
 
-    .grid{
-        grid-template-columns:1fr;
-    }
+.grid{
+grid-template-columns:1fr;
+}
 
-    .container{
-        width:94%;
-    }
+.container{
+width:94%;
+}
 
-    .card{
-        padding:19px;
-    }
+.card{
+padding:19px;
+}
 
-    .top-links a{
-        width:100%;
-        text-align:center;
-    }
+.top-links a{
+width:100%;
+text-align:center;
+}
 
-    .lang-btn{
-        padding:9px 14px;
-    }
+.lang-btn{
+padding:9px 14px;
+}
+
 }
 </style>
 </head>
@@ -202,317 +209,446 @@ body.sba-mr .block-mr{
 <body class="sba-hi">
 
 <header>
-    <h1>
-        <span class="lang-hi">कल्याण योजना की विस्तृत जानकारी</span>
-        <span class="lang-en">Detailed Information on Welfare Assistance</span>
-        <span class="lang-mr">कल्याण योजनेची सविस्तर माहिती</span>
-    </h1>
 
-    <p>
-        <span class="lang-hi">शिक्षा बचाओ संगठन — शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण योजना</span>
-        <span class="lang-en">Shiksha Bachao Association — Teacher & Non-Teaching Employee Welfare Scheme</span>
-        <span class="lang-mr">शिक्षा बचाओ संघटना — शिक्षक व शिक्षकेतर कर्मचारी कल्याण योजना</span>
-    </p>
+<h1>
+<span class="lang-hi">कल्याण योजना की विस्तृत जानकारी</span>
+<span class="lang-en">Detailed Information on Welfare Assistance</span>
+<span class="lang-mr">कल्याण योजनेची सविस्तर माहिती</span>
+</h1>
+
+<p>
+<span class="lang-hi">
+शिक्षा बचाओ संगठन — शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण योजना
+</span>
+
+<span class="lang-en">
+Shiksha Bachao Association — Teacher & Non-Teaching Employee Welfare Scheme
+</span>
+
+<span class="lang-mr">
+शिक्षा बचाओ संघटना — शिक्षक व शिक्षकेतर कर्मचारी कल्याण योजना
+</span>
+</p>
+
 </header>
 
 <div class="container">
 
-    <div class="top-links">
-        <a href="index.html">
-            <span class="lang-hi">← मुख्य पृष्ठ</span>
-            <span class="lang-en">← Home</span>
-            <span class="lang-mr">← मुख्यपृष्ठ</span>
-        </a>
-    </div>
+<div class="top-links">
 
-    <div class="languages" aria-label="Language selection">
+<a href="index.html">
+<span class="lang-hi">← मुख्य पृष्ठ</span>
+<span class="lang-en">← Home</span>
+<span class="lang-mr">← मुख्यपृष्ठ</span>
+</a>
 
-        <button class="lang-btn active" data-lang="hi">
-            हिंदी
-        </button>
+<a href="welfare-scheme.html">
+<span class="lang-hi">मुख्य कल्याण योजना</span>
+<span class="lang-en">Main Welfare Scheme</span>
+<span class="lang-mr">मुख्य कल्याण योजना</span>
+</a>
 
-        <button class="lang-btn" data-lang="en">
-            English
-        </button>
+</div>
 
-        <button class="lang-btn" data-lang="mr">
-            मराठी
-        </button>
 
-    </div>
+<div class="languages">
 
+<button class="lang-btn active" data-lang="hi">
+हिंदी
+</button>
 
-    <!-- HINDI -->
+<button class="lang-btn" data-lang="en">
+English
+</button>
 
-    <div class="block-hi">
+<button class="lang-btn" data-lang="mr">
+मराठी
+</button>
 
-        <section class="card">
-            <div class="icon">🏥</div>
-            <h2>चिकित्सा सहायता</h2>
+</div>
 
-            <p>
-                गंभीर बीमारी, अस्पताल में भर्ती होने अथवा आवश्यक चिकित्सा उपचार की
-                स्थिति में पात्र सदस्यों को निर्धारित नियमों और उपलब्ध निधि के
-                अनुसार सहायता प्रदान की जा सकती है।
-            </p>
 
-            <div class="documents">
-                <strong>संभावित दस्तावेज:</strong>
-                चिकित्सा प्रमाणपत्र, अस्पताल के बिल, डिस्चार्ज सारांश तथा सदस्यता प्रमाण।
-            </div>
-        </section>
+<!-- HINDI -->
 
+<div class="block-hi">
 
-        <section class="card">
-            <div class="icon">🛡️</div>
-            <h2>दुर्घटना सहायता</h2>
+<div class="main-scheme">
 
-            <p>
-                दुर्घटना, अस्थायी या स्थायी विकलांगता जैसी परिस्थितियों में पात्र
-                सदस्य को योजना के नियमों के अनुसार सहायता उपलब्ध कराई जा सकती है।
-            </p>
+<h2>शिक्षक कल्याण योजना</h2>
 
-            <div class="documents">
-                <strong>संभावित दस्तावेज:</strong>
-                दुर्घटना रिपोर्ट, चिकित्सकीय प्रमाणपत्र, विकलांगता प्रमाणपत्र तथा
-                अन्य आवश्यक अभिलेख।
-            </div>
-        </section>
-
+<p>
+यह पेज कल्याण योजना के अंतर्गत उपलब्ध प्रस्तावित सहायता के विभिन्न
+क्षेत्रों की विस्तृत जानकारी के लिए है।
+</p>
 
-        <section class="card">
-            <div class="icon">👨‍👩‍👧</div>
-            <h2>परिवार सुरक्षा</h2>
+<a href="welfare-scheme.html">
+मुख्य कल्याण योजना देखें
+</a>
 
-            <p>
-                सदस्य की मृत्यु होने पर नामांकित व्यक्ति अथवा पात्र आश्रित परिवार को
-                निर्धारित प्रक्रिया और नियमों के अनुसार सहायता प्रदान की जा सकती है।
-            </p>
+</div>
 
-            <div class="documents">
-                <strong>संभावित दस्तावेज:</strong>
-                मृत्यु प्रमाणपत्र, नामांकन विवरण, पारिवारिक संबंध का प्रमाण तथा पहचान-पत्र।
-            </div>
-        </section>
-
-
-        <section class="card">
-            <div class="icon">🎓</div>
-            <h2>शिक्षा सहायता</h2>
 
-            <p>
-                सदस्य के आश्रित बच्चों की शिक्षा के लिए पात्रता, उपलब्ध निधि और
-                समिति के निर्णय के अनुसार सहायता का प्रावधान किया जा सकता है।
-            </p>
-
-            <div class="documents">
-                <strong>संभावित दस्तावेज:</strong>
-                विद्यालय/महाविद्यालय प्रमाणपत्र, शुल्क रसीद, आश्रित होने का प्रमाण
-                तथा सदस्यता विवरण।
-            </div>
-        </section>
+<div class="grid">
 
+<section class="card">
 
-        <div class="note">
-            <strong>महत्वपूर्ण सूचना:</strong>
-            ऊपर दी गई सहायता योजनाएँ प्रस्तावित जानकारी के रूप में हैं।
-            वास्तविक सहायता राशि, पात्रता, आवश्यक दस्तावेज और स्वीकृति की
-            प्रक्रिया संगठन के अंतिम नियमों एवं उपलब्ध निधि के अनुसार निर्धारित होगी।
-        </div>
+<div class="icon">🏥</div>
 
-    </div>
+<h2>चिकित्सा सहायता</h2>
 
+<p>
+गंभीर बीमारी, अस्पताल में भर्ती होने अथवा आवश्यक चिकित्सा उपचार की
+स्थिति में पात्र सदस्यों को निर्धारित नियमों और उपलब्ध निधि के अनुसार
+सहायता प्रदान की जा सकती है।
+</p>
 
-    <!-- ENGLISH -->
+<div class="documents">
+<strong>संभावित दस्तावेज:</strong>
+चिकित्सा प्रमाणपत्र, अस्पताल के बिल, डिस्चार्ज सारांश तथा सदस्यता प्रमाण।
+</div>
 
-    <div class="block-en">
+</section>
 
-        <section class="card">
-            <div class="icon">🏥</div>
-            <h2>Medical Assistance</h2>
 
-            <p>
-                Eligible members may receive assistance in cases of serious illness,
-                hospitalisation or necessary medical treatment, subject to the
-                approved rules and availability of funds.
-            </p>
+<section class="card">
 
-            <div class="documents">
-                <strong>Possible documents:</strong>
-                Medical certificate, hospital bills, discharge summary and proof of membership.
-            </div>
-        </section>
+<div class="icon">🛡️</div>
 
+<h2>दुर्घटना सहायता</h2>
 
-        <section class="card">
-            <div class="icon">🛡️</div>
-            <h2>Accident Assistance</h2>
+<p>
+दुर्घटना, अस्थायी या स्थायी विकलांगता जैसी परिस्थितियों में पात्र सदस्य
+को योजना के नियमों के अनुसार सहायता उपलब्ध कराई जा सकती है।
+</p>
 
-            <p>
-                Assistance may be provided to eligible members in cases of accidents,
-                temporary disability or permanent disability, subject to the rules
-                of the scheme.
-            </p>
+<div class="documents">
+<strong>संभावित दस्तावेज:</strong>
+दुर्घटना रिपोर्ट, चिकित्सकीय प्रमाणपत्र, विकलांगता प्रमाणपत्र तथा
+अन्य आवश्यक अभिलेख।
+</div>
 
-            <div class="documents">
-                <strong>Possible documents:</strong>
-                Accident report, medical certificate, disability certificate and
-                other required records.
-            </div>
-        </section>
+</section>
 
 
-        <section class="card">
-            <div class="icon">👨‍👩‍👧</div>
-            <h2>Family Security</h2>
+<section class="card">
 
-            <p>
-                In the event of the death of a member, assistance may be provided to
-                the nominated person or eligible dependent family according to the
-                prescribed procedure and rules.
-            </p>
+<div class="icon">👨‍👩‍👧</div>
 
-            <div class="documents">
-                <strong>Possible documents:</strong>
-                Death certificate, nomination details, proof of family relationship
-                and identity document.
-            </div>
-        </section>
-
-
-        <section class="card">
-            <div class="icon">🎓</div>
-            <h2>Educational Assistance</h2>
+<h2>परिवार सुरक्षा</h2>
 
-            <p>
-                Assistance may be provided for the education of dependent children
-                of members, subject to eligibility, availability of funds and the
-                decision of the competent committee.
-            </p>
+<p>
+सदस्य की मृत्यु होने पर नामांकित व्यक्ति अथवा पात्र आश्रित परिवार को
+निर्धारित प्रक्रिया और नियमों के अनुसार सहायता प्रदान की जा सकती है।
+</p>
 
-            <div class="documents">
-                <strong>Possible documents:</strong>
-                School/college certificate, fee receipt, proof of dependency and
-                membership details.
-            </div>
-        </section>
-
-
-        <div class="note">
-            <strong>Important Information:</strong>
-            The assistance schemes described above are proposed information.
-            The actual assistance amount, eligibility, required documents and
-            approval procedure will be determined according to the final rules
-            of the Association and availability of funds.
-        </div>
-
-    </div>
-
-
-    <!-- MARATHI -->
-
-    <div class="block-mr">
-
-        <section class="card">
-            <div class="icon">🏥</div>
-            <h2>वैद्यकीय सहाय्य</h2>
-
-            <p>
-                गंभीर आजार, रुग्णालयात दाखल होणे किंवा आवश्यक वैद्यकीय उपचाराच्या
-                परिस्थितीत पात्र सदस्यांना मंजूर नियमावली आणि उपलब्ध निधीनुसार
-                सहाय्य दिले जाऊ शकते.
-            </p>
-
-            <div class="documents">
-                <strong>संभाव्य कागदपत्रे:</strong>
-                वैद्यकीय प्रमाणपत्र, रुग्णालयाची बिले, डिस्चार्ज सारांश आणि
-                सदस्यत्वाचा पुरावा.
-            </div>
-        </section>
-
-
-        <section class="card">
-            <div class="icon">🛡️</div>
-            <h2>अपघात सहाय्य</h2>
-
-            <p>
-                अपघात, तात्पुरते किंवा कायमस्वरूपी अपंगत्व अशा परिस्थितीत पात्र
-                सदस्यांना योजनेच्या नियमांनुसार सहाय्य दिले जाऊ शकते.
-            </p>
-
-            <div class="documents">
-                <strong>संभाव्य कागदपत्रे:</strong>
-                अपघात अहवाल, वैद्यकीय प्रमाणपत्र, अपंगत्व प्रमाणपत्र आणि
-                आवश्यक इतर कागदपत्रे.
-            </div>
-        </section>
-
-
-        <section class="card">
-            <div class="icon">👨‍👩‍👧</div>
-            <h2>कुटुंब सुरक्षा</h2>
-
-            <p>
-                सदस्याचा मृत्यू झाल्यास नामनिर्देशित व्यक्ती किंवा पात्र आश्रित
-                कुटुंबाला निर्धारित प्रक्रिया आणि नियमांनुसार सहाय्य दिले जाऊ शकते.
-            </p>
-
-            <div class="documents">
-                <strong>संभाव्य कागदपत्रे:</strong>
-                मृत्यू प्रमाणपत्र, नामनिर्देशनाचा तपशील, कौटुंबिक संबंधाचा पुरावा
-                आणि ओळखपत्र.
-            </div>
-        </section>
-
-
-        <section class="card">
-            <div class="icon">🎓</div>
-            <h2>शैक्षणिक सहाय्य</h2>
-
-            <p>
-                सदस्यांच्या आश्रित मुलांच्या शिक्षणासाठी पात्रता, उपलब्ध निधी आणि
-                सक्षम समितीच्या निर्णयानुसार सहाय्याची तरतूद केली जाऊ शकते.
-            </p>
-
-            <div class="documents">
-                <strong>संभाव्य कागदपत्रे:</strong>
-                शाळा/महाविद्यालय प्रमाणपत्र, शुल्क पावती, आश्रित असल्याचा पुरावा
-                आणि सदस्यत्वाचा तपशील.
-            </div>
-        </section>
-
-
-        <div class="note">
-            <strong>महत्त्वाची सूचना:</strong>
-            वरील सहाय्य योजना प्रस्तावित स्वरूपातील माहिती आहे.
-            प्रत्यक्ष सहाय्याची रक्कम, पात्रता, आवश्यक कागदपत्रे आणि मंजुरीची
-            प्रक्रिया संघटनेच्या अंतिम नियमावलीनुसार आणि उपलब्ध निधीनुसार निश्चित केली जाईल.
-        </div>
-
-    </div>
+<div class="documents">
+<strong>संभावित दस्तावेज:</strong>
+मृत्यु प्रमाणपत्र, नामांकन विवरण, पारिवारिक संबंध का प्रमाण तथा पहचान-पत्र।
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">🎓</div>
+
+<h2>शिक्षा सहायता</h2>
+
+<p>
+सदस्य के आश्रित बच्चों की शिक्षा के लिए पात्रता, उपलब्ध निधि और समिति
+के निर्णय के अनुसार सहायता का प्रावधान किया जा सकता है।
+</p>
+
+<div class="documents">
+<strong>संभावित दस्तावेज:</strong>
+विद्यालय/महाविद्यालय प्रमाणपत्र, शुल्क रसीद, आश्रित होने का प्रमाण
+तथा सदस्यता विवरण।
+</div>
+
+</section>
+
+</div>
+
+
+<div class="note">
+
+<strong>महत्वपूर्ण सूचना:</strong>
+
+ऊपर दी गई सहायता योजनाएँ प्रस्तावित जानकारी के रूप में हैं।
+वास्तविक सहायता राशि, पात्रता, आवश्यक दस्तावेज और स्वीकृति की
+प्रक्रिया संगठन के अंतिम नियमों एवं उपलब्ध निधि के अनुसार निर्धारित होगी।
+
+</div>
+
+</div>
+
+
+<!-- ENGLISH -->
+
+<div class="block-en">
+
+<div class="main-scheme">
+
+<h2>Teacher Welfare Scheme</h2>
+
+<p>
+This page provides detailed information about the proposed areas of
+assistance under the Welfare Scheme.
+</p>
+
+<a href="welfare-scheme.html">
+View Main Welfare Scheme
+</a>
+
+</div>
+
+
+<div class="grid">
+
+<section class="card">
+
+<div class="icon">🏥</div>
+
+<h2>Medical Assistance</h2>
+
+<p>
+Eligible members may receive assistance in cases of serious illness,
+hospitalisation or necessary medical treatment, subject to the approved
+rules and availability of funds.
+</p>
+
+<div class="documents">
+<strong>Possible documents:</strong>
+Medical certificate, hospital bills, discharge summary and proof of membership.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">🛡️</div>
+
+<h2>Accident Assistance</h2>
+
+<p>
+Assistance may be provided to eligible members in cases of accidents,
+temporary disability or permanent disability, subject to the rules
+of the scheme.
+</p>
+
+<div class="documents">
+<strong>Possible documents:</strong>
+Accident report, medical certificate, disability certificate and
+other required records.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">👨‍👩‍👧</div>
+
+<h2>Family Security</h2>
+
+<p>
+In the event of the death of a member, assistance may be provided to
+the nominated person or eligible dependent family according to the
+prescribed procedure and rules.
+</p>
+
+<div class="documents">
+<strong>Possible documents:</strong>
+Death certificate, nomination details, proof of family relationship
+and identity document.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">🎓</div>
+
+<h2>Educational Assistance</h2>
+
+<p>
+Assistance may be provided for the education of dependent children
+of members, subject to eligibility, availability of funds and the
+decision of the competent committee.
+</p>
+
+<div class="documents">
+<strong>Possible documents:</strong>
+School/college certificate, fee receipt, proof of dependency and
+membership details.
+</div>
+
+</section>
+
+</div>
+
+
+<div class="note">
+
+<strong>Important Information:</strong>
+
+The assistance schemes described above are proposed information.
+The actual assistance amount, eligibility, required documents and
+approval procedure will be determined according to the final rules
+of the Association and availability of funds.
+
+</div>
+
+</div>
+
+
+<!-- MARATHI -->
+
+<div class="block-mr">
+
+<div class="main-scheme">
+
+<h2>शिक्षक कल्याण योजना</h2>
+
+<p>
+या पृष्ठावर कल्याण योजनेअंतर्गत प्रस्तावित सहाय्याच्या विविध
+क्षेत्रांची सविस्तर माहिती दिली आहे.
+</p>
+
+<a href="welfare-scheme.html">
+मुख्य कल्याण योजना पहा
+</a>
+
+</div>
+
+
+<div class="grid">
+
+<section class="card">
+
+<div class="icon">🏥</div>
+
+<h2>वैद्यकीय सहाय्य</h2>
+
+<p>
+गंभीर आजार, रुग्णालयात दाखल होणे किंवा आवश्यक वैद्यकीय उपचाराच्या
+परिस्थितीत पात्र सदस्यांना मंजूर नियमावली आणि उपलब्ध निधीनुसार
+सहाय्य दिले जाऊ शकते.
+</p>
+
+<div class="documents">
+<strong>संभाव्य कागदपत्रे:</strong>
+वैद्यकीय प्रमाणपत्र, रुग्णालयाची बिले, डिस्चार्ज सारांश आणि
+सदस्यत्वाचा पुरावा.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">🛡️</div>
+
+<h2>अपघात सहाय्य</h2>
+
+<p>
+अपघात, तात्पुरते किंवा कायमस्वरूपी अपंगत्व अशा परिस्थितीत पात्र
+सदस्यांना योजनेच्या नियमांनुसार सहाय्य दिले जाऊ शकते.
+</p>
+
+<div class="documents">
+<strong>संभाव्य कागदपत्रे:</strong>
+अपघात अहवाल, वैद्यकीय प्रमाणपत्र, अपंगत्व प्रमाणपत्र आणि
+आवश्यक इतर कागदपत्रे.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">👨‍👩‍👧</div>
+
+<h2>कुटुंब सुरक्षा</h2>
+
+<p>
+सदस्याचा मृत्यू झाल्यास नामनिर्देशित व्यक्ती किंवा पात्र आश्रित
+कुटुंबाला निर्धारित प्रक्रिया आणि नियमांनुसार सहाय्य दिले जाऊ शकते.
+</p>
+
+<div class="documents">
+<strong>संभाव्य कागदपत्रे:</strong>
+मृत्यू प्रमाणपत्र, नामनिर्देशनाचा तपशील, कौटुंबिक संबंधाचा पुरावा
+आणि ओळखपत्र.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="icon">🎓</div>
+
+<h2>शैक्षणिक सहाय्य</h2>
+
+<p>
+सदस्यांच्या आश्रित मुलांच्या शिक्षणासाठी पात्रता, उपलब्ध निधी आणि
+सक्षम समितीच्या निर्णयानुसार सहाय्याची तरतूद केली जाऊ शकते.
+</p>
+
+<div class="documents">
+<strong>संभाव्य कागदपत्रे:</strong>
+शाळा/महाविद्यालय प्रमाणपत्र, शुल्क पावती, आश्रित असल्याचा पुरावा
+आणि सदस्यत्वाचा तपशील.
+</div>
+
+</section>
+
+</div>
+
+
+<div class="note">
+
+<strong>महत्त्वाची सूचना:</strong>
+
+वरील सहाय्य योजना प्रस्तावित स्वरूपातील माहिती आहे.
+प्रत्यक्ष सहाय्याची रक्कम, पात्रता, आवश्यक कागदपत्रे आणि मंजुरीची
+प्रक्रिया संघटनेच्या अंतिम नियमावलीनुसार आणि उपलब्ध निधीनुसार
+निश्चित केली जाईल.
+
+</div>
+
+</div>
 
 </div>
 
 
 <footer>
 
-    <strong>SHIKSHA BACHAO ASSOCIATION</strong>
+<strong>SHIKSHA BACHAO ASSOCIATION</strong>
 
-    <p>
-        <span class="lang-hi">
-            शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना
-        </span>
+<p>
 
-        <span class="lang-en">
-            Welfare and Social Security Scheme for Teaching and Non-Teaching Employees
-        </span>
+<span class="lang-hi">
+शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना
+</span>
 
-        <span class="lang-mr">
-            शिक्षक व शिक्षकेतर कर्मचाऱ्यांसाठी कल्याण व सामाजिक सुरक्षा योजना
-        </span>
-    </p>
+<span class="lang-en">
+Welfare and Social Security Scheme for Teaching and Non-Teaching Employees
+</span>
 
-    <p>© 2026 Shiksha Bachao Association. All Rights Reserved.</p>
+<span class="lang-mr">
+शिक्षक व शिक्षकेतर कर्मचाऱ्यांसाठी कल्याण व सामाजिक सुरक्षा योजना
+</span>
+
+</p>
+
+<p>
+© 2026 Shiksha Bachao Association. All Rights Reserved.
+</p>
 
 </footer>
 
@@ -521,67 +657,74 @@ body.sba-mr .block-mr{
 
 function setLanguage(lang){
 
-    if(!["hi","en","mr"].includes(lang)){
-        lang="hi";
-    }
+if(!["hi","en","mr"].includes(lang)){
+lang="hi";
+}
 
-    document.body.classList.remove(
-        "sba-hi",
-        "sba-en",
-        "sba-mr"
-    );
+document.body.classList.remove(
+"sba-hi",
+"sba-en",
+"sba-mr"
+);
 
-    document.body.classList.add("sba-"+lang);
+document.body.classList.add("sba-"+lang);
 
-    document.documentElement.lang=lang;
+document.documentElement.lang=lang;
 
-    document.querySelectorAll(".lang-btn").forEach(function(button){
+document.querySelectorAll(".lang-btn").forEach(function(button){
 
-        button.classList.toggle(
-            "active",
-            button.getAttribute("data-lang")===lang
-        );
+button.classList.toggle(
+"active",
+button.getAttribute("data-lang")===lang
+);
 
-    });
+});
 
-    try{
-        localStorage.setItem("sba-welfare-detail-language",lang);
-    }catch(e){}
+try{
+localStorage.setItem(
+"sba-welfare-detail-language",
+lang
+);
+}catch(e){}
 
 }
 
 
 document.querySelectorAll(".lang-btn").forEach(function(button){
 
-    button.addEventListener("click",function(){
+button.addEventListener("click",function(){
 
-        setLanguage(
-            button.getAttribute("data-lang")
-        );
+setLanguage(
+button.getAttribute("data-lang")
+);
 
-    });
+});
 
 });
 
 
 var queryLanguage=
-    new URLSearchParams(window.location.search).get("lang");
+new URLSearchParams(window.location.search).get("lang");
 
 var savedLanguage="hi";
 
 try{
-    savedLanguage=
-        localStorage.getItem("sba-welfare-detail-language") || "hi";
+
+savedLanguage=
+localStorage.getItem(
+"sba-welfare-detail-language"
+)||"hi";
+
 }catch(e){}
 
 
 if(["hi","en","mr"].includes(queryLanguage)){
 
-    setLanguage(queryLanguage);
+setLanguage(queryLanguage);
 
 }else{
 
-    setLanguage(savedLanguage);
+setLanguage(savedLanguage);
 
 }
 
