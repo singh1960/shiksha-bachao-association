@@ -84,18 +84,16 @@ footer li{margin-bottom:7px;}
 .copyright{border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:18px;text-align:center;font-size:13px;color:#aebdca;}
 .lang{display:none;}
 .lang.active{display:block;}
-.homepage-image-banner{background:#fff;padding:0;text-align:center;}
-.language-banner{display:none !important;}
-.language-banner.is-visible{display:block !important;}
-
-.homepage-image-banner img{display:block;width:100%;max-width:1600px;height:220px;object-fit:cover;object-position:center;margin:0 auto;}
+.homepage-image-banner{background:#0b2d4d;padding:0;text-align:center;position:relative;overflow:hidden;min-height:330px;}
+.language-banner{position:absolute !important;inset:0;width:100% !important;height:100% !important;max-width:none !important;margin:0 !important;display:block !important;object-fit:contain !important;object-position:center center !important;opacity:0;visibility:hidden;z-index:1;transition:none;}
+.language-banner.is-visible{opacity:1 !important;visibility:visible !important;z-index:2;}
 @media (max-width:700px){.homepage-image-banner img{height:150px;}}
 @media(max-width:900px){.header-inner{flex-direction:column;padding:15px 0;}nav{justify-content:center;}.cards{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.steps{grid-template-columns:repeat(2,1fr);}.scheme-list{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){.hero{padding:60px 0;}.hero h2{font-size:30px;}.hero h3{font-size:19px;}.cards,.support-grid,.scheme-list,.steps{grid-template-columns:1fr;}.stats{grid-template-columns:1fr 1fr;}.brand h1{font-size:18px;}nav{gap:9px;}nav a{font-size:12px;}}
 
 /* SBA Homepage Professional Hero */
 .homepage-image-banner{position:relative;overflow:hidden;background:#0b2d4d;min-height:330px;}
-.homepage-image-banner img{height:330px!important;max-width:none;width:100%;object-fit:cover;object-position:center;filter:saturate(1.03);}
+.homepage-image-banner img.language-banner{height:100%!important;max-width:none!important;width:100%!important;object-fit:contain!important;object-position:center center!important;filter:none;}
 .homepage-image-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,34,61,.72),rgba(5,34,61,.28) 52%,rgba(5,34,61,.05));pointer-events:none;}
 .home-hero-copy{position:absolute;z-index:2;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:25px;pointer-events:none;}
 .home-hero-copy-inner{max-width:850px;text-shadow:0 2px 8px rgba(0,0,0,.42);}
@@ -108,7 +106,7 @@ footer li{margin-bottom:7px;}
 .card .icon{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#edf3f7;font-size:32px;box-shadow:0 4px 12px rgba(18,60,105,.10)}
 .card:hover .icon{transform:scale(1.06);transition:.2s}
 .section-title h2{font-weight:800}
-@media(max-width:600px){.homepage-image-banner,.homepage-image-banner img{height:250px!important;min-height:250px}.home-hero-copy p{font-size:14px}.home-hero-copy h2{font-size:29px}}
+@media(max-width:600px){.homepage-image-banner{height:250px!important;min-height:250px}.homepage-image-banner img.language-banner{height:100%!important;object-fit:contain!important}.home-hero-copy p{font-size:14px}.home-hero-copy h2{font-size:29px}}
 </style>
 </head>
 <body>
@@ -142,7 +140,9 @@ if(!['mr','hi','en'].includes(lang))lang='hi';
 document.querySelectorAll('.lang').forEach(function(el){el.classList.remove('active');});
 document.querySelectorAll('.lang.'+lang).forEach(function(el){el.classList.add('active');});
 document.querySelectorAll('.language-banner').forEach(function(img){
-img.classList.toggle('is-visible', img.getAttribute('data-banner-lang')===lang);
+var visible=img.getAttribute('data-banner-lang')===lang;
+img.classList.toggle('is-visible',visible);
+img.setAttribute('aria-hidden',visible?'false':'true');
 });
 document.querySelectorAll('.languages button').forEach(function(btn){btn.classList.toggle('active',btn.id===lang+'Btn');});
 document.documentElement.lang=lang;
