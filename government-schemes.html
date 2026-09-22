@@ -41,10 +41,9 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
 .hero{border-bottom:5px solid #e2a900;}
 @media(max-width:600px){header h1,.hero h1,.hero h2{font-size:30px;line-height:1.25;}}
 /* Government Schemes Hero - clean language banner */
-.gov-hero{position:relative;max-width:1200px;margin:0 auto 12px;min-height:300px;background-size:cover;background-position:center;display:flex;align-items:center;overflow:hidden;box-shadow:0 8px 24px rgba(18,60,105,.18);border-bottom:5px solid #e2a900}
-.gov-hero-inner{position:absolute;inset:0;display:flex;align-items:flex-end;padding:25px 30px;background:linear-gradient(0deg,rgba(0,0,0,.28),transparent 45%);color:#fff}
-.gov-hero h2{display:none}.gov-hero p{display:none}.gov-credit{display:none}
-@media(max-width:600px){.gov-hero{min-height:220px}.gov-hero-inner{padding:18px}}
+.gov-hero{position:relative;max-width:1200px;margin:0 auto 12px;background:#eaf1f6;overflow:hidden;box-shadow:0 8px 24px rgba(18,60,105,.18);border-bottom:5px solid #e2a900;line-height:0}
+.gov-hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;margin:0 auto}
+@media(max-width:600px){.gov-hero img{max-height:none;width:100%;height:auto}}
 </style>
 </head>
 <body>
@@ -57,7 +56,7 @@ header h1,.hero h1,.hero h2{font-weight:800;text-shadow:0 2px 7px rgba(0,0,0,.22
   <a href="downloads-forms.html" id="downloadsLink">डाउनलोड / फॉर्म</a>
 </nav>
 
-<section class="gov-hero" id="govHero" aria-label="सरकारी योजनाएँ"><div class="gov-hero-inner"></div></section>
+<section class="gov-hero" id="govHero" aria-label="सरकारी योजनाएँ"><img id="govHeroImg" src="banner-hindi.png" alt="सरकारी योजनाएँ"></section>
 <div class="language-bar" aria-label="भाषा चुनें">
   <button class="lang-btn active" data-lang="hi">हिंदी</button>
   <button class="lang-btn" data-lang="en">English</button>
@@ -109,8 +108,8 @@ mr:{home:"मुख्य पृष्ठ",about:"आमच्याविषय
 
 function renderSchemes(lang){
  const d=data[lang]||data.hi;
- const hero=document.getElementById("govHero");
- if(hero) hero.style.backgroundImage="url('"+d.hero+"')";
+ const heroImg=document.getElementById("govHeroImg");
+ if(heroImg){ heroImg.src=d.hero; heroImg.alt=d.heading; }
  document.getElementById("homeLink").textContent=d.home;
  document.getElementById("aboutLink").textContent=d.about;
  document.getElementById("welfareLink").textContent=d.welfare;
