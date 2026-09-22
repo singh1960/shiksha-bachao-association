@@ -92,16 +92,39 @@ footer li{margin-bottom:7px;}
 @media (max-width:700px){.homepage-image-banner img{height:150px;}}
 @media(max-width:900px){.header-inner{flex-direction:column;padding:15px 0;}nav{justify-content:center;}.cards{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.steps{grid-template-columns:repeat(2,1fr);}.scheme-list{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){.hero{padding:60px 0;}.hero h2{font-size:30px;}.hero h3{font-size:19px;}.cards,.support-grid,.scheme-list,.steps{grid-template-columns:1fr;}.stats{grid-template-columns:1fr 1fr;}.brand h1{font-size:18px;}nav{gap:9px;}nav a{font-size:12px;}}
+
+/* SBA Homepage Professional Hero */
+.homepage-image-banner{position:relative;overflow:hidden;background:#0b2d4d;min-height:330px;}
+.homepage-image-banner img{height:330px!important;max-width:none;width:100%;object-fit:cover;object-position:center;filter:saturate(1.03);}
+.homepage-image-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,34,61,.72),rgba(5,34,61,.28) 52%,rgba(5,34,61,.05));pointer-events:none;}
+.home-hero-copy{position:absolute;z-index:2;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:25px;pointer-events:none;}
+.home-hero-copy-inner{max-width:850px;text-shadow:0 2px 8px rgba(0,0,0,.42);}
+.home-hero-copy h2{font-size:clamp(30px,5vw,52px);line-height:1.18;margin:0 0 10px;font-weight:800;}
+.home-hero-copy h3{font-size:clamp(18px,2.5vw,25px);margin:0 0 10px;font-weight:600;}
+.home-hero-copy p{font-size:17px;margin:0 auto;max-width:760px;}
+.home-hero-copy .hero-line{width:90px;height:5px;background:#e2a900;margin:18px auto;border-radius:5px;}
+.cards .card{position:relative;overflow:hidden;border:1px solid #e1e9ef;border-top:4px solid #12355b;}
+.cards .card:nth-child(2){border-top-color:#17824b}.cards .card:nth-child(3){border-top-color:#d27b00}.cards .card:nth-child(4){border-top-color:#7b3fb3}
+.card .icon{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#edf3f7;font-size:32px;box-shadow:0 4px 12px rgba(18,60,105,.10)}
+.card:hover .icon{transform:scale(1.06);transition:.2s}
+.section-title h2{font-weight:800}
+@media(max-width:600px){.homepage-image-banner,.homepage-image-banner img{height:250px!important;min-height:250px}.home-hero-copy p{font-size:14px}.home-hero-copy h2{font-size:29px}}
 </style>
 </head>
 <body>
 <div class="topbar"><div class="container topbar-inner"><div><span class="lang mr">शिक्षा बचाओ एसोसिएशन — शिक्षक कल्याण एवं सामाजिक सुरक्षा पहल</span><span class="lang hi active">शिक्षा बचाओ एसोसिएशन — शिक्षक कल्याण एवं सामाजिक सुरक्षा पहल</span><span class="lang en">Shiksha Bachao Association — Teacher Welfare & Social Security Initiative</span></div><div class="languages"><button onclick="setLanguage('mr')" id="mrBtn">मराठी</button><button onclick="setLanguage('hi')" id="hiBtn" class="active">हिंदी</button><button onclick="setLanguage('en')" id="enBtn">English</button></div></div></div>
 <header><div class="container header-inner"><div class="brand"><div class="logo">SBA</div><div><h1>SHIKSHA BACHAO ASSOCIATION</h1><p class="lang mr">शिक्षक व शिक्षकेतर कर्मचारी कल्याण व सामाजिक सुरक्षा योजना</p><p class="lang hi active">शिक्षक एवं शिक्षकेतर कर्मचारी कल्याण एवं सामाजिक सुरक्षा योजना</p><p class="lang en">Teacher & Non-Teaching Employees Welfare & Social Security Scheme</p></div></div>
 <nav><a href="#home"><span class="lang mr">मुख्यपृष्ठ</span><span class="lang hi active">मुख्य पृष्ठ</span><span class="lang en">Home</span></a><a href="about-us-professional.html"><span class="lang mr">आमच्याविषयी</span><span class="lang hi active">हमारे बारे में</span><span class="lang en">About Us</span></a><a href="welfare-scheme.html?lang=hi" id="navWelfareLink"><span class="lang mr">कल्याण योजना</span><span class="lang hi active">कल्याण योजना</span><span class="lang en">Welfare Scheme</span></a><a href="eligibility.html?lang=hi"><span class="lang mr">पात्रता</span><span class="lang hi active">पात्रता</span><span class="lang en">Eligibility</span></a><a href="government-schemes.html?lang=hi" id="governmentNavLink"><span class="lang mr">शासकीय योजना</span><span class="lang hi active">सरकारी योजनाएँ</span><span class="lang en">Government Schemes</span></a><a href="government-updates.html"><span class="lang mr">शासकीय आदेश व शासन निर्णय</span><span class="lang hi active">शिक्षा से जुड़े सरकारी आदेश एवं शासन निर्णय (GR)</span><span class="lang en">Education Government Orders &amp; GRs</span></a><a href="education-court-orders.html"><span class="lang mr">शैक्षणिक न्यायालयीन आदेश</span><span class="lang hi active">शिक्षा संबंधी न्यायालयीन आदेश</span><span class="lang en">Education Court Orders</span></a><a href="downloads-forms.html"><span class="lang mr">डाउनलोड</span><span class="lang hi active">डाउनलोड एवं फॉर्म</span><span class="lang en">Downloads & Forms</span></a></nav></div></header>
-<section class="homepage-image-banner" id="home">
-<img class="language-banner banner-mr" data-banner-lang="mr" src="banner-marathi.png" alt="शिक्षा बचाओ संघटन — मराठी बॅनर" loading="lazy">
-<img class="language-banner banner-hi" data-banner-lang="hi" src="banner-hindi.png" alt="शिक्षा बचाओ संगठन — हिंदी बैनर" loading="lazy">
-<img class="language-banner banner-en" data-banner-lang="en" src="banner-english-new.png" alt="Shiksha Bachao Association — English banner" loading="lazy">
+<section class="homepage-image-banner" id="home" aria-label="Shiksha Bachao Association">
+<img class="language-banner banner-mr" data-banner-lang="mr" src="banner-marathi.png" alt="शिक्षा बचाओ संगठन — मराठी बैनर" loading="eager">
+<img class="language-banner banner-hi" data-banner-lang="hi" src="banner-hindi.png" alt="शिक्षा बचाओ संगठन — हिंदी बैनर" loading="eager">
+<img class="language-banner banner-en" data-banner-lang="en" src="banner-english-new.png" alt="Shiksha Bachao Association — English banner" loading="eager">
+<div class="home-hero-copy"><div class="home-hero-copy-inner">
+<div class="hero-line"></div>
+<h2><span class="lang mr">शिक्षक हित • शिक्षण अधिकार • सामाजिक सुरक्षा</span><span class="lang hi active">शिक्षक हित में एक मजबूत आवाज़</span><span class="lang en">A Strong Voice for Teachers</span></h2>
+<h3><span class="lang mr">संघर्ष • जागरूकता • संघटन • समाधान</span><span class="lang hi active">संघर्ष • जागरूकता • संगठन • समाधान</span><span class="lang en">Awareness • Organization • Support • Solutions</span></h3>
+<p><span class="lang mr">शिक्षक व शिक्षकेतर कर्मचाऱ्यांच्या हक्क, कल्याण आणि सुरक्षित भविष्यासाठी सामूहिक प्रयत्न.</span><span class="lang hi active">शिक्षकों एवं शिक्षकेतर कर्मचारियों के अधिकार, कल्याण और सुरक्षित भविष्य के लिए सामूहिक प्रयास।</span><span class="lang en">A collective effort for the rights, welfare and secure future of teachers and non-teaching employees.</span></p>
+</div></div>
 </section>
 
 <section class="mission"><div class="container"><div class="section-title"><h2><span class="lang mr">आमचे ध्येय</span><span class="lang hi active">हमारा उद्देश्य</span><span class="lang en">Our Mission</span></h2></div><div class="mission-box"><p class="lang mr">शिक्षण क्षेत्रातील शिक्षक व शिक्षकेतर कर्मचाऱ्यांना कल्याण, सामाजिक सुरक्षा आणि परस्पर सहकार्याचा आधार देणे.</p><p class="lang hi active">शिक्षा क्षेत्र के शिक्षक एवं शिक्षकेतर कर्मचारियों को कल्याण, सामाजिक सुरक्षा और पारस्परिक सहयोग का आधार प्रदान करना।</p><p class="lang en">To provide teachers and non-teaching employees in the education sector with welfare, social security and mutual support.</p></div></div></section>
