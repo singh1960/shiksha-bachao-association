@@ -9,14 +9,18 @@
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;line-height:1.7;background:#f3f6fa;color:#263238}header{background:linear-gradient(135deg,#123c69,#176b87);color:#fff;padding:28px 18px;text-align:center}header h1{margin:0;font-size:clamp(23px,4vw,34px)}header p{margin:8px 0 0}.container{max-width:1000px;margin:25px auto;padding:0 15px}.card{background:#fff;padding:25px;margin-bottom:20px;border-radius:14px;box-shadow:0 3px 14px #00000010}h2{color:#123c69;border-bottom:2px solid #e5edf3;padding-bottom:8px}.notice{background:#fff5d9;border-left:5px solid #e2a900;padding:15px;border-radius:7px}.lang{display:none}.lang.active{display:block}.buttons{text-align:center;margin:20px 0}.btn{display:inline-block;background:#176b87;color:#fff;padding:12px 20px;margin:6px;border-radius:7px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}.langbtn{background:#123c69}.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}.links a{color:#fff;background:#123c69;padding:9px 16px;border-radius:7px;text-decoration:none;font-weight:bold}footer{background:#123c69;color:#fff;text-align:center;padding:24px 15px;margin-top:30px}
 </style>
+<style id="survey-accessibility">
+button:focus-visible,a:focus-visible{outline:3px solid #e2a900;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
 <header><h1>शिक्षा बचाओ संगठन</h1><p>पूर्ण शिक्षक स्थिति सर्वेक्षण 2026 / Complete Teacher Status Survey 2026</p></header>
 <main class="container">
 <div class="buttons">
-<button class="btn langbtn" onclick="setLang('hi')">हिंदी</button>
-<button class="btn langbtn" onclick="setLang('en')">English</button>
-<button class="btn langbtn" onclick="setLang('mr')">मराठी</button>
+<button type="button" class="btn langbtn" aria-controls="hi" aria-pressed="true" onclick="setLang('hi')">हिंदी</button>
+<button type="button" class="btn langbtn" aria-controls="en" aria-pressed="false" onclick="setLang('en')">English</button>
+<button type="button" class="btn langbtn" aria-controls="mr" aria-pressed="false" onclick="setLang('mr')">मराठी</button>
 </div>
 <section id="hi" class="card lang active">
 <h2>पूर्ण शिक्षक स्थिति सर्वेक्षण 2026</h2>
@@ -43,6 +47,15 @@
 <div class="links"><a href="index.html">मुख्य पृष्ठ / Home</a><a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Downloads & Forms</a><a href="welfare-scheme.html">कल्याण योजना / Welfare Scheme</a></div>
 </main>
 <footer>© <span id="y"></span> Shiksha Bachao Association. All Rights Reserved.</footer>
-<script>function setLang(x){document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));document.getElementById(x).classList.add('active');document.documentElement.lang=x}document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+function setLang(x){
+ document.querySelectorAll('.lang').forEach(function(e){e.classList.remove('active');e.setAttribute('aria-hidden','true')});
+ document.getElementById(x).classList.add('active');document.getElementById(x).setAttribute('aria-hidden','false');
+ document.querySelectorAll('.langbtn').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('aria-controls')===x?'true':'false')});
+ document.documentElement.lang=x;
+}
+document.querySelectorAll('.lang').forEach(function(e){e.setAttribute('aria-hidden',e.classList.contains('active')?'false':'true')});
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
