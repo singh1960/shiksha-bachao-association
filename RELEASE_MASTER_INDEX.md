@@ -206,7 +206,13 @@ Added `SECURE_BACKEND_ARCHITECTURE.md` as the Phase B security-first architectur
 
 Phase B architecture commit: `75c068a2286a79c5e3b3e17fc5187b2e70599791`
 
-## 14. Next Development Areas
+## 14. Phase B.1 — Database Schema & API Specification
+
+Added `DATABASE_API_SPECIFICATION.md` as the provider-neutral implementation contract. It maps the Phase A entities and controlled values into relational tables, defines role-aware `/api/v1` endpoints, server-side authorization, status transitions, error handling, idempotency/concurrency, private document downloads, transaction boundaries, versioning and privacy minimization. No live database, API or personal data has been deployed.
+
+Phase B.1 commit: `caa6eb35fab93c45970f3a40435f0dc71f409dbe`
+
+## 15. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -215,7 +221,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 15. Definition of Stable
+## 16. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
