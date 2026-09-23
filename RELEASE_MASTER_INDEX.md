@@ -180,7 +180,15 @@ Future work should build on this baseline rather than replacing it.
 
 Note: a true browser Lighthouse/PageSpeed measurement was not run in this environment, so no fabricated performance score is recorded.
 
-## 10. Next Development Areas
+## 10. Final Production Readiness Check
+
+The 23 September 2026 final production-readiness cross-check re-fetched the critical public pages and release-control files from `main`. The 13 audited public HTML pages each have exactly one H1 and include title, viewport and canonical metadata. No public Version 1.3 label was found in those audited pages. The repository-level Version 1.3 mentions remaining in this document are internal historical/release references only.
+
+The live GitHub Pages URLs could not be fetched from the current verification environment, so live-browser availability is not claimed from this audit. Repository-side source integrity is verified.
+
+**Production baseline status: Ready for controlled future development.**
+
+## 11. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -189,7 +197,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 11. Definition of Stable
+## 12. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
