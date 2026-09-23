@@ -194,7 +194,13 @@ Added `MEMBER_ADMIN_FEATURES.md` as the controlled architecture baseline for fut
 
 Feature foundation commit: `ae1be360cf1b940110cedd4c38870e826af0962a`
 
-## 12. Next Development Areas
+## 12. Phase A — Member/Admin Data Model & Status System
+
+Added `MEMBER_ADMIN_DATA_MODEL.md` as the Phase A logical architecture baseline. It defines Member ID, welfare application reference, decision/document IDs, member and application fields, membership/application statuses, welfare types, administrative roles, access matrix, audit-log requirements, privacy/retention boundaries and WF-01 mapping. No personal data or live backend has been added.
+
+Phase A commit: `e24665d7eceb7fc1d830d71f5910db282aee1ff9`
+
+## 13. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -203,7 +209,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 13. Definition of Stable
+## 14. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
