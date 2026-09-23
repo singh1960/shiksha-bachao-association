@@ -212,7 +212,13 @@ Added `DATABASE_API_SPECIFICATION.md` as the provider-neutral implementation con
 
 Phase B.1 commit: `caa6eb35fab93c45970f3a40435f0dc71f409dbe`
 
-## 15. Next Development Areas
+## 15. Phase B.2 — Provider Selection & Deployment Blueprint
+
+Added `PROVIDER_DEPLOYMENT_BLUEPRINT.md`. Current documentation evaluates Supabase, Firebase and AWS managed-service families, with Supabase set as the **provisional implementation target for blueprint purposes** because the approved design is PostgreSQL/relational and Supabase integrates Auth, PostgreSQL, Storage and RLS. This is not a universal product ranking; final production selection remains subject to security, privacy, legal, cost and organizational approval. No provider project or personal-data backend has been created.
+
+Phase B.2 commit: `366d40a4cae2316e439487b427e0a1f2218be7a4`
+
+## 16. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -221,7 +227,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 16. Definition of Stable
+## 17. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
