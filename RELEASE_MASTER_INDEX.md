@@ -263,17 +263,77 @@ The package is executable once an approved isolated development provider/project
 Phase B.6 runbook commit: `4634200ef3f87cc0cecc0ce89e25e60882bc139e`  
 Phase B.6 synthetic-fixture commit: `8b7e6375efa5057edee61e73573d990064c7eabc`
 
-## 20. Next Development Areas
+## 20. B.6.19–B.6.40 — Production Operations, Governance & Resilience Control Framework
+
+**Consolidation date:** 23 September 2026  
+**Consolidation status:** **FRAMEWORK COMPLETE / LIVE EXECUTION PENDING**
+
+B.6.19–B.6.40 were created as controlled repository-side operational frameworks. They extend the B.6 boundary from production release verification into operational sign-off, continuous monitoring, governance evidence, exception management, preventive controls, controlled change/release, stabilization, steady-state operations, service continuity, recovery assurance, business continuity/disaster recovery, resilience review and continuous improvement.
+
+### B.6.19–B.6.40 register
+
+| Stage | File | Commit | Current status |
+|---|---|---|---|
+| B.6.19 | `backend-development/PHASE_B6_19_PRODUCTION_OPERATIONAL_SIGNOFF.md` | `85f7d34ecc183d1d8fbda39f8de2253b76ac8808` | BLOCKED_PENDING_PRODUCTION_RELEASE_VERIFICATION |
+| B.6.20 | `backend-development/PHASE_B6_20_CONTINUOUS_PRODUCTION_MONITORING_CONTROL_REGISTER.md` | `7de5fdfc4e0936ac94046ad3fc5a079cab527f74` | BLOCKED_PENDING_AUTHORIZED_PRODUCTION_OPERATIONAL_SIGNOFF |
+| B.6.21 | `backend-development/PHASE_B6_21_CONTINUOUS_CONTROL_REAUTHORIZATION_FRAMEWORK.md` | `07c163d11d5e2908393bc680da560db177ab32cb` | BLOCKED_PENDING_B6_20_ACTIVATION |
+| B.6.22 | `backend-development/PHASE_B6_22_PRODUCTION_CONTROL_REVIEW_GOVERNANCE_CALENDAR.md` | `c0cee893ad7a05b58dea8f80d8465e7e473f3e29` | BLOCKED_PENDING_B6_20_ACTIVATION_AND_B6_21_REVIEW |
+| B.6.23 | `backend-development/PHASE_B6_23_PRODUCTION_GOVERNANCE_EVIDENCE_AUDIT_TRAIL_FRAMEWORK.md` | `56f71eac83ecd1a1c3f419dd3229492c3ee1c298` | BLOCKED_PENDING_B6_22_ACTIVATION |
+| B.6.24 | `backend-development/PHASE_B6_24_PRODUCTION_GOVERNANCE_REPORTING_EXCEPTION_MANAGEMENT.md` | `c34c10875ed044ce3cba81abc438ee911a9cfe91` | BLOCKED_PENDING_B6_23_ACTIVATION |
+| B.6.25 | `backend-development/PHASE_B6_25_GOVERNANCE_TREND_PREVENTIVE_CONTROL_FRAMEWORK.md` | `f56b49fcfee2a537fabf24248d66bbe990a9083a` | BLOCKED_PENDING_B6_24_ACTIVATION |
+| B.6.26 | `backend-development/PHASE_B6_26_PREVENTIVE_CONTROL_CHANGE_VALIDATION_REGRESSION_GATE.md` | `bf55b7fe15c72d486696319e53c8005e2f6b531d` | BLOCKED_PENDING_B6_25_ACTIVATION |
+| B.6.27 | `backend-development/PHASE_B6_27_CONTROLLED_CHANGE_PROMOTION_RELEASE_AUTHORIZATION.md` | `f76a8c0e9abcd1776b5cec45e2af8e2a8cf3577b` | BLOCKED_PENDING_B6_26_VALIDATION |
+| B.6.28 | `backend-development/PHASE_B6_28_CONTROLLED_RELEASE_EXECUTION_POST_RELEASE_VERIFICATION.md` | `a28d1e0b560cb5590e46554bf9d5b4d27e226456` | BLOCKED_PENDING_B6_27_RELEASE_AUTHORIZATION |
+| B.6.29 | `backend-development/PHASE_B6_29_RELEASE_CLOSURE_STABILIZATION_OPERATIONAL_HANDOVER.md` | `34722ba85d2b543e3d2c09226cd036c764e1e1e3` | BLOCKED_PENDING_B6_28_VERIFIED_RELEASE |
+| B.6.30 | `backend-development/PHASE_B6_30_OPERATIONAL_HANDOVER_ACCEPTANCE_STEADY_STATE_GOVERNANCE.md` | `8c6ce5a0580fadad2a6a854de251e6d7148a57ba` | BLOCKED_PENDING_B6_29_AUTHORIZED_CLOSURE |
+| B.6.31 | `backend-development/PHASE_B6_31_STEADY_STATE_OPERATIONAL_CONTROL_SERVICE_CONTINUITY.md` | `67e25a45a342c83325e8583144fd4fa170996e26` | BLOCKED_PENDING_B6_30_HANDOVER_ACCEPTANCE |
+| B.6.32 | `backend-development/PHASE_B6_32_SERVICE_CONTINUITY_RECOVERY_RESILIENCE_ASSURANCE.md` | `88dfb59079efad2d0acb5508ffbcf0abfff71062` | BLOCKED_PENDING_B6_31_ACTIVATION |
+| B.6.33 | `backend-development/PHASE_B6_33_RESILIENCE_FINDINGS_RECOVERY_READINESS_GATE.md` | `a0c5f8f965c02b6352b1d355a9886d5046ff6d74` | BLOCKED_PENDING_B6_32_ACTIVATION |
+| B.6.34 | `backend-development/PHASE_B6_34_RECOVERY_READINESS_BUSINESS_CONTINUITY_ACCEPTANCE.md` | `7a48433824433afff57bf228a0573988be48fad7` | BLOCKED_PENDING_B6_33_RECOVERY_READINESS_REVIEW |
+| B.6.35 | `backend-development/PHASE_B6_35_BUSINESS_CONTINUITY_DR_EXERCISE_READINESS.md` | `f17f970ac5879045ced6b30ea102a89112654db4` | BLOCKED_PENDING_B6_34_CONTINUITY_ACCEPTANCE |
+| B.6.36 | `backend-development/PHASE_B6_36_BC_DR_EXERCISE_RESULTS_REMEDIATION_GATE.md` | `796fdaf12ae4b7eaf228543e17ccb1007e51c62e` | BLOCKED_PENDING_B6_35_EXERCISE_EXECUTION |
+| B.6.37 | `backend-development/PHASE_B6_37_CONTINUITY_READINESS_CLOSURE_RECOVERY_AUTHORIZATION.md` | `33b374df04b36de04a147f7004c244b145b4d51d` | BLOCKED_PENDING_B6_36_RESULTS_AND_REMEDIATION |
+| B.6.38 | `backend-development/PHASE_B6_38_RECOVERY_READINESS_BASELINE_RESILIENCE_ASSURANCE.md` | `03eadd00d33c168f2c79f4437d2758f27013461d` | BLOCKED_PENDING_B6_37_AUTHORIZED_CONTINUITY_DECISION |
+| B.6.39 | `backend-development/PHASE_B6_39_RESILIENCE_ASSURANCE_REVIEW_REAUTHORIZATION_GATE.md` | `d72493095d53724023f10de3b7a8e8534e568d34` | BLOCKED_PENDING_B6_38_ASSURANCE_ACTIVATION |
+| B.6.40 | `backend-development/PHASE_B6_40_RESILIENCE_GOVERNANCE_CLOSURE_CONTINUOUS_IMPROVEMENT.md` | `6953468431c0f26d88dabeabe7679a67c2584513` | BLOCKED_PENDING_B6_39_ASSURANCE_REVIEW |
+
+### Consolidated control scope
+
+- **B.6.19–B.6.20:** production operational sign-off and continuous monitoring/control register.
+- **B.6.21–B.6.23:** periodic reauthorization, governance calendar, evidence and audit-trail framework.
+- **B.6.24–B.6.26:** governance reporting, exception management, trend analysis, preventive controls and regression validation.
+- **B.6.27–B.6.30:** controlled change promotion, release authorization/execution, post-release verification, closure and operational handover.
+- **B.6.31–B.6.34:** steady-state operations, service continuity, recovery/resilience assurance and business-continuity acceptance.
+- **B.6.35–B.6.37:** controlled BC/DR exercise readiness, results/remediation and continuity-readiness closure/recovery authorization.
+- **B.6.38–B.6.40:** recovery baseline, resilience reauthorization, governance closure and continuous-improvement cycle.
+
+### Critical execution boundary
+
+The B.6.19–B.6.40 files are **documentation/control frameworks only** at this stage. They do not constitute evidence that production monitoring, production deployment, backup/restore, DR exercises, resilience tests, live security tests, staging validation or production authorization have occurred.
+
+Current environment boundary:
+- No approved development provider/project is connected.
+- No live database migration has been executed.
+- No live RLS/security test has been executed.
+- No staging environment has been created or authorized.
+- No production environment has been created, connected, authorized or deployed.
+- No live operational monitoring or resilience exercise evidence is recorded.
+
+Accordingly, **FRAMEWORK COMPLETE / LIVE EXECUTION PENDING** remains the correct consolidated status.
+
+## 21. Next Development Areas
 
 Development should proceed in this order:
-1. Approved isolated development provider/project access
-2. Phase B.6 live migration execution and security-test run using synthetic data only
-3. Record and remediate every failed security assertion
-4. Clean destroy/recreate reproducibility test
-5. Staging only after security, privacy, legal, cost and organizational gates pass
-6. Production deployment only after all required approvals and gates pass
+1. Complete the B.6.19–B.6.40 master audit and overlap/duplicate review.
+2. Maintain the consolidated status as **Framework Complete / Live Execution Pending** until real execution evidence exists.
+3. Obtain approved isolated development provider/project access.
+4. Execute Phase B.6 live migration and security-test run using synthetic data only.
+5. Record and remediate every failed security assertion.
+6. Complete clean destroy/recreate reproducibility testing.
+7. Proceed to staging only after required development, security, privacy, legal, cost and organizational gates pass.
+8. Proceed to production only after all required approvals, controlled-release gates and evidence requirements pass.
 
-## 21. Definition of Stable
+## 22. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
@@ -285,4 +345,5 @@ A future change may be considered stable only after:
 - no unrelated structure has been changed.
 
 ---
+
 **Document purpose:** permanent internal release reference for future development and maintenance.
