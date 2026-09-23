@@ -1,0 +1,53 @@
+-- Phase B.4 — Development Security Test Fixtures
+-- DEVELOPMENT ONLY. Fictional identities/records only.
+-- These are test specifications/fixtures, not a production test run.
+
+-- Expected test actors:
+-- member_a, member_b, verification_officer, committee_user,
+-- finance_officer, auditor_user, super_admin.
+--
+-- Expected assertions:
+--
+-- AUTH-001: unauthenticated SELECT on sensitive tables => denied.
+-- AUTH-002: member_a reads own member/application => allowed.
+-- AUTH-003: member_a reads member_b/application_b => denied or safe not-found.
+-- AUTH-004: member cannot insert/update/delete role assignments => denied.
+--
+-- RLS-001: member_a can read only applications linked to member_a.
+-- RLS-002: member_b cannot read application_a by guessed UUID.
+-- RLS-003: verification officer can read assigned/unassigned verification cases.
+-- RLS-004: finance officer cannot modify document verification.
+-- RLS-005: auditor cannot modify operational records.
+--
+-- DOC-001: public/anonymous document access => denied.
+-- DOC-002: member_a cannot read document_b.
+-- DOC-003: unauthorized download URL/token => denied.
+-- DOC-004: quarantined/rejected file is never exposed as AVAILABLE.
+--
+-- WORKFLOW-001: DRAFT -> SUBMITTED is allowed through the reviewed API/function.
+-- WORKFLOW-002: member cannot directly set APPROVED/AUTHORIZED/PAID_OR_DISBURSED.
+-- WORKFLOW-003: invalid status jump => denied.
+-- WORKFLOW-004: status change writes history and audit atomically.
+--
+-- ROLE-001: verification officer attempting payment authorization => denied.
+-- ROLE-002: finance officer attempting document verification => denied.
+-- ROLE-003: auditor attempting status change => denied.
+-- ROLE-004: member attempting self-promotion to SUPER_ADMIN => denied.
+--
+-- FIN-001: duplicate idempotency key produces one effective authorization.
+-- FIN-002: concurrent disbursement cannot produce two successful disbursements.
+--
+-- AUDIT-001: protected change creates an audit row.
+-- AUDIT-002: ordinary authenticated client cannot update/delete audit rows.
+-- AUDIT-003: audit row contains no password/token/document-content fields.
+--
+-- INPUT-001: negative amount => denied.
+-- INPUT-002: negative dependent_count => denied.
+-- INPUT-003: invalid enum/status => denied.
+-- INPUT-004: malformed UUID/reference => safe validation failure.
+-- INPUT-005: SQL/script-style input => parameterized/safe handling; no SQL error leakage.
+--
+-- PASS CONDITION:
+-- Every mandatory DENY assertion must deny and every mandatory ALLOW
+-- assertion must allow. Any cross-member disclosure or privilege escalation
+-- is a blocking failure.
