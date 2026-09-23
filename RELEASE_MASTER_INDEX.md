@@ -224,7 +224,20 @@ Added `PHASE_B3_RLS_SECURITY_TEST_PLAN.md` as the controlled development-securit
 
 Phase B.3 commit: `418388670dd1b6a06510421afb537358480330b6`
 
-## 17. Next Development Areas
+## 17. Phase B.4 — Development SQL Migrations, RLS Policies & Security Fixtures
+
+Added the development-only implementation package:
+- `backend-development/migrations/001_core_schema.sql` — PostgreSQL/Supabase-compatible schema and constraints;
+- `backend-development/policies/008_rls_grants.sql` — grants/RLS baseline with role and ownership boundaries;
+- `backend-development/tests/009_security_test_fixtures.sql` — synthetic security-test assertions covering authentication, RLS, role separation, documents, workflow, finance, audit and validation.
+
+All three files were re-fetched after creation and checked for expected sections and absence of credential patterns. These scripts have **not** been executed against a live provider/database. No real personal data or secrets are included.
+
+Phase B.4 schema commit: `42a153d5e9274b8eefe6a51a63ce63f3a2372584`  
+Phase B.4 RLS commit: `c30839ba9c036738d35e8654308047a9e846830e`  
+Phase B.4 test-fixtures commit: `5c3de373ce7df6555ab2766e6af6529a61a56077`
+
+## 18. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -232,9 +245,10 @@ Development should proceed in this order:
 3. Search and navigation improvements
 4. Performance and technical audit
 5. Advanced member/admin features
-6. Backend implementation only after Phase B.3 security gates and organizational approvals
+6. Phase B.5 — isolated development environment preparation and migration validation
+7. Live provider deployment only after all security, privacy, legal, cost and organizational gates pass
 
-## 18. Definition of Stable
+## 19. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
