@@ -24,7 +24,7 @@ This document records the repository state after the final cleanup and welfare-f
 
 ## 2. Current Repository Snapshot
 
-The final repository audit recorded **57 tracked files (Git blobs)**.
+The final repository audit recorded **57 tracked files (Git blobs)** before the controlled backend-development additions in Phases B.4–B.6.
 
 ### Core website pages
 - `index.html` — Main website/home page
@@ -110,7 +110,7 @@ The Downloads page provides one welfare entry point per language and does not du
 
 | Check | Result |
 |---|---|
-| Tracked repository files | 57 Git blobs |
+| Tracked repository files at audit baseline | 57 Git blobs |
 | Hindi welfare forms | 10 |
 | English welfare forms | 10 |
 | Marathi welfare forms | 10 |
@@ -150,7 +150,7 @@ Other key stabilization commits:
 
 The 23 September 2026 consolidated audit checked the principal public pages, the Teacher Survey 2026 landing page, welfare navigation, metadata consistency, public Version 1.3 labeling, the three-language survey entry points, repository tree integrity, local-reference syntax, robots.txt and sitemap consistency. The audited core pages have the expected title, H1, viewport, meta description, and canonical elements. Teacher Survey 2026 has three language links and the accessibility controls introduced in commit `2abe1df8955049c616e755016cf9b3498415677f`.
 
-The repository currently contains 57 Git blobs; the Git tree also reports three directory entries, so a raw recursive tree count is 60 while the file/blob count is 57. The sitemap intentionally indexes the public information pages and does not enumerate the 30 individual welfare-form HTML files or the legacy compatibility page `about-us.html`.
+The repository baseline contained 57 Git blobs; the Git tree also reported three directory entries, so a raw recursive tree count was 60 while the file/blob count was 57. The sitemap intentionally indexes the public information pages and does not enumerate the 30 individual welfare-form HTML files or the legacy compatibility page `about-us.html`.
 
 Google Forms themselves are hosted externally; the live form question structure could not be machine-read from this environment, so the audit does not claim direct verification of the external form internals.
 
@@ -169,8 +169,8 @@ Future work should build on this baseline rather than replacing it.
 
 ## 9. Performance / Technical Audit Result
 
-- Repository Git blob count reconciled: **57**.
-- HTML files: **44** (14 public/core pages + 30 welfare forms).
+- Repository Git blob count at the audit baseline: **57**.
+- HTML files at the audit baseline: **44** (14 public/core pages + 30 welfare forms).
 - Local reference syntax audit: **50 local references inspected; no suspicious relative-reference pattern found**.
 - `robots.txt`: sitemap declaration present; obsolete welfare-PDF reference absent.
 - `sitemap.xml`: **13 public URLs** present, including Teacher Survey 2026 and welfare guidance/submission pages.
@@ -250,18 +250,30 @@ Phase B.5 environment template commit: `4d4217447f9a953659088941820d3d7a2200dae8
 Phase B.5 environment plan commit: `4470dd92fe44b2ee4fb69545a85ece4d06b9ff2f`  
 Phase B.5 validation-query commit: `7f28a6c880aeccf323624535b6810d8b85eba667`
 
-## 19. Next Development Areas
+## 19. Phase B.6 — Isolated Development Migration Execution Package
+
+Added the controlled B.6 execution package:
+- `backend-development/PHASE_B6_DEVELOPMENT_MIGRATION_RUNBOOK.md` — exact execution order, environment gate, migration sequence, security evidence requirements, reproducibility test and promotion gate;
+- `backend-development/tests/011_synthetic_security_fixtures.sql` — development-only synthetic fixture scaffold that deliberately avoids hard-coded auth identities and any personal data.
+
+The package is executable once an approved isolated development provider/project is available. It explicitly prevents accidental production execution and requires synthetic data only.
+
+**Important status:** the repository does **not** claim that a live migration or security test was executed. No approved provider project, development database connection or provider credentials were available/configured in this phase. The next actual execution gate is provider/project access followed by the documented B.6 runbook.
+
+Phase B.6 runbook commit: `4634200ef3f87cc0cecc0ce89e25e60882bc139e`  
+Phase B.6 synthetic-fixture commit: `8b7e6375efa5057edee61e73573d990064c7eabc`
+
+## 20. Next Development Areas
 
 Development should proceed in this order:
-1. Documentation and change-control
-2. Education and legal information resources
-3. Search and navigation improvements
-4. Performance and technical audit
-5. Advanced member/admin features
-6. Phase B.6 — isolated migration execution and security-test run, only in an approved development provider
-7. Staging/production deployment only after all security, privacy, legal, cost and organizational gates pass
+1. Approved isolated development provider/project access
+2. Phase B.6 live migration execution and security-test run using synthetic data only
+3. Record and remediate every failed security assertion
+4. Clean destroy/recreate reproducibility test
+5. Staging only after security, privacy, legal, cost and organizational gates pass
+6. Production deployment only after all required approvals and gates pass
 
-## 20. Definition of Stable
+## 21. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
