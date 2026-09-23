@@ -218,7 +218,13 @@ Added `PROVIDER_DEPLOYMENT_BLUEPRINT.md`. Current documentation evaluates Supaba
 
 Phase B.2 commit: `366d40a4cae2316e439487b427e0a1f2218be7a4`
 
-## 16. Next Development Areas
+## 16. Phase B.3 — Development Database, RLS & Security Test Plan
+
+Added `PHASE_B3_RLS_SECURITY_TEST_PLAN.md` as the controlled development-security specification. It converts the Phase B.1 schema and Phase B.2 deployment blueprint into a development-only RLS/grants model and repeatable security test matrix covering authentication, object-level isolation, role separation, status transitions, private document access, audit integrity, idempotency/concurrency, validation, privacy leakage, synthetic test data and production gates. No provider project, live database or personal data has been deployed.
+
+Phase B.3 commit: `418388670dd1b6a06510421afb537358480330b6`
+
+## 17. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -226,8 +232,9 @@ Development should proceed in this order:
 3. Search and navigation improvements
 4. Performance and technical audit
 5. Advanced member/admin features
+6. Backend implementation only after Phase B.3 security gates and organizational approvals
 
-## 17. Definition of Stable
+## 18. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
