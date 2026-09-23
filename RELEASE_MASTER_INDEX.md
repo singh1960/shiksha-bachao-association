@@ -188,7 +188,13 @@ The live GitHub Pages URLs could not be fetched from the current verification en
 
 **Production baseline status: Ready for controlled future development.**
 
-## 11. Next Development Areas
+## 11. Member / Admin Feature Foundation
+
+Added `MEMBER_ADMIN_FEATURES.md` as the controlled architecture baseline for future member and administrative functionality. It defines member services, admin roles, the WF-01 workflow, public-vs-secure data separation, implementation phases, and security requirements. No fake login, public member database, or personal-data storage has been added to the static website.
+
+Feature foundation commit: `ae1be360cf1b940110cedd4c38870e826af0962a`
+
+## 12. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -197,7 +203,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 12. Definition of Stable
+## 13. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
