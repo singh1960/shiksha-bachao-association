@@ -24,7 +24,7 @@ This document records the repository state after the final cleanup and welfare-f
 
 ## 2. Current Repository Snapshot
 
-The final repository audit recorded **56 tracked files**.
+The final repository audit recorded **57 tracked files (Git blobs)**.
 
 ### Core website pages
 - `index.html` — Main website/home page
@@ -110,7 +110,7 @@ The Downloads page provides one welfare entry point per language and does not du
 
 | Check | Result |
 |---|---|
-| Tracked repository files | 56 |
+| Tracked repository files | 57 Git blobs |
 | Hindi welfare forms | 10 |
 | English welfare forms | 10 |
 | Marathi welfare forms | 10 |
@@ -148,7 +148,9 @@ Other key stabilization commits:
 
 ## 7. Consolidated Accessibility / SEO / Navigation Audit
 
-The 23 September 2026 consolidated audit checked the principal public pages, the Teacher Survey 2026 landing page, welfare navigation, metadata consistency, public Version 1.3 labeling, and the three-language survey entry points. The audited core pages have the expected title, H1, viewport, meta description, and canonical elements. Teacher Survey 2026 has three language links and the accessibility controls introduced in commit `2abe1df8955049c616e755016cf9b3498415677f`.
+The 23 September 2026 consolidated audit checked the principal public pages, the Teacher Survey 2026 landing page, welfare navigation, metadata consistency, public Version 1.3 labeling, the three-language survey entry points, repository tree integrity, local-reference syntax, robots.txt and sitemap consistency. The audited core pages have the expected title, H1, viewport, meta description, and canonical elements. Teacher Survey 2026 has three language links and the accessibility controls introduced in commit `2abe1df8955049c616e755016cf9b3498415677f`.
+
+The repository currently contains 57 Git blobs; the Git tree also reports three directory entries, so a raw recursive tree count is 60 while the file/blob count is 57. The sitemap intentionally indexes the public information pages and does not enumerate the 30 individual welfare-form HTML files or the legacy compatibility page `about-us.html`.
 
 Google Forms themselves are hosted externally; the live form question structure could not be machine-read from this environment, so the audit does not claim direct verification of the external form internals.
 
@@ -165,7 +167,20 @@ The following areas are considered **stable and should not be unnecessarily modi
 
 Future work should build on this baseline rather than replacing it.
 
-## 9. Next Development Areas
+## 9. Performance / Technical Audit Result
+
+- Repository Git blob count reconciled: **57**.
+- HTML files: **44** (14 public/core pages + 30 welfare forms).
+- Local reference syntax audit: **50 local references inspected; no suspicious relative-reference pattern found**.
+- `robots.txt`: sitemap declaration present; obsolete welfare-PDF reference absent.
+- `sitemap.xml`: **13 public URLs** present, including Teacher Survey 2026 and welfare guidance/submission pages.
+- Obsolete welfare-PDF references in sitemap: **0**.
+- Individual welfare forms are kept out of the sitemap by design; `welfare-scheme.html` remains their authoritative entry point.
+- No file deletion or structural redesign was required by this audit.
+
+Note: a true browser Lighthouse/PageSpeed measurement was not run in this environment, so no fabricated performance score is recorded.
+
+## 10. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -174,7 +189,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 10. Definition of Stable
+## 11. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
