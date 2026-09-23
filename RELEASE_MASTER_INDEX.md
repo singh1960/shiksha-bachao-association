@@ -1,7 +1,7 @@
 # Shiksha Bachao Association — Release Master Index
 
 **Release status:** Stable / Release-Ready Foundation  
-**Audit date:** 23 September 2026  
+**Audit date:** 23 September 2026 (Final Repository / Release Audit)  
 **Repository:** `singh1960/shiksha-bachao-association`  
 **Branch:** `main`  
 **Website:** https://singh1960.github.io/shiksha-bachao-association/
@@ -24,7 +24,7 @@ This document records the repository state after the final cleanup and welfare-f
 
 ## 2. Current Repository Snapshot
 
-The final cleanup audit recorded **52 tracked files**.
+The final repository audit recorded **56 tracked files**.
 
 ### Core website pages
 - `index.html` — Main website/home page
@@ -110,7 +110,7 @@ The Downloads page provides one welfare entry point per language and does not du
 
 | Check | Result |
 |---|---|
-| Tracked repository files | 52 |
+| Tracked repository files | 56 |
 | Hindi welfare forms | 10 |
 | English welfare forms | 10 |
 | Marathi welfare forms | 10 |
@@ -120,6 +120,8 @@ The Downloads page provides one welfare entry point per language and does not du
 | Obsolete welfare PDF references | 0 |
 | Obsolete welfare PDFs remaining | 0 |
 | Sitemap obsolete-PDF references | 0 |
+| Public `Version 1.3` labels on audited welfare pages | 0 |
+| Welfare guidance/submission pages included in sitemap | Yes |
 | Robots.txt obsolete-PDF references | 0 |
 
 ## 6. Cleanup Record
