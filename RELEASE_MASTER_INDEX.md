@@ -1,7 +1,7 @@
 # Shiksha Bachao Association — Release Master Index
 
 **Release status:** Stable / Release-Ready Foundation  
-**Audit date:** 23 September 2026 (Final Repository / Release Audit)  
+**Audit date:** 23 September 2026 (Consolidated Accessibility / SEO / Navigation Audit)  
 **Repository:** `singh1960/shiksha-bachao-association`  
 **Branch:** `main`  
 **Website:** https://singh1960.github.io/shiksha-bachao-association/
@@ -123,6 +123,10 @@ The Downloads page provides one welfare entry point per language and does not du
 | Public `Version 1.3` labels on audited welfare pages | 0 |
 | Welfare guidance/submission pages included in sitemap | Yes |
 | Robots.txt obsolete-PDF references | 0 |
+| Core website pages with title + H1 + viewport + description + canonical | 14 / 14 |
+| Teacher Survey 2026 language links | 3 / 3 |
+| Teacher Survey 2026 accessibility controls | Passed |
+| Public `Version 1.3` labels found by repository search | 0 |
 
 ## 6. Cleanup Record
 
@@ -142,12 +146,18 @@ Other key stabilization commits:
 - `0ab87a638e72a6cecf9a0cfe04e3bc94be03ff3a` — simplified welfare headings
 - `07e455dcb04578b1084dd97c21529d09198e52e1` — fixed Downloads & Forms language display
 
-## 7. Release Baseline
+## 7. Consolidated Accessibility / SEO / Navigation Audit
+
+The 23 September 2026 consolidated audit checked the principal public pages, the Teacher Survey 2026 landing page, welfare navigation, metadata consistency, public Version 1.3 labeling, and the three-language survey entry points. The audited core pages have the expected title, H1, viewport, meta description, and canonical elements. Teacher Survey 2026 has three language links and the accessibility controls introduced in commit `2abe1df8955049c616e755016cf9b3498415677f`.
+
+Google Forms themselves are hosted externally; the live form question structure could not be machine-read from this environment, so the audit does not claim direct verification of the external form internals.
+
+## 8. Release Baseline
 
 The following areas are considered **stable and should not be unnecessarily modified**:
 - Existing main-page structure
 - Three-language welfare navigation
-- 30 Version 1.3 welfare-form files
+- 30 welfare-form files (10 Hindi + 10 English + 10 Marathi)
 - Welfare form entry architecture
 - Existing membership/nominee/complaint downloads
 - Existing banners and core assets
@@ -155,20 +165,16 @@ The following areas are considered **stable and should not be unnecessarily modi
 
 Future work should build on this baseline rather than replacing it.
 
-## 8. Next Development Areas
+## 9. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
-2. Welfare guidance / FAQ
-3. Online forms and submission workflow
-4. Teacher Survey 2026
-5. Education and legal information resources
-6. Search and navigation improvements
-7. Accessibility and SEO
-8. Performance and technical audit
-9. Advanced member/admin features
+2. Education and legal information resources
+3. Search and navigation improvements
+4. Performance and technical audit
+5. Advanced member/admin features
 
-## 9. Definition of Stable
+## 10. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
