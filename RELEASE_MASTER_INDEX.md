@@ -237,7 +237,20 @@ Phase B.4 schema commit: `42a153d5e9274b8eefe6a51a63ce63f3a2372584`
 Phase B.4 RLS commit: `c30839ba9c036738d35e8654308047a9e846830e`  
 Phase B.4 test-fixtures commit: `5c3de373ce7df6555ab2766e6af6529a61a56077`
 
-## 18. Next Development Areas
+## 18. Phase B.5 — Isolated Development Environment Preparation & Migration Validation
+
+Added the Phase B.5 development-environment package:
+- `backend-development/.env.example` — credential-free configuration template;
+- `backend-development/DEVELOPMENT_ENVIRONMENT.md` — isolated environment, migration validation, reproducibility and stop-condition plan;
+- `backend-development/tests/010_migration_validation.sql` — structural checks for RLS, constraints, indexes, policies and unintended public/anonymous grants.
+
+All files were re-fetched after creation. The package contains no real credentials or personal data. The validation SQL is prepared for an isolated development database; it has **not** been executed against a live provider.
+
+Phase B.5 environment template commit: `4d4217447f9a953659088941820d3d7a2200dae8`  
+Phase B.5 environment plan commit: `4470dd92fe44b2ee4fb69545a85ece4d06b9ff2f`  
+Phase B.5 validation-query commit: `7f28a6c880aeccf323624535b6810d8b85eba667`
+
+## 19. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -245,10 +258,10 @@ Development should proceed in this order:
 3. Search and navigation improvements
 4. Performance and technical audit
 5. Advanced member/admin features
-6. Phase B.5 — isolated development environment preparation and migration validation
-7. Live provider deployment only after all security, privacy, legal, cost and organizational gates pass
+6. Phase B.6 — isolated migration execution and security-test run, only in an approved development provider
+7. Staging/production deployment only after all security, privacy, legal, cost and organizational gates pass
 
-## 19. Definition of Stable
+## 20. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
