@@ -200,7 +200,13 @@ Added `MEMBER_ADMIN_DATA_MODEL.md` as the Phase A logical architecture baseline.
 
 Phase A commit: `e24665d7eceb7fc1d830d71f5910db282aee1ff9`
 
-## 13. Next Development Areas
+## 13. Phase B — Secure Backend Architecture
+
+Added `SECURE_BACKEND_ARCHITECTURE.md` as the Phase B security-first architecture baseline. It defines the public/static website boundary, authentication, API layer, relational database, private document storage, RBAC, audit logging, encryption, secure uploads, status-transition enforcement, backups/recovery, monitoring, environment separation, deployment boundaries and production security gates. No live backend or personal data has been deployed.
+
+Phase B architecture commit: `75c068a2286a79c5e3b3e17fc5187b2e70599791`
+
+## 14. Next Development Areas
 
 Development should proceed in this order:
 1. Documentation and change-control
@@ -209,7 +215,7 @@ Development should proceed in this order:
 4. Performance and technical audit
 5. Advanced member/admin features
 
-## 14. Definition of Stable
+## 15. Definition of Stable
 
 A future change may be considered stable only after:
 - the intended file(s) are identified;
