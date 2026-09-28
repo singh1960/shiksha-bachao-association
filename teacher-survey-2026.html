@@ -40,10 +40,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #e2a900;outline-offset:3p
 <div class="notice"><strong>फक्त शिक्षकांनी सहभागी व्हावे.</strong> कृपया आपल्या वास्तविक सेवा नोंदी व अनुभवाच्या आधारे माहिती भरा.</div>
 <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSceFtZihSrdcbcU0YlEA5RcZLwOEMwYsWIhclPGmPgifL9jJQ/viewform" target="_blank" rel="noopener noreferrer">मराठी सर्वेक्षण भरा</a>
 </section>
-<section class="card">
-<h2>सर्वेक्षण के 8 प्रमुख भाग</h2>
-<ol><li>व्यक्तिगत जानकारी / Personal Information</li><li>विद्यालय एवं नियुक्ति संबंधी जानकारी / School & Appointment Information</li><li>वेतन एवं वित्तीय सुविधाएँ / Salary & Financial Facilities</li><li>सेवा सुरक्षा एवं अधिकार / Service Security & Rights</li><li>छुट्टी एवं अन्य सुविधाएँ / Leave & Other Facilities</li><li>कार्य की स्थिति एवं विद्यालय का वातावरण / Work Conditions & School Environment</li><li>शिकायत एवं समस्याएँ / Complaints & Problems</li><li>शिक्षक संगठन से संबंधित जानकारी / Teacher Organization Information</li></ol>
-</section>
+<section id="sections-hi" class="card lang active"><h2>सर्वेक्षण के 8 प्रमुख भाग</h2><ol><li>व्यक्तिगत जानकारी</li><li>विद्यालय एवं नियुक्ति संबंधी जानकारी</li><li>वेतन एवं वित्तीय सुविधाएँ</li><li>सेवा सुरक्षा एवं अधिकार</li><li>छुट्टी एवं अन्य सुविधाएँ</li><li>कार्य की स्थिति एवं विद्यालय का वातावरण</li><li>शिकायत एवं समस्याएँ</li><li>शिक्षक संगठन से संबंधित जानकारी</li></ol></section>
+<section id="sections-en" class="card lang"><h2>8 Main Sections of the Survey</h2><ol><li>Personal Information</li><li>School & Appointment Information</li><li>Salary & Financial Benefits</li><li>Service Security & Rights</li><li>Leave & Other Benefits</li><li>Working Conditions & School Environment</li><li>Complaints & Grievances</li><li>Teacher Organization Information</li></ol></section>
+<section id="sections-mr" class="card lang"><h2>सर्वेक्षणाचे ८ प्रमुख भाग</h2><ol><li>वैयक्तिक माहिती</li><li>शाळा व नियुक्ती संबंधी माहिती</li><li>वेतन व आर्थिक सुविधा</li><li>सेवा सुरक्षा व अधिकार</li><li>रजा व इतर सुविधा</li><li>कामाची परिस्थिती व शाळेचे वातावरण</li><li>तक्रारी व समस्या</li><li>शिक्षक संघटनेशी संबंधित माहिती</li></ol></section>
 <div class="links"><a href="index.html">मुख्य पृष्ठ / Home</a><a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Downloads & Forms</a><a href="welfare-scheme.html">कल्याण योजना / Welfare Scheme</a></div>
 </main>
 <footer>© <span id="y"></span> Shiksha Bachao Association. All Rights Reserved.</footer>
@@ -51,6 +50,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #e2a900;outline-offset:3p
 function setLang(x){
  document.querySelectorAll('.lang').forEach(function(e){e.classList.remove('active');e.setAttribute('aria-hidden','true')});
  document.getElementById(x).classList.add('active');document.getElementById(x).setAttribute('aria-hidden','false');
+ document.getElementById('sections-'+x).classList.add('active');document.getElementById('sections-'+x).setAttribute('aria-hidden','false');
  document.querySelectorAll('.langbtn').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('aria-controls')===x?'true':'false')});
  document.documentElement.lang=x;
 }
