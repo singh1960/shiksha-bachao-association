@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-10-24T07:28:40.982576+00:00",
+  "lastChecked": "2026-10-25T07:43:55.313141+00:00",
   "sources": [
     {
       "type": "Bombay High Court",
@@ -20,8 +20,9 @@
       "type": "Maharashtra Government",
       "title": "Government Resolutions",
       "url": "https://gr.maharashtra.gov.in/",
-      "status": 200,
-      "reachable": true
+      "status": null,
+      "reachable": false,
+      "error": "The read operation timed out"
     },
     {
       "type": "Education Department",
@@ -37,7 +38,7 @@
       "url": "https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index",
       "status": null,
       "reachable": false,
-      "error": "<urlopen error [Errno 111] Connection refused>"
+      "error": "<urlopen error timed out>"
     }
   ]
 }
