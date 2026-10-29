@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-10-28T08:47:15.090911+00:00",
+  "lastChecked": "2026-10-29T08:43:49.974297+00:00",
   "sources": [
     {
       "type": "Bombay High Court",
@@ -7,7 +7,7 @@
       "url": "https://bombayhighcourt.gov.in/bhc/front/unified-search",
       "status": null,
       "reachable": false,
-      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1000)>"
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1081)>"
     },
     {
       "type": "Supreme Court of India",
