@@ -1,0 +1,45 @@
+name: Fix Short Meta Descriptions
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-short-meta.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-meta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update short meta descriptions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          descriptions = {
+              'welfare-scheme.html': 'शिक्षा बचाओ संगठन की शिक्षक कल्याण योजना, पात्रता, सहायता के स्वरूप, आवेदन प्रक्रिया और योजना से संबंधित महत्वपूर्ण जानकारी।',
+              'eligibility.html': 'शिक्षा बचाओ संगठन की कल्याण योजना में शिक्षक, शिक्षकेतर कर्मचारी और अन्य पात्र सदस्यों के लिए पात्रता तथा आवश्यक शर्तों की जानकारी।',
+              'membership.html': 'शिक्षा बचाओ संगठन की सदस्यता के लिए ऑनलाइन और ऑफलाइन आवेदन विकल्प, सदस्यता प्रक्रिया तथा आवश्यक जानकारी।',
+              'education-court-orders.html': 'शिक्षकों के लिए Supreme Court, Bombay High Court और Tribunal के महत्वपूर्ण न्यायिक आदेशों की विषयवार Judicial Library और सरल जानकारी।',
+              'government-schemes.html': 'शिक्षा बचाओ संगठन द्वारा उपयोगी सरकारी योजनाओं, छात्रवृत्तियों, नागरिक सेवाओं और संबंधित आधिकारिक पोर्टलों की जानकारी।',
+              'about-us.html': 'शिक्षा बचाओ संगठन के बारे में संक्षिप्त जानकारी और मुख्य About Us पेज का लिंक। संगठन शिक्षक हित, शिक्षा और सामाजिक कल्याण के लिए कार्य करता है।',
+          }
+          for name, desc in descriptions.items():
+              path = Path(name)
+              text = path.read_text(encoding='utf-8')
+              tag = '<meta name="description" content="' + desc.replace('"', '&quot;') + '">'
+              new, n = re.subn(r'<meta\\s+name=["\']description["\']\\s+content=["\'][^"\']*["\']\\s*/?>', tag, text, count=1, flags=re.I)
+              if n != 1:
+                  raise SystemExit(f'Could not update description in {name}')
+              path.write_text(new, encoding='utf-8')
+              print(name, len(desc))
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add welfare-scheme.html eligibility.html membership.html education-court-orders.html government-schemes.html about-us.html
+          git commit -m 'Improve short meta descriptions' || echo 'No changes'
+          git push
