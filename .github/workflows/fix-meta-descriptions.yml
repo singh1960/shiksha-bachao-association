@@ -1,0 +1,88 @@
+name: Fix Meta Descriptions
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-meta-descriptions.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-meta-descriptions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add missing meta descriptions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          descriptions = {
+              'HI-WF-01.html': 'शिक्षक कल्याण योजना सदस्यता आवेदन प्रपत्र — शिक्षा बचाओ संगठन की शिक्षक कल्याण योजना में सदस्यता के लिए हिंदी आवेदन प्रपत्र।',
+              'HI-WF-02.html': 'शिक्षक कल्याण योजना योगदान रिकॉर्ड प्रपत्र — सदस्य के अंशदान और योगदान का रिकॉर्ड रखने के लिए हिंदी प्रपत्र।',
+              'HI-WF-03.html': 'सामान्य कल्याण दावा प्रपत्र — शिक्षक कल्याण योजना के सामान्य कल्याण लाभ के लिए आवेदन और दावा प्रस्तुत करने का हिंदी प्रपत्र।',
+              'HI-WF-04.html': 'चिकित्सा और दुर्घटना दावा प्रपत्र — शिक्षक कल्याण योजना के अंतर्गत चिकित्सा या दुर्घटना सहायता के लिए हिंदी दावा प्रपत्र।',
+              'HI-WF-05.html': 'मृत्यु, परिवार और आश्रित दावा प्रपत्र — शिक्षक कल्याण योजना में मृत्यु या आश्रित परिवार सहायता के लिए हिंदी दावा प्रपत्र।',
+              'HI-WF-06.html': 'नामांकन और नामांकन परिवर्तन प्रपत्र — शिक्षक कल्याण योजना में नामांकित व्यक्ति जोड़ने या बदलने के लिए हिंदी प्रपत्र।',
+              'HI-WF-07.html': 'आपातकालीन सहायता प्रपत्र — शिक्षक कल्याण योजना के अंतर्गत आपातकालीन सहायता के लिए आवेदन करने का हिंदी प्रपत्र।',
+              'HI-WF-08.html': 'सत्यापन रिपोर्ट प्रपत्र — शिक्षक कल्याण योजना के आवेदन और दस्तावेजों के सत्यापन के लिए हिंदी कार्यालयीन प्रपत्र।',
+              'HI-WF-09.html': 'स्वीकृति एवं भुगतान प्राधिकरण प्रपत्र — शिक्षक कल्याण योजना सहायता की स्वीकृति और भुगतान प्रक्रिया के लिए हिंदी प्रपत्र।',
+              'HI-WF-10.html': 'पुनर्विचार और अभ्यावेदन प्रपत्र — शिक्षक कल्याण योजना के निर्णय पर पुनर्विचार या अभ्यावेदन के लिए हिंदी प्रपत्र।',
+              'EN-WF-01.html': 'Teacher Welfare Scheme membership application form for Shiksha Bachao Association members seeking welfare scheme enrollment.',
+              'EN-WF-02.html': 'Teacher Welfare Scheme contribution record form for maintaining a member’s welfare fund contribution and payment record.',
+              'EN-WF-03.html': 'General Welfare Claim form for submitting an application for eligible assistance under the Teacher Welfare Scheme.',
+              'EN-WF-04.html': 'Medical and Accident Claim form for requesting eligible medical or accident assistance under the Teacher Welfare Scheme.',
+              'EN-WF-05.html': 'Death, Family and Dependent Claim form for requesting eligible family or dependent assistance under the Teacher Welfare Scheme.',
+              'EN-WF-06.html': 'Nomination and Nomination Change form for adding or changing a nominee under the Teacher Welfare Scheme.',
+              'EN-WF-07.html': 'Emergency Assistance form for requesting eligible emergency support under the Teacher Welfare Scheme.',
+              'EN-WF-08.html': 'Verification Report form for recording verification of Teacher Welfare Scheme applications and supporting documents.',
+              'EN-WF-09.html': 'Sanction and Payment Authorization form for recording approval and payment authorization under the Teacher Welfare Scheme.',
+              'EN-WF-10.html': 'Review and Representation form for requesting review or submitting a representation regarding a Teacher Welfare Scheme decision.',
+              'MR-WF-01.html': 'शिक्षक कल्याण योजना सदस्यत्व अर्ज — शिक्षा बचाओ संगठनाच्या शिक्षक कल्याण योजनेतील सदस्यत्वासाठी मराठी अर्ज प्रपत्र.',
+              'MR-WF-02.html': 'शिक्षक कल्याण योजना योगदान नोंद प्रपत्र — सदस्याच्या अंशदान आणि योगदानाची नोंद ठेवण्यासाठी मराठी प्रपत्र.',
+              'MR-WF-03.html': 'सामान्य कल्याण दावा प्रपत्र — शिक्षक कल्याण योजनेअंतर्गत पात्र सहाय्यासाठी अर्ज व दावा सादर करण्याचे मराठी प्रपत्र.',
+              'MR-WF-04.html': 'वैद्यकीय आणि अपघात दावा प्रपत्र — शिक्षक कल्याण योजनेअंतर्गत वैद्यकीय किंवा अपघात सहाय्यासाठी मराठी दावा प्रपत्र.',
+              'MR-WF-05.html': 'मृत्यू, कुटुंब आणि आश्रित दावा प्रपत्र — शिक्षक कल्याण योजनेअंतर्गत कुटुंब किंवा आश्रित सहाय्यासाठी मराठी दावा प्रपत्र.',
+              'MR-WF-06.html': 'नामनिर्देशन आणि नामनिर्देशन बदल प्रपत्र — शिक्षक कल्याण योजनेतील नामनिर्देशित व्यक्ती जोडण्यासाठी किंवा बदलण्यासाठी मराठी प्रपत्र.',
+              'MR-WF-07.html': 'आपत्कालीन सहाय्य प्रपत्र — शिक्षक कल्याण योजनेअंतर्गत पात्र आपत्कालीन सहाय्यासाठी अर्ज करण्याचे मराठी प्रपत्र.',
+              'MR-WF-08.html': 'पडताळणी अहवाल प्रपत्र — शिक्षक कल्याण योजनेच्या अर्ज आणि कागदपत्रांच्या पडताळणीसाठी मराठी कार्यालयीन प्रपत्र.',
+              'MR-WF-09.html': 'मंजुरी व भुगतान प्राधिकरण प्रपत्र — शिक्षक कल्याण योजनेतील सहाय्याची मंजुरी आणि भुगतान प्रक्रियेसाठी मराठी प्रपत्र.',
+              'MR-WF-10.html': 'पुनर्विचार आणि अभ्यावेदन प्रपत्र — शिक्षक कल्याण योजनेच्या निर्णयावर पुनर्विचार किंवा अभ्यावेदनासाठी मराठी प्रपत्र.',
+              'HI-OF-01.html': 'संगठन सदस्यता आवेदन प्रपत्र — शिक्षा बचाओ संगठन की सामान्य सदस्यता के लिए आवेदन करने का हिंदी प्रपत्र।',
+          }
+
+          roots = [Path('welfare-forms'), Path('organization-forms')]
+          changed = []
+          for root in roots:
+              for path in root.glob('*.html'):
+                  if path.name not in descriptions:
+                      continue
+                  text = path.read_text(encoding='utf-8')
+                  if re.search(r'<meta\s+[^>]*name=["\']description["\']', text, re.I):
+                      continue
+                  tag = '<meta name="description" content="' + descriptions[path.name].replace('"', '&quot;') + '">'
+                  new_text, n = re.subn(r'(<meta\s+charset=[^>]+>)', r'\1' + tag, text, count=1, flags=re.I)
+                  if n != 1:
+                      raise SystemExit(f'Could not insert description into {path}')
+                  path.write_text(new_text, encoding='utf-8')
+                  changed.append(str(path))
+          print(f'Updated {len(changed)} files')
+          for item in changed:
+              print(item)
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add welfare-forms/*.html organization-forms/HI-OF-01.html
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Add meta descriptions to welfare forms'
+            git push
+          fi
