@@ -29,10 +29,10 @@ jobs:
           for name, desc in descriptions.items():
               path = Path(name)
               text = path.read_text(encoding='utf-8')
-              tag = '<meta name="description" content="' + desc.replace('"', '&quot;') + '">'
-              new, n = re.subn(r'<meta\\s+name=["\']description["\']\\s+content=["\'][^"\']*["\']\\s*/?>', tag, text, count=1, flags=re.I)
+              tag = '<meta name="description" content="' + desc.replace('"', '&quot;') + '">' 
+              new, n = re.subn(r'<meta\s+name=["\']description["\']\s+content=["\'][^"\']*["\']\s*/?>', tag, text, count=1, flags=re.I)
               if n != 1:
-                  raise SystemExit(f'Could not update description in {name}')
+                  raise SystemExit(f'Could not update description in {name}; matches={n}')
               path.write_text(new, encoding='utf-8')
               print(name, len(desc))
           PY
