@@ -29,7 +29,12 @@ jobs:
               im = Image.open(p)
               if im.mode not in ('RGB', 'RGBA'):
                   im = im.convert('RGBA')
-              # Keep the existing dimensions; optimize PNG encoding only.
+              # Keep dimensions and PNG format, but reduce the color palette substantially.
+              # This is appropriate for banner graphics and targets a much smaller file size.
+              if im.mode == 'RGBA':
+                  im = im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG)
+              else:
+                  im = im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG)
               im.save(p, format='PNG', optimize=True, compress_level=9)
               print(name, p.stat().st_size)
           PY
@@ -42,6 +47,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No image changes to commit."
           else
-            git commit -m "Optimize banner images"
+            git commit -m "Further optimize banner images"
             git push
           fi
