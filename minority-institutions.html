@@ -39,5 +39,11 @@ const T={hi:{title:'अल्पसंख्यक शैक्षणिक स�
 function setLang(l){let t=T[l];for(const k in t){let e=document.getElementById(k);if(e)e.textContent=t[k]}document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));history.replaceState(null,'','?lang='+l)}
 let l=new URLSearchParams(location.search).get('lang')||'hi';setLang(T[l]?l:'hi');document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 </script>
+
+<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">
+<strong>संबंधित संगठन एवं शिक्षा जानकारी / Related Education Information</strong><br>
+<a href="government-updates.html">सरकारी अपडेट / Government Updates</a> &nbsp;|&nbsp;
+<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>
+</section>
 </body>
 </html>
