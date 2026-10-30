@@ -1,0 +1,73 @@
+name: Add Contextual Internal Links
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  add-internal-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add contextual links to low-link pages
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          marker = 'sba-contextual-internal-links'
+          changed = []
+
+          form_links = '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संबंधित शिक्षक कल्याण जानकारी / Related Teacher Welfare Information</strong><br>\n<a href="../welfare-guidance.html">मार्गदर्शिका / Guidance</a> &nbsp;|&nbsp;\n<a href="../welfare-submission.html">आवेदन एवं जमा प्रक्रिया / Submission Process</a> &nbsp;|&nbsp;\n<a href="../welfare-scheme.html">मुख्य कल्याण योजना / Welfare Scheme</a>\n</section>\n'''
+
+          page_links = {
+              'welfare-benefits.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संबंधित कल्याण पृष्ठ / Related Welfare Pages</strong><br>\n<a href="welfare-guidance.html">मार्गदर्शिका / Guidance</a> &nbsp;|&nbsp;\n<a href="welfare-submission.html">आवेदन एवं जमा प्रक्रिया / Submission Process</a> &nbsp;|&nbsp;\n<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>\n</section>\n''',
+              'welfare-submission.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संबंधित कल्याण पृष्ठ / Related Welfare Pages</strong><br>\n<a href="welfare-guidance.html">मार्गदर्शिका / Guidance</a> &nbsp;|&nbsp;\n<a href="welfare-scheme.html">मुख्य कल्याण योजना / Welfare Scheme</a> &nbsp;|&nbsp;\n<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>\n</section>\n''',
+              'welfare-guidance.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संबंधित कल्याण पृष्ठ / Related Welfare Pages</strong><br>\n<a href="welfare-scheme.html">मुख्य कल्याण योजना / Welfare Scheme</a> &nbsp;|&nbsp;\n<a href="welfare-submission.html">आवेदन एवं जमा प्रक्रिया / Submission Process</a> &nbsp;|&nbsp;\n<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>\n</section>\n''',
+              'about-us.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>शिक्षक कल्याण एवं संगठन जानकारी / Association Information</strong><br>\n<a href="welfare-scheme.html">शिक्षक कल्याण योजना / Welfare Scheme</a> &nbsp;|&nbsp;\n<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>\n</section>\n''',
+              'organization-forms/HI-OF-01.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संगठन एवं कल्याण जानकारी / Association & Welfare Information</strong><br>\n<a href="../downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a> &nbsp;|&nbsp;\n<a href="../membership.html">सदस्यता / Membership</a>\n</section>\n''',
+              'minority-institutions.html': '''\n<section id="sba-contextual-internal-links" class="sba-contextual-internal-links" style="margin-top:24px;padding:16px;background:#eef7f2;border:1px solid #cfe6db;border-radius:10px;text-align:center;">\n<strong>संबंधित संगठन एवं शिक्षा जानकारी / Related Education Information</strong><br>\n<a href="government-updates.html">सरकारी अपडेट / Government Updates</a> &nbsp;|&nbsp;\n<a href="downloads-forms.html">डाउनलोड एवं फॉर्म / Forms & Downloads</a>\n</section>\n'''
+          }
+
+          targets = [p for p in Path('.').rglob('*.html') if 'welfare-forms' in p.parts]
+          for p in targets:
+              text = p.read_text(encoding='utf-8')
+              if marker in text or '</body>' not in text:
+                  continue
+              new = text.replace('</body>', form_links + '</body>', 1)
+              p.write_text(new, encoding='utf-8')
+              changed.append(str(p))
+
+          for name, block in page_links.items():
+              p = Path(name)
+              if not p.exists():
+                  continue
+              text = p.read_text(encoding='utf-8')
+              if marker in text or '</body>' not in text:
+                  continue
+              new = text.replace('</body>', block + '</body>', 1)
+              p.write_text(new, encoding='utf-8')
+              changed.append(str(p))
+
+          print(f'Updated {len(changed)} HTML files')
+          for item in changed:
+              print(item)
+          PY
+
+      - name: Commit internal-link changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes needed."
+          else
+            git add '*.html' '**/*.html'
+            git commit -m "Improve contextual internal linking"
+            git push
+          fi
