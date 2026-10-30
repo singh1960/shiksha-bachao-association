@@ -1,0 +1,75 @@
+name: Add Open Graph and X Card Metadata
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  add-social-meta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add missing social metadata
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import html
+          import re
+
+          BASE = 'https://singh1960.github.io/shiksha-bachao-association/'
+          changed = []
+
+          for path in Path('.').rglob('*.html'):
+              if '.git' in path.parts:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if 'property="og:title"' in text or 'name="twitter:card"' in text:
+                  continue
+
+              title_m = re.search(r'<title>(.*?)</title>', text, re.I | re.S)
+              desc_m = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']*)["\']', text, re.I | re.S)
+              canon_m = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', text, re.I | re.S)
+
+              if not title_m:
+                  continue
+
+              title = html.unescape(re.sub(r'<[^>]+>', '', title_m.group(1))).strip()
+              description = html.unescape(desc_m.group(1)).strip() if desc_m else title
+              url = canon_m.group(1).strip() if canon_m else BASE + str(path).replace('\\', '/')
+
+              social = (
+                  '\n<meta property="og:type" content="website">'
+                  f'\n<meta property="og:site_name" content="Shiksha Bachao Association">'
+                  f'\n<meta property="og:title" content="{html.escape(title, quote=True)}">'
+                  f'\n<meta property="og:description" content="{html.escape(description, quote=True)}">'
+                  f'\n<meta property="og:url" content="{html.escape(url, quote=True)}">'
+                  '\n<meta name="twitter:card" content="summary">'
+                  f'\n<meta name="twitter:title" content="{html.escape(title, quote=True)}">'
+                  f'\n<meta name="twitter:description" content="{html.escape(description, quote=True)}">'
+              )
+
+              text = text.replace('</head>', social + '\n</head>', 1)
+              path.write_text(text, encoding='utf-8')
+              changed.append(str(path))
+
+          print(f'Updated {len(changed)} HTML files')
+          for item in changed:
+              print(item)
+          PY
+
+      - name: Commit metadata changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes needed."
+          else
+            git add '*.html' '**/*.html'
+            git commit -m "Add Open Graph and X card metadata"
+            git push
+          fi
