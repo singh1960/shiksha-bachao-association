@@ -1,0 +1,43 @@
+name: Fix Multiple H1
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix-h1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fix hero heading structure
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('downloads-forms.html')
+          s = p.read_text(encoding='utf-8')
+          old = '''<section class="hero"><div class="lang block hi active"><h1>फॉर्म एवं डाउनलोड</h1><p>आवश्यक आवेदन-पत्र, शिक्षक कल्याण प्रपत्र और उपयोगी दस्तावेज़ यहाँ उपलब्ध हैं।</p></div><div class="lang block en"><h1>Forms & Downloads</h1><p>Essential application forms, Teacher Welfare forms and useful documents are available here.</p></div><div class="lang block mr"><h1>फॉर्म व डाउनलोड</h1><p>आवश्यक अर्ज, शिक्षक कल्याण प्रपत्रे आणि उपयुक्त कागदपत्रे येथे उपलब्ध आहेत.</p></div></section>'''
+          new = '''<section class="hero"><h1><span class="lang hi active">फॉर्म एवं डाउनलोड</span><span class="lang en">Forms & Downloads</span><span class="lang mr">फॉर्म व डाउनलोड</span></h1><div class="lang block hi active"><p>आवश्यक आवेदन-पत्र, शिक्षक कल्याण प्रपत्र और उपयोगी दस्तावेज़ यहाँ उपलब्ध हैं।</p></div><div class="lang block en"><p>Essential application forms, Teacher Welfare forms and useful documents are available here.</p></div><div class="lang block mr"><p>आवश्यक अर्ज, शिक्षक कल्याण प्रपत्रे आणि उपयुक्त कागदपत्रे येथे उपलब्ध आहेत.</p></div></section>'''
+          if old not in s:
+              raise SystemExit('Expected hero heading block not found; no changes made.')
+          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          print('Fixed hero heading: one H1 with language spans.')
+          PY
+
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads-forms.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Fix multiple H1 tags on downloads page"
+            git push
+          fi
