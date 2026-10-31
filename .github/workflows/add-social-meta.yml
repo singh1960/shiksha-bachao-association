@@ -37,13 +37,11 @@ jobs:
               title = html.unescape(re.sub(r'<[^>]+>', '', title_m.group(1))).strip()
               desc_m = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']*)["\']', text, re.I | re.S)
               canon_m = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', text, re.I | re.S)
-
               description = html.unescape(desc_m.group(1)).strip() if desc_m else title
               url = canon_m.group(1).strip() if canon_m else BASE + str(path).replace('\\', '/')
 
               original = text
 
-              # Add the complete Open Graph set when missing.
               if 'property="og:title"' not in text:
                   social = (
                       '\n<meta property="og:type" content="website">'
@@ -54,19 +52,12 @@ jobs:
                   )
                   text = text.replace('</head>', social + '\n</head>', 1)
 
-              # Add the shared social image to every HTML page.
               if 'property="og:image"' not in text:
-                  og_image = f'\n<meta property="og:image" content="{IMAGE}">'
-                  if 'property="og:url"' in text:
-                      text = text.replace('</head>', og_image + '\n</head>', 1)
-                  else:
-                      text = text.replace('</head>', og_image + '\n</head>', 1)
+                  text = text.replace('</head>', f'\n<meta property="og:image" content="{IMAGE}">\n</head>', 1)
 
-              # Ensure Twitter/X has an image and uses the large card format.
               text = text.replace('<meta name="twitter:card" content="summary">', '<meta name="twitter:card" content="summary_large_image">')
               if 'name="twitter:image"' not in text:
-                  twitter_image = f'\n<meta name="twitter:image" content="{IMAGE}">'
-                  text = text.replace('</head>', twitter_image + '\n</head>', 1)
+                  text = text.replace('</head>', f'\n<meta name="twitter:image" content="{IMAGE}">\n</head>', 1)
 
               if text != original:
                   path.write_text(text, encoding='utf-8')
@@ -80,7 +71,7 @@ jobs:
       - name: Commit metadata changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet; then
             echo "No changes needed."
           else
