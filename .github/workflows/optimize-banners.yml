@@ -63,3 +63,5 @@ jobs:
             git commit -m "Further optimize banner images"
             git push
           fi
+
+      # Verification trigger: keep workflow active on the main branch after the Pillow fix.
