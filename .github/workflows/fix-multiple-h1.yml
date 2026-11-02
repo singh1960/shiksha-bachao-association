@@ -16,18 +16,34 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Fix hero heading structure
+      - name: Validate and fix downloads page H1
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
+
           p = Path('downloads-forms.html')
           s = p.read_text(encoding='utf-8')
+
+          h1s = re.findall(r'<h1\b[^>]*>.*?</h1>', s, flags=re.I | re.S)
+          print(f'Found {len(h1s)} H1 element(s).')
+
+          # The current page is already in the corrected one-H1 structure.
+          # Treat that state as successful so the workflow is idempotent.
+          if len(h1s) == 1:
+              print('H1 structure is already valid. No changes required.')
+              raise SystemExit(0)
+
+          # If an older version contains the known three-language hero structure,
+          # collapse it to one H1 while keeping the language-specific paragraphs.
           old = '''<section class="hero"><div class="lang block hi active"><h1>फॉर्म एवं डाउनलोड</h1><p>आवश्यक आवेदन-पत्र, शिक्षक कल्याण प्रपत्र और उपयोगी दस्तावेज़ यहाँ उपलब्ध हैं।</p></div><div class="lang block en"><h1>Forms & Downloads</h1><p>Essential application forms, Teacher Welfare forms and useful documents are available here.</p></div><div class="lang block mr"><h1>फॉर्म व डाउनलोड</h1><p>आवश्यक अर्ज, शिक्षक कल्याण प्रपत्रे आणि उपयुक्त कागदपत्रे येथे उपलब्ध आहेत.</p></div></section>'''
-          new = '''<section class="hero"><h1><span class="lang hi active">फॉर्म एवं डाउनलोड</span><span class="lang en">Forms & Downloads</span><span class="lang mr">फॉर्म व डाउनलोड</span></h1><div class="lang block hi active"><p>आवश्यक आवेदन-पत्र, शिक्षक कल्याण प्रपत्र और उपयोगी दस्तावेज़ यहाँ उपलब्ध हैं।</p></div><div class="lang block en"><p>Essential application forms, Teacher Welfare forms and useful documents are available here.</p></div><div class="lang block mr"><p>आवश्यक अर्ज, शिक्षक कल्याण प्रपत्रे आणि उपयुक्त कागदपत्रे येथे उपलब्ध आहेत.</p></div></section>'''
-          if old not in s:
-              raise SystemExit('Expected hero heading block not found; no changes made.')
-          p.write_text(s.replace(old, new, 1), encoding='utf-8')
-          print('Fixed hero heading: one H1 with language spans.')
+          new = '''<section class="hero"><h1 id="page-title">फॉर्म एवं डाउनलोड</h1><div class="lang block hi active"><p>आवश्यक आवेदन-पत्र, शिक्षक कल्याण प्रपत्र और उपयोगी दस्तावेज़ यहाँ उपलब्ध हैं।</p></div><div class="lang block en"><p>Essential application forms, Teacher Welfare forms and useful documents are available here.</p></div><div class="lang block mr"><p>आवश्यक अर्ज, शिक्षक कल्याण प्रपत्रे आणि उपयुक्त कागदपत्रे येथे उपलब्ध आहेत.</p></div></section>'''
+
+          if old in s:
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+              print('Fixed legacy multiple-H1 hero structure.')
+          else:
+              raise SystemExit('Multiple H1 elements remain, but the legacy hero structure was not recognized. No changes made.')
           PY
 
       - name: Commit fix
