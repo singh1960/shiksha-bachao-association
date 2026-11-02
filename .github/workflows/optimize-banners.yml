@@ -24,17 +24,30 @@ jobs:
           python - <<'PY'
           from PIL import Image
           from pathlib import Path
+
           for name in ['banner-hindi.png', 'banner-marathi.png', 'banner-english.png']:
               p = Path(name)
               im = Image.open(p)
+
               if im.mode not in ('RGB', 'RGBA'):
                   im = im.convert('RGBA')
-              # Keep dimensions and PNG format, but reduce the color palette substantially.
-              # This is appropriate for banner graphics and targets a much smaller file size.
+
+              # Pillow 13 does not support MEDIANCUT quantization for RGBA images.
+              # FASTOCTREE preserves transparency while providing a compatible
+              # 256-color palette for PNG banner graphics.
               if im.mode == 'RGBA':
-                  im = im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG)
+                  im = im.quantize(
+                      colors=256,
+                      method=Image.Quantize.FASTOCTREE,
+                      dither=Image.Dither.FLOYDSTEINBERG,
+                  )
               else:
-                  im = im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG)
+                  im = im.quantize(
+                      colors=256,
+                      method=Image.Quantize.MEDIANCUT,
+                      dither=Image.Dither.FLOYDSTEINBERG,
+                  )
+
               im.save(p, format='PNG', optimize=True, compress_level=9)
               print(name, p.stat().st_size)
           PY
