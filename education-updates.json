@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-11-02T09:44:03.742019+00:00",
+  "lastChecked": "2026-11-03T09:46:47.977706+00:00",
   "sources": [
     {
       "type": "Bombay High Court",
@@ -36,9 +36,8 @@
       "type": "eCourts",
       "title": "High Court Services",
       "url": "https://services.ecourts.gov.in/ecourtindia_v6/?p=high_court/index",
-      "status": null,
-      "reachable": false,
-      "error": "<urlopen error timed out>"
+      "status": 200,
+      "reachable": true
     }
   ]
 }
