@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-11-06T09:35:39.094186+00:00",
+  "lastChecked": "2026-11-07T08:59:43.864588+00:00",
   "sources": [
     {
       "type": "Bombay High Court",
@@ -20,9 +20,8 @@
       "type": "Maharashtra Government",
       "title": "Government Resolutions",
       "url": "https://gr.maharashtra.gov.in/",
-      "status": null,
-      "reachable": false,
-      "error": "The read operation timed out"
+      "status": 200,
+      "reachable": true
     },
     {
       "type": "Education Department",
